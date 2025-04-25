@@ -15,7 +15,7 @@ export function SectionCards() {
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
+          <CardDescription>总收入</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             $1,250.00
           </CardTitle>
@@ -28,16 +28,16 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <IconTrendingUp className="size-4" />
+            本月收入增长 <IconTrendingUp className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Visitors for the last 6 months
+            过去6个月的访问量
           </div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>New Customers</CardDescription>
+          <CardDescription>新客户</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             1,234
           </CardTitle>
@@ -50,16 +50,16 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <IconTrendingDown className="size-4" />
+            过去6个月的收入下降 <IconTrendingDown className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Acquisition needs attention
+            新客户需要关注
           </div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
+          <CardDescription>活跃账户</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             45,678
           </CardTitle>
@@ -72,14 +72,14 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Strong user retention <IconTrendingUp className="size-4" />
+            用户留存率强 <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-muted-foreground">Engagement exceed targets</div>
+          <div className="text-muted-foreground">用户留存率强</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
+          <CardDescription>增长率</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             4.5%
           </CardTitle>
@@ -92,9 +92,9 @@ export function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Steady performance increase <IconTrendingUp className="size-4" />
+            稳步增长 <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-muted-foreground">Meets growth projections</div>
+          <div className="text-muted-foreground">超过增长目标</div>
         </CardFooter>
       </Card>
     </div>

@@ -30,7 +30,7 @@ import {
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
 
-export const description = "An interactive area chart"
+export const description = "一个交互式面积图"
 
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
@@ -128,14 +128,14 @@ const chartData = [
 
 const chartConfig = {
   visitors: {
-    label: "Visitors",
+    label: "访问量",
   },
   desktop: {
-    label: "Desktop",
+    label: "桌面端",
     color: "var(--primary)",
   },
   mobile: {
-    label: "Mobile",
+    label: "移动端",
     color: "var(--primary)",
   },
 } satisfies ChartConfig
@@ -167,12 +167,12 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader>
-        <CardTitle>Total Visitors</CardTitle>
+        <CardTitle>总访问量</CardTitle>
         <CardDescription>
           <span className="hidden @[540px]/card:block">
-            Total for the last 3 months
+            最近3个月的总访问量
           </span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
+          <span className="@[540px]/card:hidden">最近3个月</span>
         </CardDescription>
         <CardAction>
           <ToggleGroup
@@ -182,27 +182,27 @@ export function ChartAreaInteractive() {
             variant="outline"
             className="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
           >
-            <ToggleGroupItem value="90d">Last 3 months</ToggleGroupItem>
-            <ToggleGroupItem value="30d">Last 30 days</ToggleGroupItem>
-            <ToggleGroupItem value="7d">Last 7 days</ToggleGroupItem>
+            <ToggleGroupItem value="90d">最近3个月</ToggleGroupItem>
+            <ToggleGroupItem value="30d">最近30天</ToggleGroupItem>
+            <ToggleGroupItem value="7d">最近7天</ToggleGroupItem>
           </ToggleGroup>
           <Select value={timeRange} onValueChange={setTimeRange}>
             <SelectTrigger
               className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
               size="sm"
-              aria-label="Select a value"
+              aria-label="选择时间范围"
             >
-              <SelectValue placeholder="Last 3 months" />
+              <SelectValue placeholder="最近3个月" />
             </SelectTrigger>
             <SelectContent className="rounded-xl">
               <SelectItem value="90d" className="rounded-lg">
-                Last 3 months
+                最近3个月
               </SelectItem>
               <SelectItem value="30d" className="rounded-lg">
-                Last 30 days
+                最近30天
               </SelectItem>
               <SelectItem value="7d" className="rounded-lg">
-                Last 7 days
+                最近7天
               </SelectItem>
             </SelectContent>
           </Select>
@@ -249,7 +249,7 @@ export function ChartAreaInteractive() {
               minTickGap={32}
               tickFormatter={(value) => {
                 const date = new Date(value)
-                return date.toLocaleDateString("en-US", {
+                return date.toLocaleDateString("zh-CN", {
                   month: "short",
                   day: "numeric",
                 })
@@ -261,7 +261,7 @@ export function ChartAreaInteractive() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                    return new Date(value).toLocaleDateString("zh-CN", {
                       month: "short",
                       day: "numeric",
                     })

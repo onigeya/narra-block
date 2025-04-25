@@ -5,615 +5,615 @@ import { SectionCards } from "@/components/section-cards";
 const data = [
   {
     "id": 1,
-    "header": "Cover page",
-    "type": "Cover page",
-    "status": "In Process",
+    "header": "封面页",
+    "type": "封面页",
+    "status": "处理中",
     "target": "18",
     "limit": "5",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 2,
-    "header": "Table of contents",
-    "type": "Table of contents",
-    "status": "Done",
+    "header": "目录",
+    "type": "目录",
+    "status": "已完成",
     "target": "29",
     "limit": "24",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 3,
-    "header": "Executive summary",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "执行摘要",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "10",
     "limit": "13",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 4,
-    "header": "Technical approach",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "技术方案",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "27",
     "limit": "23",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 5,
-    "header": "Design",
-    "type": "Narrative",
-    "status": "In Process",
+    "header": "设计",
+    "type": "叙述性内容",
+    "status": "处理中",
     "target": "2",
     "limit": "16",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 6,
-    "header": "Capabilities",
-    "type": "Narrative",
-    "status": "In Process",
+    "header": "能力说明",
+    "type": "叙述性内容",
+    "status": "处理中",
     "target": "20",
     "limit": "8",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 7,
-    "header": "Integration with existing systems",
-    "type": "Narrative",
-    "status": "In Process",
+    "header": "与现有系统集成",
+    "type": "叙述性内容",
+    "status": "处理中",
     "target": "19",
     "limit": "21",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 8,
-    "header": "Innovation and Advantages",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "创新与优势",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "25",
     "limit": "26",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 9,
-    "header": "Overview of EMR's Innovative Solutions",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "EMR创新解决方案概述",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "7",
     "limit": "23",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 10,
-    "header": "Advanced Algorithms and Machine Learning",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "高级算法与机器学习",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "30",
     "limit": "28",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 11,
-    "header": "Adaptive Communication Protocols",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "自适应通信协议",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "9",
     "limit": "31",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 12,
-    "header": "Advantages Over Current Technologies",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "相对于现有技术的优势",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "12",
     "limit": "0",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 13,
-    "header": "Past Performance",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "过往业绩",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "22",
     "limit": "33",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 14,
-    "header": "Customer Feedback and Satisfaction Levels",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "客户反馈与满意度",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "15",
     "limit": "34",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 15,
-    "header": "Implementation Challenges and Solutions",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "实施挑战与解决方案",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "3",
     "limit": "35",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 16,
-    "header": "Security Measures and Data Protection Policies",
-    "type": "Narrative",
-    "status": "In Process",
+    "header": "安全措施与数据保护政策",
+    "type": "叙述性内容",
+    "status": "处理中",
     "target": "6",
     "limit": "36",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 17,
-    "header": "Scalability and Future Proofing",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "可扩展性与未来保障",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "4",
     "limit": "37",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 18,
-    "header": "Cost-Benefit Analysis",
-    "type": "Plain language",
-    "status": "Done",
+    "header": "成本效益分析",
+    "type": "简明语言",
+    "status": "已完成",
     "target": "14",
     "limit": "38",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 19,
-    "header": "User Training and Onboarding Experience",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "用户培训与入门体验",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "17",
     "limit": "39",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 20,
-    "header": "Future Development Roadmap",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "未来发展路线图",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "11",
     "limit": "40",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 21,
-    "header": "System Architecture Overview",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "系统架构概述",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "24",
     "limit": "18",
-    "reviewer": "Maya Johnson"
+    "reviewer": "玛雅·约翰逊"
   },
   {
     "id": 22,
-    "header": "Risk Management Plan",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "风险管理计划",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "15",
     "limit": "22",
-    "reviewer": "Carlos Rodriguez"
+    "reviewer": "卡洛斯·罗德里格斯"
   },
   {
     "id": 23,
-    "header": "Compliance Documentation",
-    "type": "Legal",
-    "status": "In Process",
+    "header": "合规文档",
+    "type": "法律文件",
+    "status": "处理中",
     "target": "31",
     "limit": "27",
-    "reviewer": "Sarah Chen"
+    "reviewer": "莎拉·陈"
   },
   {
     "id": 24,
-    "header": "API Documentation",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "API文档",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "8",
     "limit": "12",
-    "reviewer": "Raj Patel"
+    "reviewer": "拉吉·帕特尔"
   },
   {
     "id": 25,
-    "header": "User Interface Mockups",
-    "type": "Visual",
-    "status": "In Process",
+    "header": "用户界面原型",
+    "type": "视觉设计",
+    "status": "处理中",
     "target": "19",
     "limit": "25",
-    "reviewer": "Leila Ahmadi"
+    "reviewer": "蕾拉·艾哈迈迪"
   },
   {
     "id": 26,
-    "header": "Database Schema",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "数据库架构",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "22",
     "limit": "20",
-    "reviewer": "Thomas Wilson"
+    "reviewer": "托马斯·威尔逊"
   },
   {
     "id": 27,
-    "header": "Testing Methodology",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "测试方法",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "17",
     "limit": "14",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 28,
-    "header": "Deployment Strategy",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "部署策略",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "26",
     "limit": "30",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 29,
-    "header": "Budget Breakdown",
-    "type": "Financial",
-    "status": "In Process",
+    "header": "预算明细",
+    "type": "财务文件",
+    "status": "处理中",
     "target": "13",
     "limit": "16",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 30,
-    "header": "Market Analysis",
-    "type": "Research",
-    "status": "Done",
+    "header": "市场分析",
+    "type": "研究报告",
+    "status": "已完成",
     "target": "29",
     "limit": "32",
-    "reviewer": "Sophia Martinez"
+    "reviewer": "索菲亚·马丁内斯"
   },
   {
     "id": 31,
-    "header": "Competitor Comparison",
-    "type": "Research",
-    "status": "In Process",
+    "header": "竞争对手对比",
+    "type": "研究报告",
+    "status": "处理中",
     "target": "21",
     "limit": "19",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 32,
-    "header": "Maintenance Plan",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "维护计划",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "16",
     "limit": "23",
-    "reviewer": "Alex Thompson"
+    "reviewer": "亚历克斯·汤普森"
   },
   {
     "id": 33,
-    "header": "User Personas",
-    "type": "Research",
-    "status": "In Process",
+    "header": "用户画像",
+    "type": "研究报告",
+    "status": "处理中",
     "target": "27",
     "limit": "24",
-    "reviewer": "Nina Patel"
+    "reviewer": "妮娜·帕特尔"
   },
   {
     "id": 34,
-    "header": "Accessibility Compliance",
-    "type": "Legal",
-    "status": "Done",
+    "header": "可访问性合规",
+    "type": "法律文件",
+    "status": "已完成",
     "target": "18",
     "limit": "21",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 35,
-    "header": "Performance Metrics",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "性能指标",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "23",
     "limit": "26",
-    "reviewer": "David Kim"
+    "reviewer": "大卫·金"
   },
   {
     "id": 36,
-    "header": "Disaster Recovery Plan",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "灾难恢复计划",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "14",
     "limit": "17",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 37,
-    "header": "Third-party Integrations",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "第三方集成",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "25",
     "limit": "28",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 38,
-    "header": "User Feedback Summary",
-    "type": "Research",
-    "status": "Done",
+    "header": "用户反馈总结",
+    "type": "研究报告",
+    "status": "已完成",
     "target": "20",
     "limit": "15",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 39,
-    "header": "Localization Strategy",
-    "type": "Narrative",
-    "status": "In Process",
+    "header": "本地化策略",
+    "type": "叙述性内容",
+    "status": "处理中",
     "target": "12",
     "limit": "19",
-    "reviewer": "Maria Garcia"
+    "reviewer": "玛丽亚·加西亚"
   },
   {
     "id": 40,
-    "header": "Mobile Compatibility",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "移动端兼容性",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "28",
     "limit": "31",
-    "reviewer": "James Wilson"
+    "reviewer": "詹姆斯·威尔逊"
   },
   {
     "id": 41,
-    "header": "Data Migration Plan",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "数据迁移计划",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "19",
     "limit": "22",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 42,
-    "header": "Quality Assurance Protocols",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "质量保证协议",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "30",
     "limit": "33",
-    "reviewer": "Priya Singh"
+    "reviewer": "普里亚·辛格"
   },
   {
     "id": 43,
-    "header": "Stakeholder Analysis",
-    "type": "Research",
-    "status": "In Process",
+    "header": "利益相关者分析",
+    "type": "研究报告",
+    "status": "处理中",
     "target": "11",
     "limit": "14",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 44,
-    "header": "Environmental Impact Assessment",
-    "type": "Research",
-    "status": "Done",
+    "header": "环境影响评估",
+    "type": "研究报告",
+    "status": "已完成",
     "target": "24",
     "limit": "27",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 45,
-    "header": "Intellectual Property Rights",
-    "type": "Legal",
-    "status": "In Process",
+    "header": "知识产权",
+    "type": "法律文件",
+    "status": "处理中",
     "target": "17",
     "limit": "20",
-    "reviewer": "Sarah Johnson"
+    "reviewer": "莎拉·约翰逊"
   },
   {
     "id": 46,
-    "header": "Customer Support Framework",
-    "type": "Narrative",
-    "status": "Done",
+    "header": "客户支持框架",
+    "type": "叙述性内容",
+    "status": "已完成",
     "target": "22",
     "limit": "25",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 47,
-    "header": "Version Control Strategy",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "版本控制策略",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "15",
     "limit": "18",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 48,
-    "header": "Continuous Integration Pipeline",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "持续集成流程",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "26",
     "limit": "29",
-    "reviewer": "Michael Chen"
+    "reviewer": "迈克尔·陈"
   },
   {
     "id": 49,
-    "header": "Regulatory Compliance",
-    "type": "Legal",
-    "status": "In Process",
+    "header": "法规合规",
+    "type": "法律文件",
+    "status": "处理中",
     "target": "13",
     "limit": "16",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 50,
-    "header": "User Authentication System",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "用户认证系统",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "28",
     "limit": "31",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 51,
-    "header": "Data Analytics Framework",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "数据分析框架",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "21",
     "limit": "24",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 52,
-    "header": "Cloud Infrastructure",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "云基础设施",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "16",
     "limit": "19",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 53,
-    "header": "Network Security Measures",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "网络安全措施",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "29",
     "limit": "32",
-    "reviewer": "Lisa Wong"
+    "reviewer": "丽莎·王"
   },
   {
     "id": 54,
-    "header": "Project Timeline",
-    "type": "Planning",
-    "status": "Done",
+    "header": "项目时间表",
+    "type": "计划文件",
+    "status": "已完成",
     "target": "14",
     "limit": "17",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 55,
-    "header": "Resource Allocation",
-    "type": "Planning",
-    "status": "In Process",
+    "header": "资源分配",
+    "type": "计划文件",
+    "status": "处理中",
     "target": "27",
     "limit": "30",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 56,
-    "header": "Team Structure and Roles",
-    "type": "Planning",
-    "status": "Done",
+    "header": "团队结构与角色",
+    "type": "计划文件",
+    "status": "已完成",
     "target": "20",
     "limit": "23",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 57,
-    "header": "Communication Protocols",
-    "type": "Planning",
-    "status": "In Process",
+    "header": "沟通协议",
+    "type": "计划文件",
+    "status": "处理中",
     "target": "15",
     "limit": "18",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 58,
-    "header": "Success Metrics",
-    "type": "Planning",
-    "status": "Done",
+    "header": "成功指标",
+    "type": "计划文件",
+    "status": "已完成",
     "target": "30",
     "limit": "33",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 59,
-    "header": "Internationalization Support",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "国际化支持",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "23",
     "limit": "26",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 60,
-    "header": "Backup and Recovery Procedures",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "备份与恢复程序",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "18",
     "limit": "21",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 61,
-    "header": "Monitoring and Alerting System",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "监控与告警系统",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "25",
     "limit": "28",
-    "reviewer": "Daniel Park"
+    "reviewer": "丹尼尔·帕克"
   },
   {
     "id": 62,
-    "header": "Code Review Guidelines",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "代码审查指南",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "12",
     "limit": "15",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 63,
-    "header": "Documentation Standards",
-    "type": "Technical content",
-    "status": "In Process",
+    "header": "文档标准",
+    "type": "技术内容",
+    "status": "处理中",
     "target": "27",
     "limit": "30",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 64,
-    "header": "Release Management Process",
-    "type": "Planning",
-    "status": "Done",
+    "header": "发布管理流程",
+    "type": "计划文件",
+    "status": "已完成",
     "target": "22",
     "limit": "25",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   },
   {
     "id": 65,
-    "header": "Feature Prioritization Matrix",
-    "type": "Planning",
-    "status": "In Process",
+    "header": "功能优先级矩阵",
+    "type": "计划文件",
+    "status": "处理中",
     "target": "19",
     "limit": "22",
-    "reviewer": "Emma Davis"
+    "reviewer": "艾玛·戴维斯"
   },
   {
     "id": 66,
-    "header": "Technical Debt Assessment",
-    "type": "Technical content",
-    "status": "Done",
+    "header": "技术债务评估",
+    "type": "技术内容",
+    "status": "已完成",
     "target": "24",
     "limit": "27",
-    "reviewer": "Eddie Lake"
+    "reviewer": "艾迪·莱克"
   },
   {
     "id": 67,
-    "header": "Capacity Planning",
-    "type": "Planning",
-    "status": "In Process",
+    "header": "容量规划",
+    "type": "计划文件",
+    "status": "处理中",
     "target": "21",
     "limit": "24",
-    "reviewer": "Jamik Tashpulatov"
+    "reviewer": "贾米克·塔什普拉托夫"
   },
   {
     "id": 68,
-    "header": "Service Level Agreements",
-    "type": "Legal",
-    "status": "Done",
+    "header": "服务级别协议",
+    "type": "法律文件",
+    "status": "已完成",
     "target": "26",
     "limit": "29",
-    "reviewer": "Assign reviewer"
+    "reviewer": "待分配审核人"
   }
 ]
 
