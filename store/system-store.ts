@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { IconCamera, IconChartBar, IconDashboard, IconDatabase, IconFileAi, IconFileDescription, IconFileWord, IconFolder, IconHelp, IconInnerShadowTop, IconListDetails, IconReport, IconSearch, IconSettings, IconUsers, IconUserCog } from "@tabler/icons-react"
+import { IconCamera, IconChartBar, IconDashboard, IconDatabase, IconFileAi, IconFileDescription, IconFileWord, IconFolder, IconHelp, IconInnerShadowTop, IconListDetails, IconReport, IconSearch, IconSettings, IconUsers, IconUserCog, IconBook, IconBook2, IconBookmark, IconMap, IconUser, IconKey } from "@tabler/icons-react"
 
 interface NavItem {
   title: string
@@ -20,9 +20,7 @@ interface Document {
 
 interface SystemState {
   navMain: NavItem[]
-  navClouds: NavItem[]
   navSecondary: NavItem[]
-  documents: Document[]
   breadcrumbs: {
     title: string
     url: string
@@ -34,77 +32,47 @@ const initialState: SystemState = {
   navMain: [
     {
       title: "仪表盘",
-      url: "#",
+      url: "/",
       icon: IconDashboard,
     },
     {
-      title: "生命周期",
-      url: "#",
-      icon: IconListDetails,
-    },
-    {
-      title: "数据分析",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "项目管理",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "团队管理",
-      url: "#",
-      icon: IconUsers,
-    },
-  ],
-  navClouds: [
-    {
-      title: "采集管理",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
+      title: "叙事结构",
+      url: "/narrative",
+      icon: IconBook,
       items: [
         {
-          title: "进行中的提案",
-          url: "#",
+          title: "幕",
+          url: "/narrative/acts"
         },
         {
-          title: "已归档",
-          url: "#",
+          title: "序列",
+          url: "/narrative/sequences"
         },
-      ],
+        {
+          title: "场景",
+          url: "/narrative/scenes"
+        },
+        {
+          title: "节拍",
+          url: "/narrative/beats"
+        }
+      ]
     },
     {
-      title: "提案管理",
-      icon: IconFileDescription,
-      url: "#",
-      items: [
-        {
-          title: "进行中的提案",
-          url: "#",
-        },
-        {
-          title: "已归档",
-          url: "#",
-        },
-      ],
+      title: "角色管理",
+      url: "/characters",
+      icon: IconUser,
     },
     {
-      title: "提示词管理",
-      icon: IconFileAi,
-      url: "#",
-      items: [
-        {
-          title: "进行中的提案",
-          url: "#",
-        },
-        {
-          title: "已归档",
-          url: "#",
-        },
-      ],
+      title: "地点管理",
+      url: "/locations",
+      icon: IconMap,
     },
+    {
+      title: "线索管理",
+      url: "/clues",
+      icon: IconKey,
+    }
   ],
   navSecondary: [
     {
@@ -131,23 +99,6 @@ const initialState: SystemState = {
       title: "搜索",
       url: "#",
       icon: IconSearch,
-    },
-  ],
-  documents: [
-    {
-      name: "数据资料库",
-      url: "#",
-      icon: IconDatabase,
-    },
-    {
-      name: "报表中心",
-      url: "#",
-      icon: IconReport,
-    },
-    {
-      name: "文档助手",
-      url: "#",
-      icon: IconFileWord,
     },
   ],
   breadcrumbs: [
