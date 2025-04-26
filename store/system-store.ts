@@ -1,12 +1,6 @@
 import { create } from 'zustand'
 import { IconCamera, IconChartBar, IconDashboard, IconDatabase, IconFileAi, IconFileDescription, IconFileWord, IconFolder, IconHelp, IconInnerShadowTop, IconListDetails, IconReport, IconSearch, IconSettings, IconUsers } from "@tabler/icons-react"
 
-interface User {
-  name: string
-  email: string
-  avatar: string
-}
-
 interface NavItem {
   title: string
   url: string
@@ -25,7 +19,6 @@ interface Document {
 }
 
 interface SystemState {
-  user: User
   navMain: NavItem[]
   navClouds: NavItem[]
   navSecondary: NavItem[]
@@ -33,11 +26,6 @@ interface SystemState {
 }
 
 const initialState: SystemState = {
-  user: {
-    name: "系统管理员",
-    email: "admin@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "仪表盘",

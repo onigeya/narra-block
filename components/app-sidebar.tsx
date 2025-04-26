@@ -19,7 +19,7 @@ import {
 import { useSystemStore } from "@/store/system-store"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { user, navMain, navSecondary, documents } = useSystemStore()
+  const { navMain, navSecondary, documents } = useSystemStore()
 
   return (
     <Sidebar collapsible="offcanvas" {...props}>
@@ -44,7 +44,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   )
