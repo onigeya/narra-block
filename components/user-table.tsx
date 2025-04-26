@@ -34,6 +34,7 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { format } from "date-fns";
 import { zhCN } from "date-fns/locale";
 import { User } from "@/lib/db";
+import { RoleViewer } from "@/components/role-viewer";
 
 type UserWithRoles = Omit<User, "passwordHash"> & {
   roles: {
@@ -110,7 +111,8 @@ export function UserTable({ data, onEdit, onDelete }: UserTableProps) {
       header: "角色",
       cell: ({ row }) => {
         const roles = row.getValue("roles") as UserWithRoles["roles"];
-        return <div>{roles.map((role) => role.role.name).join(", ")}</div>;
+        const roleNames = roles.map((role) => role.role.name);
+        return <RoleViewer value={roleNames} readOnly />;
       },
     },
     {

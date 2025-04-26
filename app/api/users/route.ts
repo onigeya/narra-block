@@ -54,17 +54,45 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, password } = body;
+    const { name, email, password, roles } = body;
 
     // 生成密码哈希
     const passwordHash = hashPassword(password);
+
+    // 获取角色ID
+    const roleIds = await prisma.role.findMany({
+      where: {
+        name: {
+          in: roles || []
+        }
+      },
+      select: {
+        id: true
+      }
+    });
 
     const user = await prisma.user.create({
       data: {
         name,
         email,
         passwordHash,
+        roles: {
+          create: roleIds.map(role => ({
+            role: {
+              connect: {
+                id: role.id
+              }
+            }
+          }))
+        }
       },
+      include: {
+        roles: {
+          include: {
+            role: true
+          }
+        }
+      }
     });
 
     return NextResponse.json(user);
@@ -78,11 +106,33 @@ export async function POST(request: Request) {
 export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    const { id, name, email, password } = body;
+    const { id, name, email, password, roles } = body;
+
+    // 获取角色ID
+    const roleIds = await prisma.role.findMany({
+      where: {
+        name: {
+          in: roles || []
+        }
+      },
+      select: {
+        id: true
+      }
+    });
 
     const updateData: any = {
       name,
       email,
+      roles: {
+        deleteMany: {},
+        create: roleIds.map(role => ({
+          role: {
+            connect: {
+              id: role.id
+            }
+          }
+        }))
+      }
     };
 
     // 如果提供了新密码，则更新密码哈希
@@ -93,6 +143,13 @@ export async function PUT(request: Request) {
     const user = await prisma.user.update({
       where: { id },
       data: updateData,
+      include: {
+        roles: {
+          include: {
+            role: true
+          }
+        }
+      }
     });
 
     return NextResponse.json(user);

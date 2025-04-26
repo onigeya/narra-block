@@ -41,12 +41,16 @@ export default function UsersPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<UserWithRoles | null>(null);
   const [userToDelete, setUserToDelete] = useState<UserWithRoles | null>(null);
-  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles" | "passwordHash"> & { password: string }>({
+  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles" | "passwordHash"> & { 
+    password: string;
+    roles: string[];
+  }>({
     name: "",
     email: "",
     emailVerified: null,
     image: null,
     password: "",
+    roles: []
   });
 
   const searchParams = useSearchParams();
@@ -84,6 +88,7 @@ export default function UsersPage() {
           name: newUser.name,
           email: newUser.email,
           password: newUser.password,
+          roles: newUser.roles
         }),
       });
 
@@ -98,6 +103,7 @@ export default function UsersPage() {
         emailVerified: null,
         image: null,
         password: "",
+        roles: []
       });
       setIsAddDialogOpen(false);
       toast.success("用户创建成功");
@@ -120,6 +126,7 @@ export default function UsersPage() {
           name: selectedUser.name,
           email: selectedUser.email,
           password: selectedUser.password || undefined,
+          roles: selectedUser.roles.map(r => r.role.name)
         }),
       });
 
@@ -199,16 +206,21 @@ export default function UsersPage() {
           emailVerified: selectedUser.emailVerified,
           image: selectedUser.image,
           password: "",
+          roles: selectedUser.roles.map(r => r.role.name)
         } : {
           name: "",
           email: "",
           emailVerified: null,
           image: null,
           password: "",
+          roles: []
         }}
         onUserChange={(user) => setSelectedUser({
           ...selectedUser!,
           ...user,
+          roles: user.roles.map(name => ({
+            role: { name }
+          }))
         })}
         onSubmit={handleEditUser}
         title="编辑用户"
