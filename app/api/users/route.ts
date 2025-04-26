@@ -105,8 +105,10 @@ export async function POST(request: Request) {
 // 更新用户
 export async function PUT(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id")!;
     const body = await request.json();
-    const { id, name, email, password, roles } = body;
+    const { name, email, password, roles } = body;
 
     // 获取角色ID
     const roleIds = await prisma.role.findMany({

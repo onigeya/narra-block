@@ -41,7 +41,7 @@ export default function UsersPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<UserWithRoles | null>(null);
   const [userToDelete, setUserToDelete] = useState<UserWithRoles | null>(null);
-  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles" | "passwordHash"> & { 
+  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles"> & { 
     password: string;
     roles: string[];
   }>({
@@ -74,72 +74,6 @@ export default function UsersPage() {
     } catch (error) {
       console.error("获取用户列表失败:", error);
       toast.error("获取用户列表失败");
-    }
-  };
-
-  const handleAddUser = async () => {
-    try {
-      const response = await fetch("/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: newUser.name,
-          email: newUser.email,
-          password: newUser.password,
-          roles: newUser.roles
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("创建用户失败");
-      }
-
-      await fetchUsers();
-      setNewUser({
-        name: "",
-        email: "",
-        emailVerified: null,
-        image: null,
-        password: "",
-        roles: []
-      });
-      setIsAddDialogOpen(false);
-      toast.success("用户创建成功");
-    } catch (error) {
-      toast.error("创建用户失败");
-    }
-  };
-
-  const handleEditUser = async () => {
-    if (!selectedUser) return;
-
-    try {
-      const response = await fetch("/api/users", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: selectedUser.id,
-          name: selectedUser.name,
-          email: selectedUser.email,
-          password: selectedUser.password || undefined,
-          roles: selectedUser.roles.map(r => r.role.name)
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("更新用户失败");
-      }
-
-      await fetchUsers();
-      setIsEditDialogOpen(false);
-      setSelectedUser(null);
-      toast.success("用户更新成功");
-    } catch (error) {
-      toast.error("更新用户失败");
     }
   };
 
@@ -192,9 +126,9 @@ export default function UsersPage() {
         open={isAddDialogOpen}
         onOpenChange={setIsAddDialogOpen}
         user={newUser}
-        onUserChange={setNewUser}
-        onSubmit={handleAddUser}
+        onSuccess={fetchUsers}
         title="添加新用户"
+        mode="create"
       />
 
       <UserDialog
@@ -215,15 +149,10 @@ export default function UsersPage() {
           password: "",
           roles: []
         }}
-        onUserChange={(user) => setSelectedUser({
-          ...selectedUser!,
-          ...user,
-          roles: user.roles.map(name => ({
-            role: { name }
-          }))
-        })}
-        onSubmit={handleEditUser}
+        onSuccess={fetchUsers}
         title="编辑用户"
+        mode="edit"
+        userId={selectedUser?.id}
       />
 
       <ConfirmDialog

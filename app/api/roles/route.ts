@@ -105,8 +105,10 @@ export async function POST(request: Request) {
 // 更新角色
 export async function PUT(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id")!;
     const body = await request.json();
-    const { id, name, description, permissions } = body;
+    const { name, description, permissions } = body;
 
     // 更新角色基本信息
     const role = await prisma.role.update({

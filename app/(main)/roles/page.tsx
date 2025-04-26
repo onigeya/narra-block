@@ -66,58 +66,6 @@ export default function RolesPage() {
     }
   };
 
-  const handleAddRole = async () => {
-    try {
-      const response = await fetch("/api/roles", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newRole),
-      });
-
-      if (!response.ok) {
-        throw new Error("创建角色失败");
-      }
-
-      await fetchRoles();
-      setNewRole({
-        name: "",
-        description: "",
-        permissions: [],
-      });
-      setIsAddDialogOpen(false);
-      toast.success("角色创建成功");
-    } catch (error) {
-      toast.error("创建角色失败");
-    }
-  };
-
-  const handleEditRole = async () => {
-    if (!selectedRole) return;
-
-    try {
-      const response = await fetch("/api/roles", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(selectedRole),
-      });
-
-      if (!response.ok) {
-        throw new Error("更新角色失败");
-      }
-
-      await fetchRoles();
-      setIsEditDialogOpen(false);
-      setSelectedRole(null);
-      toast.success("角色更新成功");
-    } catch (error) {
-      toast.error("更新角色失败");
-    }
-  };
-
   const handleDeleteRole = async (id: string) => {
     try {
       const response = await fetch(`/api/roles?id=${id}`, {
@@ -164,9 +112,9 @@ export default function RolesPage() {
         open={isAddDialogOpen}
         onOpenChange={setIsAddDialogOpen}
         role={newRole}
-        onRoleChange={setNewRole}
-        onSubmit={handleAddRole}
+        onSuccess={fetchRoles}
         title="添加新角色"
+        mode="create"
       />
 
       <RoleDialog
@@ -177,12 +125,10 @@ export default function RolesPage() {
           description: "",
           permissions: [],
         }}
-        onRoleChange={(role) => setSelectedRole({
-          ...selectedRole!,
-          ...role,
-        })}
-        onSubmit={handleEditRole}
+        onSuccess={fetchRoles}
         title="编辑角色"
+        mode="edit"
+        roleId={selectedRole?.id}
       />
 
       <ConfirmDialog
