@@ -103,6 +103,11 @@ const initialState: SystemState = {
   ],
   navSecondary: [
     {
+      title: "用户管理",
+      url: "/users",
+      icon: IconUsers,
+    },
+    {
       title: "系统设置",
       url: "#",
       icon: IconSettings,
