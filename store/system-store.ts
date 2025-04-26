@@ -86,19 +86,9 @@ const initialState: SystemState = {
       icon: IconUserCog,
     },
     {
-      title: "系统设置",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
       title: "帮助中心",
       url: "#",
       icon: IconHelp,
-    },
-    {
-      title: "搜索",
-      url: "#",
-      icon: IconSearch,
     },
   ],
   breadcrumbs: [
