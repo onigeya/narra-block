@@ -41,7 +41,7 @@ export default function UsersPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<UserWithRoles | null>(null);
   const [userToDelete, setUserToDelete] = useState<UserWithRoles | null>(null);
-  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles"> & { 
+  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "resetToken" | "resetTokenExpiry" | "roles"> & { 
     password: string;
     roles: string[];
   }>({

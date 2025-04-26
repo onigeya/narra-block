@@ -23,18 +23,35 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "用户名至少需要2个字符",
   }),
-  currentPassword: z.string().min(6, {
-    message: "当前密码至少需要6个字符",
-  }),
-  newPassword: z.string().min(6, {
-    message: "新密码至少需要6个字符",
-  }),
-  confirmPassword: z.string().min(6, {
-    message: "确认密码至少需要6个字符",
-  }),
-}).refine((data) => data.newPassword === data.confirmPassword, {
+  currentPassword: z.string().optional(),
+  newPassword: z.string().optional(),
+  confirmPassword: z.string().optional(),
+}).refine((data) => {
+  // 只有当输入了新密码时才需要验证
+  if (data.newPassword) {
+    return data.newPassword === data.confirmPassword;
+  }
+  return true;
+}, {
   message: "新密码和确认密码不匹配",
   path: ["confirmPassword"],
+}).refine((data) => {
+  // 只有当输入了新密码时才需要验证当前密码
+  if (data.newPassword) {
+    return (data.currentPassword?.length ?? 0) >= 6;
+  }
+  return true;
+}, {
+  message: "当前密码至少需要6个字符",
+  path: ["currentPassword"],
+}).refine((data) => {
+  if (data.newPassword) {
+    return data.newPassword.length >= 6;
+  }
+  return true;
+}, {
+  message: "新密码至少需要6个字符",
+  path: ["newPassword"],
 })
 
 export default function SettingsPage() {
@@ -73,7 +90,12 @@ export default function SettingsPage() {
       toast.success("更新成功", {
         description: "您的账户信息已更新",
       })
-      form.reset()
+      form.reset({
+        name: values.name,
+        currentPassword: "",
+        newPassword: "",
+        confirmPassword: "",
+      })
     } catch (error) {
       toast.error("更新失败", {
         description: error instanceof Error ? error.message : "请检查您的输入并重试",
@@ -101,45 +123,48 @@ export default function SettingsPage() {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="currentPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>当前密码</FormLabel>
-                <FormControl>
-                  <Input type="password" placeholder="请输入当前密码" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="newPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>新密码</FormLabel>
-                <FormControl>
-                  <Input type="password" placeholder="请输入新密码" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>确认新密码</FormLabel>
-                <FormControl>
-                  <Input type="password" placeholder="请再次输入新密码" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">修改密码（可选）</h2>
+            <FormField
+              control={form.control}
+              name="currentPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>当前密码</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder="请输入当前密码" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="newPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>新密码</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder="请输入新密码" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>确认新密码</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder="请再次输入新密码" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <Button type="submit" disabled={isLoading}>
             {isLoading ? "更新中..." : "保存更改"}
           </Button>

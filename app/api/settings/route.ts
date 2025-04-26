@@ -13,27 +13,34 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { name, currentPassword, newPassword } = body
 
-    // 验证当前密码
+    // 获取用户信息
     const user = await prisma.user.findUnique({
       where: { email: session.user.email! },
       select: { passwordHash: true },
     })
 
-    if (!user?.passwordHash) {
+    if (!user) {
       return new NextResponse("用户不存在", { status: 404 })
     }
 
-    const isPasswordValid = hashPassword(currentPassword) === user.passwordHash
-    if (!isPasswordValid) {
-      return new NextResponse("当前密码不正确", { status: 400 })
-    }
-
-    // 更新用户信息
+    // 准备更新数据
     const updateData: any = { name }
+
+    // 如果提供了新密码，则需要验证当前密码
     if (newPassword) {
+      if (!currentPassword) {
+        return new NextResponse("请输入当前密码", { status: 400 })
+      }
+
+      const isPasswordValid = hashPassword(currentPassword) === user.passwordHash
+      if (!isPasswordValid) {
+        return new NextResponse("当前密码不正确", { status: 400 })
+      }
+
       updateData.passwordHash = hashPassword(newPassword)
     }
 
+    // 更新用户信息
     await prisma.user.update({
       where: { email: session.user.email! },
       data: updateData,

@@ -25,7 +25,7 @@ type UserWithRoles = Omit<User, "passwordHash"> & {
 interface UserDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  user: Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles"> & { 
+  user: Omit<UserWithRoles, "id" | "resetToken" | "resetTokenExpiry" | "createdAt" | "updatedAt" | "roles"> & { 
     password: string;
     roles: string[];
   };

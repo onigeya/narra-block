@@ -11,17 +11,16 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { signIn } from "next-auth/react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
-export function LoginForm({
+export function ForgotPasswordForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
@@ -29,23 +28,28 @@ export function LoginForm({
     e.preventDefault()
     setIsLoading(true)
     setError("")
+    setSuccess("")
 
     try {
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      })
+      const response = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
-      if (result?.error) {
-        setError("登录失败，请检查您的邮箱和密码")
-      } else {
-        router.push("/")
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "发送重置密码邮件失败");
       }
+
+      setSuccess(data.message);
     } catch (error) {
-      setError("登录过程中发生错误")
+      setError(error instanceof Error ? error.message : "发送重置密码邮件失败，请稍后重试");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
 
@@ -53,9 +57,9 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>登录您的账户</CardTitle>
+          <CardTitle>找回密码</CardTitle>
           <CardDescription>
-            输入您的邮箱以登录账户
+            输入您的邮箱地址，我们将发送重置密码的链接
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -72,39 +76,26 @@ export function LoginForm({
                   required
                 />
               </div>
-              <div className="grid gap-3">
-                <div className="flex items-center">
-                  <Label htmlFor="password">密码</Label>
-                  <a
-                    href="/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    忘记密码？
-                  </a>
-                </div>
-                <Input 
-                  id="password" 
-                  type="password" 
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required 
-                />
-              </div>
               {error && (
                 <div className="text-sm text-red-500">
                   {error}
                 </div>
               )}
+              {success && (
+                <div className="text-sm text-green-500">
+                  {success}
+                </div>
+              )}
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "登录中..." : "登录"}
+                  {isLoading ? "发送中..." : "发送重置链接"}
                 </Button>
               </div>
             </div>
             <div className="mt-4 text-center text-sm">
-              还没有账户？{" "}
-              <a href="/register" className="underline underline-offset-4">
-                立即注册
+              想起密码了？{" "}
+              <a href="/login" className="underline underline-offset-4">
+                返回登录
               </a>
             </div>
           </form>
@@ -112,4 +103,4 @@ export function LoginForm({
       </Card>
     </div>
   )
-}
+} 
