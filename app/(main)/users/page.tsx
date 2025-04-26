@@ -3,11 +3,21 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { UserDialog, User } from "@/components/user-dialog";
+import { UserDialog } from "@/components/user-dialog";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { UserTable } from "@/components/user-table";
 import { useSearchParams } from "next/navigation";
 import { useSystemStore } from "@/store/system-store";
+import { User } from "@/lib/db";
+
+type UserWithRoles = Omit<User, "passwordHash"> & {
+  roles: {
+    role: {
+      name: string;
+    };
+  }[];
+  password: string | null;
+};
 
 export default function UsersPage() {
   const { setBreadcrumbs } = useSystemStore();
@@ -19,7 +29,7 @@ export default function UsersPage() {
     ]);
   }, [setBreadcrumbs]);
 
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<UserWithRoles[]>([]);
   const [pagination, setPagination] = useState({
     total: 0,
     page: 1,
@@ -29,9 +39,9 @@ export default function UsersPage() {
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const [userToDelete, setUserToDelete] = useState<User | null>(null);
-  const [newUser, setNewUser] = useState<Omit<User, "id" | "createdAt" | "updatedAt" | "roles"> & { password: string }>({
+  const [selectedUser, setSelectedUser] = useState<UserWithRoles | null>(null);
+  const [userToDelete, setUserToDelete] = useState<UserWithRoles | null>(null);
+  const [newUser, setNewUser] = useState<Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles" | "passwordHash"> & { password: string }>({
     name: "",
     email: "",
     emailVerified: null,
@@ -143,7 +153,7 @@ export default function UsersPage() {
     }
   };
 
-  const openEditDialog = (user: User) => {
+  const openEditDialog = (user: UserWithRoles) => {
     setSelectedUser({
       ...user,
       password: "",
@@ -151,7 +161,7 @@ export default function UsersPage() {
     setIsEditDialogOpen(true);
   };
 
-  const openDeleteDialog = (user: User) => {
+  const openDeleteDialog = (user: UserWithRoles) => {
     setUserToDelete(user);
     setIsDeleteDialogOpen(true);
   };

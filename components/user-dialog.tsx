@@ -6,28 +6,22 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { User } from "@/lib/db";
 
-export interface User {
-  id: string;
-  name: string | null;
-  email: string;
-  emailVerified: Date | null;
-  image: string | null;
-  password: string | null;
-  createdAt: Date;
-  updatedAt: Date;
+type UserWithRoles = Omit<User, "passwordHash"> & {
   roles: {
     role: {
       name: string;
     };
   }[];
-}
+  password: string | null;
+};
 
 interface UserDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  user: Omit<User, "id" | "createdAt" | "updatedAt" | "roles"> & { password: string };
-  onUserChange: (user: Omit<User, "id" | "createdAt" | "updatedAt" | "roles"> & { password: string }) => void;
+  user: Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles"> & { password: string };
+  onUserChange: (user: Omit<UserWithRoles, "id" | "createdAt" | "updatedAt" | "roles"> & { password: string }) => void;
   onSubmit: () => void;
   title: string;
 }

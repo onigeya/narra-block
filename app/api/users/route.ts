@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+import { prisma, Prisma } from "@/lib/db";
 import { hashPassword } from "@/lib/password";
-import { Prisma } from "@prisma/client";
 
 // 获取所有用户
 export async function GET(request: Request) {

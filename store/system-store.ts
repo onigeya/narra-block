@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { IconCamera, IconChartBar, IconDashboard, IconDatabase, IconFileAi, IconFileDescription, IconFileWord, IconFolder, IconHelp, IconInnerShadowTop, IconListDetails, IconReport, IconSearch, IconSettings, IconUsers } from "@tabler/icons-react"
+import { IconCamera, IconChartBar, IconDashboard, IconDatabase, IconFileAi, IconFileDescription, IconFileWord, IconFolder, IconHelp, IconInnerShadowTop, IconListDetails, IconReport, IconSearch, IconSettings, IconUsers, IconUserCog } from "@tabler/icons-react"
 
 interface NavItem {
   title: string
@@ -111,6 +111,11 @@ const initialState: SystemState = {
       title: "用户管理",
       url: "/users",
       icon: IconUsers,
+    },
+    {
+      title: "角色管理",
+      url: "/roles",
+      icon: IconUserCog,
     },
     {
       title: "系统设置",

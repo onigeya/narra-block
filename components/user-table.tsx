@@ -29,13 +29,24 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { User } from "@/components/user-dialog";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useDebounce } from "@/hooks/use-debounce";
+import { format } from "date-fns";
+import { zhCN } from "date-fns/locale";
+import { User } from "@/lib/db";
+
+type UserWithRoles = Omit<User, "passwordHash"> & {
+  roles: {
+    role: {
+      name: string;
+    };
+  }[];
+  password: string | null;
+};
 
 interface UserTableProps {
   data: {
-    users: User[];
+    users: UserWithRoles[];
     pagination: {
       total: number;
       page: number;
@@ -43,8 +54,8 @@ interface UserTableProps {
       totalPages: number;
     };
   };
-  onEdit: (user: User) => void;
-  onDelete: (user: User) => void;
+  onEdit: (user: UserWithRoles) => void;
+  onDelete: (user: UserWithRoles) => void;
 }
 
 export function UserTable({ data, onEdit, onDelete }: UserTableProps) {
@@ -83,7 +94,7 @@ export function UserTable({ data, onEdit, onDelete }: UserTableProps) {
     router.push(`?${params.toString()}`);
   }, [debouncedName, debouncedEmail, router, searchParams]);
 
-  const columns: ColumnDef<User>[] = [
+  const columns: ColumnDef<UserWithRoles>[] = [
     {
       accessorKey: "name",
       header: "姓名",
@@ -98,7 +109,7 @@ export function UserTable({ data, onEdit, onDelete }: UserTableProps) {
       accessorKey: "roles",
       header: "角色",
       cell: ({ row }) => {
-        const roles = row.getValue("roles") as User["roles"];
+        const roles = row.getValue("roles") as UserWithRoles["roles"];
         return <div>{roles.map((role) => role.role.name).join(", ")}</div>;
       },
     },
@@ -107,7 +118,7 @@ export function UserTable({ data, onEdit, onDelete }: UserTableProps) {
       header: "创建时间",
       cell: ({ row }) => {
         const date = new Date(row.getValue("createdAt"));
-        return <div>{date.toLocaleString()}</div>;
+        return <div>{format(date, "yyyy-MM-dd HH:mm:ss", { locale: zhCN })}</div>;
       },
     },
     {
