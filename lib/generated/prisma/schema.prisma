@@ -133,3 +133,165 @@ model RolePermission {
 
   @@id([roleId, permissionId])
 }
+
+model Beat {
+  id         String      @id @default(cuid())
+  title      String
+  content    String
+  order      Int
+  sceneId    String
+  scene      Scene       @relation(fields: [sceneId], references: [id], onDelete: Cascade)
+  characters Character[]
+  clues      Clue[]
+  locationId String?
+  location   Location?   @relation(fields: [locationId], references: [id])
+
+  // 多对多前后关系
+  nextBeats     BeatTransition[] @relation("FromBeat")
+  previousBeats BeatTransition[] @relation("ToBeat")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BeatTransition {
+  id          String  @id @default(cuid())
+  fromBeatId  String
+  toBeatId    String
+  fromBeat    Beat    @relation("FromBeat", fields: [fromBeatId], references: [id], onDelete: Cascade)
+  toBeat      Beat    @relation("ToBeat", fields: [toBeatId], references: [id], onDelete: Cascade)
+  condition   String? // 转换条件
+  description String? // 转换描述
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fromBeatId, toBeatId])
+}
+
+model Scene {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  order       Int
+  sequenceId  String
+  sequence    Sequence @relation(fields: [sequenceId], references: [id], onDelete: Cascade)
+  beats       Beat[]
+
+  // 多对多前后关系
+  nextScenes     SceneTransition[] @relation("FromScene")
+  previousScenes SceneTransition[] @relation("ToScene")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SceneTransition {
+  id          String  @id @default(cuid())
+  fromSceneId String
+  toSceneId   String
+  fromScene   Scene   @relation("FromScene", fields: [fromSceneId], references: [id], onDelete: Cascade)
+  toScene     Scene   @relation("ToScene", fields: [toSceneId], references: [id], onDelete: Cascade)
+  condition   String? // 转换条件
+  description String? // 转换描述
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fromSceneId, toSceneId])
+}
+
+model Sequence {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+  order       Int
+  actId       String
+  act         Act     @relation(fields: [actId], references: [id], onDelete: Cascade)
+  scenes      Scene[]
+
+  // 多对多前后关系
+  nextSequences     SequenceTransition[] @relation("FromSequence")
+  previousSequences SequenceTransition[] @relation("ToSequence")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SequenceTransition {
+  id             String   @id @default(cuid())
+  fromSequenceId String
+  toSequenceId   String
+  fromSequence   Sequence @relation("FromSequence", fields: [fromSequenceId], references: [id], onDelete: Cascade)
+  toSequence     Sequence @relation("ToSequence", fields: [toSequenceId], references: [id], onDelete: Cascade)
+  condition      String? // 转换条件
+  description    String? // 转换描述
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fromSequenceId, toSequenceId])
+}
+
+model Act {
+  id          String     @id @default(cuid())
+  title       String
+  description String?
+  order       Int
+  sequences   Sequence[]
+
+  // 多对多前后关系
+  nextActs     ActTransition[] @relation("FromAct")
+  previousActs ActTransition[] @relation("ToAct")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ActTransition {
+  id          String  @id @default(cuid())
+  fromActId   String
+  toActId     String
+  fromAct     Act     @relation("FromAct", fields: [fromActId], references: [id], onDelete: Cascade)
+  toAct       Act     @relation("ToAct", fields: [toActId], references: [id], onDelete: Cascade)
+  condition   String? // 转换条件
+  description String? // 转换描述
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fromActId, toActId])
+}
+
+model Location {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  beats       Beat[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Character {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  beats       Beat[]
+  clues       Clue[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Clue {
+  id          String      @id @default(cuid())
+  title       String
+  description String?
+  beatId      String
+  beat        Beat        @relation(fields: [beatId], references: [id], onDelete: Cascade)
+  characters  Character[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

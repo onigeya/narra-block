@@ -58,6 +58,61 @@ export type UserRole = $Result.DefaultSelection<Prisma.$UserRolePayload>
  * 
  */
 export type RolePermission = $Result.DefaultSelection<Prisma.$RolePermissionPayload>
+/**
+ * Model Beat
+ * 
+ */
+export type Beat = $Result.DefaultSelection<Prisma.$BeatPayload>
+/**
+ * Model BeatTransition
+ * 
+ */
+export type BeatTransition = $Result.DefaultSelection<Prisma.$BeatTransitionPayload>
+/**
+ * Model Scene
+ * 
+ */
+export type Scene = $Result.DefaultSelection<Prisma.$ScenePayload>
+/**
+ * Model SceneTransition
+ * 
+ */
+export type SceneTransition = $Result.DefaultSelection<Prisma.$SceneTransitionPayload>
+/**
+ * Model Sequence
+ * 
+ */
+export type Sequence = $Result.DefaultSelection<Prisma.$SequencePayload>
+/**
+ * Model SequenceTransition
+ * 
+ */
+export type SequenceTransition = $Result.DefaultSelection<Prisma.$SequenceTransitionPayload>
+/**
+ * Model Act
+ * 
+ */
+export type Act = $Result.DefaultSelection<Prisma.$ActPayload>
+/**
+ * Model ActTransition
+ * 
+ */
+export type ActTransition = $Result.DefaultSelection<Prisma.$ActTransitionPayload>
+/**
+ * Model Location
+ * 
+ */
+export type Location = $Result.DefaultSelection<Prisma.$LocationPayload>
+/**
+ * Model Character
+ * 
+ */
+export type Character = $Result.DefaultSelection<Prisma.$CharacterPayload>
+/**
+ * Model Clue
+ * 
+ */
+export type Clue = $Result.DefaultSelection<Prisma.$CluePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -273,6 +328,116 @@ export class PrismaClient<
     * ```
     */
   get rolePermission(): Prisma.RolePermissionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.beat`: Exposes CRUD operations for the **Beat** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Beats
+    * const beats = await prisma.beat.findMany()
+    * ```
+    */
+  get beat(): Prisma.BeatDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.beatTransition`: Exposes CRUD operations for the **BeatTransition** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BeatTransitions
+    * const beatTransitions = await prisma.beatTransition.findMany()
+    * ```
+    */
+  get beatTransition(): Prisma.BeatTransitionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.scene`: Exposes CRUD operations for the **Scene** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Scenes
+    * const scenes = await prisma.scene.findMany()
+    * ```
+    */
+  get scene(): Prisma.SceneDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.sceneTransition`: Exposes CRUD operations for the **SceneTransition** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more SceneTransitions
+    * const sceneTransitions = await prisma.sceneTransition.findMany()
+    * ```
+    */
+  get sceneTransition(): Prisma.SceneTransitionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.sequence`: Exposes CRUD operations for the **Sequence** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Sequences
+    * const sequences = await prisma.sequence.findMany()
+    * ```
+    */
+  get sequence(): Prisma.SequenceDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.sequenceTransition`: Exposes CRUD operations for the **SequenceTransition** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more SequenceTransitions
+    * const sequenceTransitions = await prisma.sequenceTransition.findMany()
+    * ```
+    */
+  get sequenceTransition(): Prisma.SequenceTransitionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.act`: Exposes CRUD operations for the **Act** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Acts
+    * const acts = await prisma.act.findMany()
+    * ```
+    */
+  get act(): Prisma.ActDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.actTransition`: Exposes CRUD operations for the **ActTransition** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ActTransitions
+    * const actTransitions = await prisma.actTransition.findMany()
+    * ```
+    */
+  get actTransition(): Prisma.ActTransitionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.location`: Exposes CRUD operations for the **Location** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Locations
+    * const locations = await prisma.location.findMany()
+    * ```
+    */
+  get location(): Prisma.LocationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.character`: Exposes CRUD operations for the **Character** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Characters
+    * const characters = await prisma.character.findMany()
+    * ```
+    */
+  get character(): Prisma.CharacterDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.clue`: Exposes CRUD operations for the **Clue** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Clues
+    * const clues = await prisma.clue.findMany()
+    * ```
+    */
+  get clue(): Prisma.ClueDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -721,7 +886,18 @@ export namespace Prisma {
     Role: 'Role',
     Permission: 'Permission',
     UserRole: 'UserRole',
-    RolePermission: 'RolePermission'
+    RolePermission: 'RolePermission',
+    Beat: 'Beat',
+    BeatTransition: 'BeatTransition',
+    Scene: 'Scene',
+    SceneTransition: 'SceneTransition',
+    Sequence: 'Sequence',
+    SequenceTransition: 'SequenceTransition',
+    Act: 'Act',
+    ActTransition: 'ActTransition',
+    Location: 'Location',
+    Character: 'Character',
+    Clue: 'Clue'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -740,7 +916,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "role" | "permission" | "userRole" | "rolePermission"
+      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "role" | "permission" | "userRole" | "rolePermission" | "beat" | "beatTransition" | "scene" | "sceneTransition" | "sequence" | "sequenceTransition" | "act" | "actTransition" | "location" | "character" | "clue"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1410,6 +1586,820 @@ export namespace Prisma {
           }
         }
       }
+      Beat: {
+        payload: Prisma.$BeatPayload<ExtArgs>
+        fields: Prisma.BeatFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BeatFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BeatFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          findFirst: {
+            args: Prisma.BeatFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BeatFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          findMany: {
+            args: Prisma.BeatFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>[]
+          }
+          create: {
+            args: Prisma.BeatCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          createMany: {
+            args: Prisma.BeatCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BeatCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>[]
+          }
+          delete: {
+            args: Prisma.BeatDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          update: {
+            args: Prisma.BeatUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          deleteMany: {
+            args: Prisma.BeatDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BeatUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BeatUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>[]
+          }
+          upsert: {
+            args: Prisma.BeatUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatPayload>
+          }
+          aggregate: {
+            args: Prisma.BeatAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBeat>
+          }
+          groupBy: {
+            args: Prisma.BeatGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BeatGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BeatCountArgs<ExtArgs>
+            result: $Utils.Optional<BeatCountAggregateOutputType> | number
+          }
+        }
+      }
+      BeatTransition: {
+        payload: Prisma.$BeatTransitionPayload<ExtArgs>
+        fields: Prisma.BeatTransitionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BeatTransitionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BeatTransitionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          findFirst: {
+            args: Prisma.BeatTransitionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BeatTransitionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          findMany: {
+            args: Prisma.BeatTransitionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>[]
+          }
+          create: {
+            args: Prisma.BeatTransitionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          createMany: {
+            args: Prisma.BeatTransitionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BeatTransitionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>[]
+          }
+          delete: {
+            args: Prisma.BeatTransitionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          update: {
+            args: Prisma.BeatTransitionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          deleteMany: {
+            args: Prisma.BeatTransitionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BeatTransitionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BeatTransitionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>[]
+          }
+          upsert: {
+            args: Prisma.BeatTransitionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BeatTransitionPayload>
+          }
+          aggregate: {
+            args: Prisma.BeatTransitionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBeatTransition>
+          }
+          groupBy: {
+            args: Prisma.BeatTransitionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BeatTransitionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BeatTransitionCountArgs<ExtArgs>
+            result: $Utils.Optional<BeatTransitionCountAggregateOutputType> | number
+          }
+        }
+      }
+      Scene: {
+        payload: Prisma.$ScenePayload<ExtArgs>
+        fields: Prisma.SceneFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SceneFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SceneFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          findFirst: {
+            args: Prisma.SceneFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SceneFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          findMany: {
+            args: Prisma.SceneFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>[]
+          }
+          create: {
+            args: Prisma.SceneCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          createMany: {
+            args: Prisma.SceneCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SceneCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>[]
+          }
+          delete: {
+            args: Prisma.SceneDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          update: {
+            args: Prisma.SceneUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          deleteMany: {
+            args: Prisma.SceneDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SceneUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SceneUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>[]
+          }
+          upsert: {
+            args: Prisma.SceneUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ScenePayload>
+          }
+          aggregate: {
+            args: Prisma.SceneAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateScene>
+          }
+          groupBy: {
+            args: Prisma.SceneGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SceneGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SceneCountArgs<ExtArgs>
+            result: $Utils.Optional<SceneCountAggregateOutputType> | number
+          }
+        }
+      }
+      SceneTransition: {
+        payload: Prisma.$SceneTransitionPayload<ExtArgs>
+        fields: Prisma.SceneTransitionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SceneTransitionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SceneTransitionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          findFirst: {
+            args: Prisma.SceneTransitionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SceneTransitionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          findMany: {
+            args: Prisma.SceneTransitionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>[]
+          }
+          create: {
+            args: Prisma.SceneTransitionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          createMany: {
+            args: Prisma.SceneTransitionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SceneTransitionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>[]
+          }
+          delete: {
+            args: Prisma.SceneTransitionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          update: {
+            args: Prisma.SceneTransitionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          deleteMany: {
+            args: Prisma.SceneTransitionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SceneTransitionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SceneTransitionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>[]
+          }
+          upsert: {
+            args: Prisma.SceneTransitionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SceneTransitionPayload>
+          }
+          aggregate: {
+            args: Prisma.SceneTransitionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSceneTransition>
+          }
+          groupBy: {
+            args: Prisma.SceneTransitionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SceneTransitionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SceneTransitionCountArgs<ExtArgs>
+            result: $Utils.Optional<SceneTransitionCountAggregateOutputType> | number
+          }
+        }
+      }
+      Sequence: {
+        payload: Prisma.$SequencePayload<ExtArgs>
+        fields: Prisma.SequenceFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SequenceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SequenceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          findFirst: {
+            args: Prisma.SequenceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SequenceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          findMany: {
+            args: Prisma.SequenceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>[]
+          }
+          create: {
+            args: Prisma.SequenceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          createMany: {
+            args: Prisma.SequenceCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SequenceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>[]
+          }
+          delete: {
+            args: Prisma.SequenceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          update: {
+            args: Prisma.SequenceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          deleteMany: {
+            args: Prisma.SequenceDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SequenceUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SequenceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>[]
+          }
+          upsert: {
+            args: Prisma.SequenceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequencePayload>
+          }
+          aggregate: {
+            args: Prisma.SequenceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSequence>
+          }
+          groupBy: {
+            args: Prisma.SequenceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SequenceGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SequenceCountArgs<ExtArgs>
+            result: $Utils.Optional<SequenceCountAggregateOutputType> | number
+          }
+        }
+      }
+      SequenceTransition: {
+        payload: Prisma.$SequenceTransitionPayload<ExtArgs>
+        fields: Prisma.SequenceTransitionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SequenceTransitionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SequenceTransitionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          findFirst: {
+            args: Prisma.SequenceTransitionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SequenceTransitionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          findMany: {
+            args: Prisma.SequenceTransitionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>[]
+          }
+          create: {
+            args: Prisma.SequenceTransitionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          createMany: {
+            args: Prisma.SequenceTransitionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SequenceTransitionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>[]
+          }
+          delete: {
+            args: Prisma.SequenceTransitionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          update: {
+            args: Prisma.SequenceTransitionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          deleteMany: {
+            args: Prisma.SequenceTransitionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SequenceTransitionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SequenceTransitionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>[]
+          }
+          upsert: {
+            args: Prisma.SequenceTransitionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SequenceTransitionPayload>
+          }
+          aggregate: {
+            args: Prisma.SequenceTransitionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSequenceTransition>
+          }
+          groupBy: {
+            args: Prisma.SequenceTransitionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SequenceTransitionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SequenceTransitionCountArgs<ExtArgs>
+            result: $Utils.Optional<SequenceTransitionCountAggregateOutputType> | number
+          }
+        }
+      }
+      Act: {
+        payload: Prisma.$ActPayload<ExtArgs>
+        fields: Prisma.ActFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ActFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ActFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          findFirst: {
+            args: Prisma.ActFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ActFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          findMany: {
+            args: Prisma.ActFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>[]
+          }
+          create: {
+            args: Prisma.ActCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          createMany: {
+            args: Prisma.ActCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ActCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>[]
+          }
+          delete: {
+            args: Prisma.ActDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          update: {
+            args: Prisma.ActUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          deleteMany: {
+            args: Prisma.ActDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ActUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ActUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>[]
+          }
+          upsert: {
+            args: Prisma.ActUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActPayload>
+          }
+          aggregate: {
+            args: Prisma.ActAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAct>
+          }
+          groupBy: {
+            args: Prisma.ActGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ActGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ActCountArgs<ExtArgs>
+            result: $Utils.Optional<ActCountAggregateOutputType> | number
+          }
+        }
+      }
+      ActTransition: {
+        payload: Prisma.$ActTransitionPayload<ExtArgs>
+        fields: Prisma.ActTransitionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ActTransitionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ActTransitionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          findFirst: {
+            args: Prisma.ActTransitionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ActTransitionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          findMany: {
+            args: Prisma.ActTransitionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>[]
+          }
+          create: {
+            args: Prisma.ActTransitionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          createMany: {
+            args: Prisma.ActTransitionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ActTransitionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>[]
+          }
+          delete: {
+            args: Prisma.ActTransitionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          update: {
+            args: Prisma.ActTransitionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          deleteMany: {
+            args: Prisma.ActTransitionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ActTransitionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ActTransitionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>[]
+          }
+          upsert: {
+            args: Prisma.ActTransitionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ActTransitionPayload>
+          }
+          aggregate: {
+            args: Prisma.ActTransitionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateActTransition>
+          }
+          groupBy: {
+            args: Prisma.ActTransitionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ActTransitionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ActTransitionCountArgs<ExtArgs>
+            result: $Utils.Optional<ActTransitionCountAggregateOutputType> | number
+          }
+        }
+      }
+      Location: {
+        payload: Prisma.$LocationPayload<ExtArgs>
+        fields: Prisma.LocationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LocationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LocationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          findFirst: {
+            args: Prisma.LocationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LocationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          findMany: {
+            args: Prisma.LocationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          create: {
+            args: Prisma.LocationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          createMany: {
+            args: Prisma.LocationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LocationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          delete: {
+            args: Prisma.LocationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          update: {
+            args: Prisma.LocationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          deleteMany: {
+            args: Prisma.LocationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LocationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LocationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          upsert: {
+            args: Prisma.LocationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          aggregate: {
+            args: Prisma.LocationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLocation>
+          }
+          groupBy: {
+            args: Prisma.LocationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LocationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LocationCountArgs<ExtArgs>
+            result: $Utils.Optional<LocationCountAggregateOutputType> | number
+          }
+        }
+      }
+      Character: {
+        payload: Prisma.$CharacterPayload<ExtArgs>
+        fields: Prisma.CharacterFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CharacterFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CharacterFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          findFirst: {
+            args: Prisma.CharacterFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CharacterFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          findMany: {
+            args: Prisma.CharacterFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+          }
+          create: {
+            args: Prisma.CharacterCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          createMany: {
+            args: Prisma.CharacterCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CharacterCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+          }
+          delete: {
+            args: Prisma.CharacterDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          update: {
+            args: Prisma.CharacterUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          deleteMany: {
+            args: Prisma.CharacterDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CharacterUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CharacterUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>[]
+          }
+          upsert: {
+            args: Prisma.CharacterUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CharacterPayload>
+          }
+          aggregate: {
+            args: Prisma.CharacterAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCharacter>
+          }
+          groupBy: {
+            args: Prisma.CharacterGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CharacterGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CharacterCountArgs<ExtArgs>
+            result: $Utils.Optional<CharacterCountAggregateOutputType> | number
+          }
+        }
+      }
+      Clue: {
+        payload: Prisma.$CluePayload<ExtArgs>
+        fields: Prisma.ClueFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ClueFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ClueFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          findFirst: {
+            args: Prisma.ClueFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ClueFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          findMany: {
+            args: Prisma.ClueFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>[]
+          }
+          create: {
+            args: Prisma.ClueCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          createMany: {
+            args: Prisma.ClueCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ClueCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>[]
+          }
+          delete: {
+            args: Prisma.ClueDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          update: {
+            args: Prisma.ClueUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          deleteMany: {
+            args: Prisma.ClueDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ClueUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ClueUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>[]
+          }
+          upsert: {
+            args: Prisma.ClueUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CluePayload>
+          }
+          aggregate: {
+            args: Prisma.ClueAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateClue>
+          }
+          groupBy: {
+            args: Prisma.ClueGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ClueGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ClueCountArgs<ExtArgs>
+            result: $Utils.Optional<ClueCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1503,6 +2493,17 @@ export namespace Prisma {
     permission?: PermissionOmit
     userRole?: UserRoleOmit
     rolePermission?: RolePermissionOmit
+    beat?: BeatOmit
+    beatTransition?: BeatTransitionOmit
+    scene?: SceneOmit
+    sceneTransition?: SceneTransitionOmit
+    sequence?: SequenceOmit
+    sequenceTransition?: SequenceTransitionOmit
+    act?: ActOmit
+    actTransition?: ActTransitionOmit
+    location?: LocationOmit
+    character?: CharacterOmit
+    clue?: ClueOmit
   }
 
   /* Types for Logging */
@@ -1718,6 +2719,313 @@ export namespace Prisma {
    */
   export type PermissionCountOutputTypeCountRolesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: RolePermissionWhereInput
+  }
+
+
+  /**
+   * Count Type BeatCountOutputType
+   */
+
+  export type BeatCountOutputType = {
+    characters: number
+    clues: number
+    nextBeats: number
+    previousBeats: number
+  }
+
+  export type BeatCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    characters?: boolean | BeatCountOutputTypeCountCharactersArgs
+    clues?: boolean | BeatCountOutputTypeCountCluesArgs
+    nextBeats?: boolean | BeatCountOutputTypeCountNextBeatsArgs
+    previousBeats?: boolean | BeatCountOutputTypeCountPreviousBeatsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * BeatCountOutputType without action
+   */
+  export type BeatCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatCountOutputType
+     */
+    select?: BeatCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * BeatCountOutputType without action
+   */
+  export type BeatCountOutputTypeCountCharactersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CharacterWhereInput
+  }
+
+  /**
+   * BeatCountOutputType without action
+   */
+  export type BeatCountOutputTypeCountCluesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ClueWhereInput
+  }
+
+  /**
+   * BeatCountOutputType without action
+   */
+  export type BeatCountOutputTypeCountNextBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatTransitionWhereInput
+  }
+
+  /**
+   * BeatCountOutputType without action
+   */
+  export type BeatCountOutputTypeCountPreviousBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatTransitionWhereInput
+  }
+
+
+  /**
+   * Count Type SceneCountOutputType
+   */
+
+  export type SceneCountOutputType = {
+    beats: number
+    nextScenes: number
+    previousScenes: number
+  }
+
+  export type SceneCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beats?: boolean | SceneCountOutputTypeCountBeatsArgs
+    nextScenes?: boolean | SceneCountOutputTypeCountNextScenesArgs
+    previousScenes?: boolean | SceneCountOutputTypeCountPreviousScenesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SceneCountOutputType without action
+   */
+  export type SceneCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneCountOutputType
+     */
+    select?: SceneCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SceneCountOutputType without action
+   */
+  export type SceneCountOutputTypeCountBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatWhereInput
+  }
+
+  /**
+   * SceneCountOutputType without action
+   */
+  export type SceneCountOutputTypeCountNextScenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SceneTransitionWhereInput
+  }
+
+  /**
+   * SceneCountOutputType without action
+   */
+  export type SceneCountOutputTypeCountPreviousScenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SceneTransitionWhereInput
+  }
+
+
+  /**
+   * Count Type SequenceCountOutputType
+   */
+
+  export type SequenceCountOutputType = {
+    scenes: number
+    nextSequences: number
+    previousSequences: number
+  }
+
+  export type SequenceCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    scenes?: boolean | SequenceCountOutputTypeCountScenesArgs
+    nextSequences?: boolean | SequenceCountOutputTypeCountNextSequencesArgs
+    previousSequences?: boolean | SequenceCountOutputTypeCountPreviousSequencesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SequenceCountOutputType without action
+   */
+  export type SequenceCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceCountOutputType
+     */
+    select?: SequenceCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SequenceCountOutputType without action
+   */
+  export type SequenceCountOutputTypeCountScenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SceneWhereInput
+  }
+
+  /**
+   * SequenceCountOutputType without action
+   */
+  export type SequenceCountOutputTypeCountNextSequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SequenceTransitionWhereInput
+  }
+
+  /**
+   * SequenceCountOutputType without action
+   */
+  export type SequenceCountOutputTypeCountPreviousSequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SequenceTransitionWhereInput
+  }
+
+
+  /**
+   * Count Type ActCountOutputType
+   */
+
+  export type ActCountOutputType = {
+    sequences: number
+    nextActs: number
+    previousActs: number
+  }
+
+  export type ActCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sequences?: boolean | ActCountOutputTypeCountSequencesArgs
+    nextActs?: boolean | ActCountOutputTypeCountNextActsArgs
+    previousActs?: boolean | ActCountOutputTypeCountPreviousActsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ActCountOutputType without action
+   */
+  export type ActCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActCountOutputType
+     */
+    select?: ActCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ActCountOutputType without action
+   */
+  export type ActCountOutputTypeCountSequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SequenceWhereInput
+  }
+
+  /**
+   * ActCountOutputType without action
+   */
+  export type ActCountOutputTypeCountNextActsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ActTransitionWhereInput
+  }
+
+  /**
+   * ActCountOutputType without action
+   */
+  export type ActCountOutputTypeCountPreviousActsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ActTransitionWhereInput
+  }
+
+
+  /**
+   * Count Type LocationCountOutputType
+   */
+
+  export type LocationCountOutputType = {
+    beats: number
+  }
+
+  export type LocationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beats?: boolean | LocationCountOutputTypeCountBeatsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationCountOutputType
+     */
+    select?: LocationCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeCountBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatWhereInput
+  }
+
+
+  /**
+   * Count Type CharacterCountOutputType
+   */
+
+  export type CharacterCountOutputType = {
+    beats: number
+    clues: number
+  }
+
+  export type CharacterCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beats?: boolean | CharacterCountOutputTypeCountBeatsArgs
+    clues?: boolean | CharacterCountOutputTypeCountCluesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CharacterCountOutputType without action
+   */
+  export type CharacterCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CharacterCountOutputType
+     */
+    select?: CharacterCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CharacterCountOutputType without action
+   */
+  export type CharacterCountOutputTypeCountBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatWhereInput
+  }
+
+  /**
+   * CharacterCountOutputType without action
+   */
+  export type CharacterCountOutputTypeCountCluesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ClueWhereInput
+  }
+
+
+  /**
+   * Count Type ClueCountOutputType
+   */
+
+  export type ClueCountOutputType = {
+    characters: number
+  }
+
+  export type ClueCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    characters?: boolean | ClueCountOutputTypeCountCharactersArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ClueCountOutputType without action
+   */
+  export type ClueCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ClueCountOutputType
+     */
+    select?: ClueCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ClueCountOutputType without action
+   */
+  export type ClueCountOutputTypeCountCharactersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CharacterWhereInput
   }
 
 
@@ -11573,6 +12881,12496 @@ export namespace Prisma {
 
 
   /**
+   * Model Beat
+   */
+
+  export type AggregateBeat = {
+    _count: BeatCountAggregateOutputType | null
+    _avg: BeatAvgAggregateOutputType | null
+    _sum: BeatSumAggregateOutputType | null
+    _min: BeatMinAggregateOutputType | null
+    _max: BeatMaxAggregateOutputType | null
+  }
+
+  export type BeatAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type BeatSumAggregateOutputType = {
+    order: number | null
+  }
+
+  export type BeatMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    content: string | null
+    order: number | null
+    sceneId: string | null
+    locationId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type BeatMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    content: string | null
+    order: number | null
+    sceneId: string | null
+    locationId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type BeatCountAggregateOutputType = {
+    id: number
+    title: number
+    content: number
+    order: number
+    sceneId: number
+    locationId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type BeatAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type BeatSumAggregateInputType = {
+    order?: true
+  }
+
+  export type BeatMinAggregateInputType = {
+    id?: true
+    title?: true
+    content?: true
+    order?: true
+    sceneId?: true
+    locationId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type BeatMaxAggregateInputType = {
+    id?: true
+    title?: true
+    content?: true
+    order?: true
+    sceneId?: true
+    locationId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type BeatCountAggregateInputType = {
+    id?: true
+    title?: true
+    content?: true
+    order?: true
+    sceneId?: true
+    locationId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type BeatAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Beat to aggregate.
+     */
+    where?: BeatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Beats to fetch.
+     */
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BeatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Beats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Beats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Beats
+    **/
+    _count?: true | BeatCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BeatAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BeatSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BeatMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BeatMaxAggregateInputType
+  }
+
+  export type GetBeatAggregateType<T extends BeatAggregateArgs> = {
+        [P in keyof T & keyof AggregateBeat]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBeat[P]>
+      : GetScalarType<T[P], AggregateBeat[P]>
+  }
+
+
+
+
+  export type BeatGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatWhereInput
+    orderBy?: BeatOrderByWithAggregationInput | BeatOrderByWithAggregationInput[]
+    by: BeatScalarFieldEnum[] | BeatScalarFieldEnum
+    having?: BeatScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BeatCountAggregateInputType | true
+    _avg?: BeatAvgAggregateInputType
+    _sum?: BeatSumAggregateInputType
+    _min?: BeatMinAggregateInputType
+    _max?: BeatMaxAggregateInputType
+  }
+
+  export type BeatGroupByOutputType = {
+    id: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: BeatCountAggregateOutputType | null
+    _avg: BeatAvgAggregateOutputType | null
+    _sum: BeatSumAggregateOutputType | null
+    _min: BeatMinAggregateOutputType | null
+    _max: BeatMaxAggregateOutputType | null
+  }
+
+  type GetBeatGroupByPayload<T extends BeatGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BeatGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BeatGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BeatGroupByOutputType[P]>
+            : GetScalarType<T[P], BeatGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BeatSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    content?: boolean
+    order?: boolean
+    sceneId?: boolean
+    locationId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    characters?: boolean | Beat$charactersArgs<ExtArgs>
+    clues?: boolean | Beat$cluesArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+    nextBeats?: boolean | Beat$nextBeatsArgs<ExtArgs>
+    previousBeats?: boolean | Beat$previousBeatsArgs<ExtArgs>
+    _count?: boolean | BeatCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["beat"]>
+
+  export type BeatSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    content?: boolean
+    order?: boolean
+    sceneId?: boolean
+    locationId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+  }, ExtArgs["result"]["beat"]>
+
+  export type BeatSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    content?: boolean
+    order?: boolean
+    sceneId?: boolean
+    locationId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+  }, ExtArgs["result"]["beat"]>
+
+  export type BeatSelectScalar = {
+    id?: boolean
+    title?: boolean
+    content?: boolean
+    order?: boolean
+    sceneId?: boolean
+    locationId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type BeatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "content" | "order" | "sceneId" | "locationId" | "createdAt" | "updatedAt", ExtArgs["result"]["beat"]>
+  export type BeatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    characters?: boolean | Beat$charactersArgs<ExtArgs>
+    clues?: boolean | Beat$cluesArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+    nextBeats?: boolean | Beat$nextBeatsArgs<ExtArgs>
+    previousBeats?: boolean | Beat$previousBeatsArgs<ExtArgs>
+    _count?: boolean | BeatCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type BeatIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+  }
+  export type BeatIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    scene?: boolean | SceneDefaultArgs<ExtArgs>
+    location?: boolean | Beat$locationArgs<ExtArgs>
+  }
+
+  export type $BeatPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Beat"
+    objects: {
+      scene: Prisma.$ScenePayload<ExtArgs>
+      characters: Prisma.$CharacterPayload<ExtArgs>[]
+      clues: Prisma.$CluePayload<ExtArgs>[]
+      location: Prisma.$LocationPayload<ExtArgs> | null
+      nextBeats: Prisma.$BeatTransitionPayload<ExtArgs>[]
+      previousBeats: Prisma.$BeatTransitionPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      content: string
+      order: number
+      sceneId: string
+      locationId: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["beat"]>
+    composites: {}
+  }
+
+  type BeatGetPayload<S extends boolean | null | undefined | BeatDefaultArgs> = $Result.GetResult<Prisma.$BeatPayload, S>
+
+  type BeatCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BeatFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BeatCountAggregateInputType | true
+    }
+
+  export interface BeatDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Beat'], meta: { name: 'Beat' } }
+    /**
+     * Find zero or one Beat that matches the filter.
+     * @param {BeatFindUniqueArgs} args - Arguments to find a Beat
+     * @example
+     * // Get one Beat
+     * const beat = await prisma.beat.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BeatFindUniqueArgs>(args: SelectSubset<T, BeatFindUniqueArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Beat that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BeatFindUniqueOrThrowArgs} args - Arguments to find a Beat
+     * @example
+     * // Get one Beat
+     * const beat = await prisma.beat.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BeatFindUniqueOrThrowArgs>(args: SelectSubset<T, BeatFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Beat that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatFindFirstArgs} args - Arguments to find a Beat
+     * @example
+     * // Get one Beat
+     * const beat = await prisma.beat.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BeatFindFirstArgs>(args?: SelectSubset<T, BeatFindFirstArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Beat that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatFindFirstOrThrowArgs} args - Arguments to find a Beat
+     * @example
+     * // Get one Beat
+     * const beat = await prisma.beat.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BeatFindFirstOrThrowArgs>(args?: SelectSubset<T, BeatFindFirstOrThrowArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Beats that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Beats
+     * const beats = await prisma.beat.findMany()
+     * 
+     * // Get first 10 Beats
+     * const beats = await prisma.beat.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const beatWithIdOnly = await prisma.beat.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BeatFindManyArgs>(args?: SelectSubset<T, BeatFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Beat.
+     * @param {BeatCreateArgs} args - Arguments to create a Beat.
+     * @example
+     * // Create one Beat
+     * const Beat = await prisma.beat.create({
+     *   data: {
+     *     // ... data to create a Beat
+     *   }
+     * })
+     * 
+     */
+    create<T extends BeatCreateArgs>(args: SelectSubset<T, BeatCreateArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Beats.
+     * @param {BeatCreateManyArgs} args - Arguments to create many Beats.
+     * @example
+     * // Create many Beats
+     * const beat = await prisma.beat.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BeatCreateManyArgs>(args?: SelectSubset<T, BeatCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Beats and returns the data saved in the database.
+     * @param {BeatCreateManyAndReturnArgs} args - Arguments to create many Beats.
+     * @example
+     * // Create many Beats
+     * const beat = await prisma.beat.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Beats and only return the `id`
+     * const beatWithIdOnly = await prisma.beat.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BeatCreateManyAndReturnArgs>(args?: SelectSubset<T, BeatCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Beat.
+     * @param {BeatDeleteArgs} args - Arguments to delete one Beat.
+     * @example
+     * // Delete one Beat
+     * const Beat = await prisma.beat.delete({
+     *   where: {
+     *     // ... filter to delete one Beat
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BeatDeleteArgs>(args: SelectSubset<T, BeatDeleteArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Beat.
+     * @param {BeatUpdateArgs} args - Arguments to update one Beat.
+     * @example
+     * // Update one Beat
+     * const beat = await prisma.beat.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BeatUpdateArgs>(args: SelectSubset<T, BeatUpdateArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Beats.
+     * @param {BeatDeleteManyArgs} args - Arguments to filter Beats to delete.
+     * @example
+     * // Delete a few Beats
+     * const { count } = await prisma.beat.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BeatDeleteManyArgs>(args?: SelectSubset<T, BeatDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Beats.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Beats
+     * const beat = await prisma.beat.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BeatUpdateManyArgs>(args: SelectSubset<T, BeatUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Beats and returns the data updated in the database.
+     * @param {BeatUpdateManyAndReturnArgs} args - Arguments to update many Beats.
+     * @example
+     * // Update many Beats
+     * const beat = await prisma.beat.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Beats and only return the `id`
+     * const beatWithIdOnly = await prisma.beat.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BeatUpdateManyAndReturnArgs>(args: SelectSubset<T, BeatUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Beat.
+     * @param {BeatUpsertArgs} args - Arguments to update or create a Beat.
+     * @example
+     * // Update or create a Beat
+     * const beat = await prisma.beat.upsert({
+     *   create: {
+     *     // ... data to create a Beat
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Beat we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BeatUpsertArgs>(args: SelectSubset<T, BeatUpsertArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Beats.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatCountArgs} args - Arguments to filter Beats to count.
+     * @example
+     * // Count the number of Beats
+     * const count = await prisma.beat.count({
+     *   where: {
+     *     // ... the filter for the Beats we want to count
+     *   }
+     * })
+    **/
+    count<T extends BeatCountArgs>(
+      args?: Subset<T, BeatCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BeatCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Beat.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BeatAggregateArgs>(args: Subset<T, BeatAggregateArgs>): Prisma.PrismaPromise<GetBeatAggregateType<T>>
+
+    /**
+     * Group by Beat.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BeatGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BeatGroupByArgs['orderBy'] }
+        : { orderBy?: BeatGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BeatGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBeatGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Beat model
+   */
+  readonly fields: BeatFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Beat.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BeatClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    scene<T extends SceneDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SceneDefaultArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    characters<T extends Beat$charactersArgs<ExtArgs> = {}>(args?: Subset<T, Beat$charactersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    clues<T extends Beat$cluesArgs<ExtArgs> = {}>(args?: Subset<T, Beat$cluesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    location<T extends Beat$locationArgs<ExtArgs> = {}>(args?: Subset<T, Beat$locationArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    nextBeats<T extends Beat$nextBeatsArgs<ExtArgs> = {}>(args?: Subset<T, Beat$nextBeatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    previousBeats<T extends Beat$previousBeatsArgs<ExtArgs> = {}>(args?: Subset<T, Beat$previousBeatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Beat model
+   */
+  interface BeatFieldRefs {
+    readonly id: FieldRef<"Beat", 'String'>
+    readonly title: FieldRef<"Beat", 'String'>
+    readonly content: FieldRef<"Beat", 'String'>
+    readonly order: FieldRef<"Beat", 'Int'>
+    readonly sceneId: FieldRef<"Beat", 'String'>
+    readonly locationId: FieldRef<"Beat", 'String'>
+    readonly createdAt: FieldRef<"Beat", 'DateTime'>
+    readonly updatedAt: FieldRef<"Beat", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Beat findUnique
+   */
+  export type BeatFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter, which Beat to fetch.
+     */
+    where: BeatWhereUniqueInput
+  }
+
+  /**
+   * Beat findUniqueOrThrow
+   */
+  export type BeatFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter, which Beat to fetch.
+     */
+    where: BeatWhereUniqueInput
+  }
+
+  /**
+   * Beat findFirst
+   */
+  export type BeatFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter, which Beat to fetch.
+     */
+    where?: BeatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Beats to fetch.
+     */
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Beats.
+     */
+    cursor?: BeatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Beats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Beats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Beats.
+     */
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Beat findFirstOrThrow
+   */
+  export type BeatFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter, which Beat to fetch.
+     */
+    where?: BeatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Beats to fetch.
+     */
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Beats.
+     */
+    cursor?: BeatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Beats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Beats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Beats.
+     */
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Beat findMany
+   */
+  export type BeatFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter, which Beats to fetch.
+     */
+    where?: BeatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Beats to fetch.
+     */
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Beats.
+     */
+    cursor?: BeatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Beats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Beats.
+     */
+    skip?: number
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Beat create
+   */
+  export type BeatCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Beat.
+     */
+    data: XOR<BeatCreateInput, BeatUncheckedCreateInput>
+  }
+
+  /**
+   * Beat createMany
+   */
+  export type BeatCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Beats.
+     */
+    data: BeatCreateManyInput | BeatCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Beat createManyAndReturn
+   */
+  export type BeatCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * The data used to create many Beats.
+     */
+    data: BeatCreateManyInput | BeatCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Beat update
+   */
+  export type BeatUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Beat.
+     */
+    data: XOR<BeatUpdateInput, BeatUncheckedUpdateInput>
+    /**
+     * Choose, which Beat to update.
+     */
+    where: BeatWhereUniqueInput
+  }
+
+  /**
+   * Beat updateMany
+   */
+  export type BeatUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Beats.
+     */
+    data: XOR<BeatUpdateManyMutationInput, BeatUncheckedUpdateManyInput>
+    /**
+     * Filter which Beats to update
+     */
+    where?: BeatWhereInput
+    /**
+     * Limit how many Beats to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Beat updateManyAndReturn
+   */
+  export type BeatUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * The data used to update Beats.
+     */
+    data: XOR<BeatUpdateManyMutationInput, BeatUncheckedUpdateManyInput>
+    /**
+     * Filter which Beats to update
+     */
+    where?: BeatWhereInput
+    /**
+     * Limit how many Beats to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Beat upsert
+   */
+  export type BeatUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Beat to update in case it exists.
+     */
+    where: BeatWhereUniqueInput
+    /**
+     * In case the Beat found by the `where` argument doesn't exist, create a new Beat with this data.
+     */
+    create: XOR<BeatCreateInput, BeatUncheckedCreateInput>
+    /**
+     * In case the Beat was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BeatUpdateInput, BeatUncheckedUpdateInput>
+  }
+
+  /**
+   * Beat delete
+   */
+  export type BeatDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    /**
+     * Filter which Beat to delete.
+     */
+    where: BeatWhereUniqueInput
+  }
+
+  /**
+   * Beat deleteMany
+   */
+  export type BeatDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Beats to delete
+     */
+    where?: BeatWhereInput
+    /**
+     * Limit how many Beats to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Beat.characters
+   */
+  export type Beat$charactersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    where?: CharacterWhereInput
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    cursor?: CharacterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CharacterScalarFieldEnum | CharacterScalarFieldEnum[]
+  }
+
+  /**
+   * Beat.clues
+   */
+  export type Beat$cluesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    where?: ClueWhereInput
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    cursor?: ClueWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ClueScalarFieldEnum | ClueScalarFieldEnum[]
+  }
+
+  /**
+   * Beat.location
+   */
+  export type Beat$locationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    where?: LocationWhereInput
+  }
+
+  /**
+   * Beat.nextBeats
+   */
+  export type Beat$nextBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    where?: BeatTransitionWhereInput
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    cursor?: BeatTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BeatTransitionScalarFieldEnum | BeatTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Beat.previousBeats
+   */
+  export type Beat$previousBeatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    where?: BeatTransitionWhereInput
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    cursor?: BeatTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BeatTransitionScalarFieldEnum | BeatTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Beat without action
+   */
+  export type BeatDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BeatTransition
+   */
+
+  export type AggregateBeatTransition = {
+    _count: BeatTransitionCountAggregateOutputType | null
+    _min: BeatTransitionMinAggregateOutputType | null
+    _max: BeatTransitionMaxAggregateOutputType | null
+  }
+
+  export type BeatTransitionMinAggregateOutputType = {
+    id: string | null
+    fromBeatId: string | null
+    toBeatId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type BeatTransitionMaxAggregateOutputType = {
+    id: string | null
+    fromBeatId: string | null
+    toBeatId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type BeatTransitionCountAggregateOutputType = {
+    id: number
+    fromBeatId: number
+    toBeatId: number
+    condition: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type BeatTransitionMinAggregateInputType = {
+    id?: true
+    fromBeatId?: true
+    toBeatId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type BeatTransitionMaxAggregateInputType = {
+    id?: true
+    fromBeatId?: true
+    toBeatId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type BeatTransitionCountAggregateInputType = {
+    id?: true
+    fromBeatId?: true
+    toBeatId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type BeatTransitionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BeatTransition to aggregate.
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BeatTransitions to fetch.
+     */
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BeatTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BeatTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BeatTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BeatTransitions
+    **/
+    _count?: true | BeatTransitionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BeatTransitionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BeatTransitionMaxAggregateInputType
+  }
+
+  export type GetBeatTransitionAggregateType<T extends BeatTransitionAggregateArgs> = {
+        [P in keyof T & keyof AggregateBeatTransition]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBeatTransition[P]>
+      : GetScalarType<T[P], AggregateBeatTransition[P]>
+  }
+
+
+
+
+  export type BeatTransitionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BeatTransitionWhereInput
+    orderBy?: BeatTransitionOrderByWithAggregationInput | BeatTransitionOrderByWithAggregationInput[]
+    by: BeatTransitionScalarFieldEnum[] | BeatTransitionScalarFieldEnum
+    having?: BeatTransitionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BeatTransitionCountAggregateInputType | true
+    _min?: BeatTransitionMinAggregateInputType
+    _max?: BeatTransitionMaxAggregateInputType
+  }
+
+  export type BeatTransitionGroupByOutputType = {
+    id: string
+    fromBeatId: string
+    toBeatId: string
+    condition: string | null
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: BeatTransitionCountAggregateOutputType | null
+    _min: BeatTransitionMinAggregateOutputType | null
+    _max: BeatTransitionMaxAggregateOutputType | null
+  }
+
+  type GetBeatTransitionGroupByPayload<T extends BeatTransitionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BeatTransitionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BeatTransitionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BeatTransitionGroupByOutputType[P]>
+            : GetScalarType<T[P], BeatTransitionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BeatTransitionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromBeatId?: boolean
+    toBeatId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["beatTransition"]>
+
+  export type BeatTransitionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromBeatId?: boolean
+    toBeatId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["beatTransition"]>
+
+  export type BeatTransitionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromBeatId?: boolean
+    toBeatId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["beatTransition"]>
+
+  export type BeatTransitionSelectScalar = {
+    id?: boolean
+    fromBeatId?: boolean
+    toBeatId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type BeatTransitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fromBeatId" | "toBeatId" | "condition" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["beatTransition"]>
+  export type BeatTransitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }
+  export type BeatTransitionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }
+  export type BeatTransitionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromBeat?: boolean | BeatDefaultArgs<ExtArgs>
+    toBeat?: boolean | BeatDefaultArgs<ExtArgs>
+  }
+
+  export type $BeatTransitionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BeatTransition"
+    objects: {
+      fromBeat: Prisma.$BeatPayload<ExtArgs>
+      toBeat: Prisma.$BeatPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fromBeatId: string
+      toBeatId: string
+      condition: string | null
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["beatTransition"]>
+    composites: {}
+  }
+
+  type BeatTransitionGetPayload<S extends boolean | null | undefined | BeatTransitionDefaultArgs> = $Result.GetResult<Prisma.$BeatTransitionPayload, S>
+
+  type BeatTransitionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BeatTransitionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BeatTransitionCountAggregateInputType | true
+    }
+
+  export interface BeatTransitionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BeatTransition'], meta: { name: 'BeatTransition' } }
+    /**
+     * Find zero or one BeatTransition that matches the filter.
+     * @param {BeatTransitionFindUniqueArgs} args - Arguments to find a BeatTransition
+     * @example
+     * // Get one BeatTransition
+     * const beatTransition = await prisma.beatTransition.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BeatTransitionFindUniqueArgs>(args: SelectSubset<T, BeatTransitionFindUniqueArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BeatTransition that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BeatTransitionFindUniqueOrThrowArgs} args - Arguments to find a BeatTransition
+     * @example
+     * // Get one BeatTransition
+     * const beatTransition = await prisma.beatTransition.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BeatTransitionFindUniqueOrThrowArgs>(args: SelectSubset<T, BeatTransitionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BeatTransition that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionFindFirstArgs} args - Arguments to find a BeatTransition
+     * @example
+     * // Get one BeatTransition
+     * const beatTransition = await prisma.beatTransition.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BeatTransitionFindFirstArgs>(args?: SelectSubset<T, BeatTransitionFindFirstArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BeatTransition that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionFindFirstOrThrowArgs} args - Arguments to find a BeatTransition
+     * @example
+     * // Get one BeatTransition
+     * const beatTransition = await prisma.beatTransition.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BeatTransitionFindFirstOrThrowArgs>(args?: SelectSubset<T, BeatTransitionFindFirstOrThrowArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BeatTransitions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BeatTransitions
+     * const beatTransitions = await prisma.beatTransition.findMany()
+     * 
+     * // Get first 10 BeatTransitions
+     * const beatTransitions = await prisma.beatTransition.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const beatTransitionWithIdOnly = await prisma.beatTransition.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BeatTransitionFindManyArgs>(args?: SelectSubset<T, BeatTransitionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BeatTransition.
+     * @param {BeatTransitionCreateArgs} args - Arguments to create a BeatTransition.
+     * @example
+     * // Create one BeatTransition
+     * const BeatTransition = await prisma.beatTransition.create({
+     *   data: {
+     *     // ... data to create a BeatTransition
+     *   }
+     * })
+     * 
+     */
+    create<T extends BeatTransitionCreateArgs>(args: SelectSubset<T, BeatTransitionCreateArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BeatTransitions.
+     * @param {BeatTransitionCreateManyArgs} args - Arguments to create many BeatTransitions.
+     * @example
+     * // Create many BeatTransitions
+     * const beatTransition = await prisma.beatTransition.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BeatTransitionCreateManyArgs>(args?: SelectSubset<T, BeatTransitionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BeatTransitions and returns the data saved in the database.
+     * @param {BeatTransitionCreateManyAndReturnArgs} args - Arguments to create many BeatTransitions.
+     * @example
+     * // Create many BeatTransitions
+     * const beatTransition = await prisma.beatTransition.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BeatTransitions and only return the `id`
+     * const beatTransitionWithIdOnly = await prisma.beatTransition.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BeatTransitionCreateManyAndReturnArgs>(args?: SelectSubset<T, BeatTransitionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BeatTransition.
+     * @param {BeatTransitionDeleteArgs} args - Arguments to delete one BeatTransition.
+     * @example
+     * // Delete one BeatTransition
+     * const BeatTransition = await prisma.beatTransition.delete({
+     *   where: {
+     *     // ... filter to delete one BeatTransition
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BeatTransitionDeleteArgs>(args: SelectSubset<T, BeatTransitionDeleteArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BeatTransition.
+     * @param {BeatTransitionUpdateArgs} args - Arguments to update one BeatTransition.
+     * @example
+     * // Update one BeatTransition
+     * const beatTransition = await prisma.beatTransition.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BeatTransitionUpdateArgs>(args: SelectSubset<T, BeatTransitionUpdateArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BeatTransitions.
+     * @param {BeatTransitionDeleteManyArgs} args - Arguments to filter BeatTransitions to delete.
+     * @example
+     * // Delete a few BeatTransitions
+     * const { count } = await prisma.beatTransition.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BeatTransitionDeleteManyArgs>(args?: SelectSubset<T, BeatTransitionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BeatTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BeatTransitions
+     * const beatTransition = await prisma.beatTransition.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BeatTransitionUpdateManyArgs>(args: SelectSubset<T, BeatTransitionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BeatTransitions and returns the data updated in the database.
+     * @param {BeatTransitionUpdateManyAndReturnArgs} args - Arguments to update many BeatTransitions.
+     * @example
+     * // Update many BeatTransitions
+     * const beatTransition = await prisma.beatTransition.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BeatTransitions and only return the `id`
+     * const beatTransitionWithIdOnly = await prisma.beatTransition.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BeatTransitionUpdateManyAndReturnArgs>(args: SelectSubset<T, BeatTransitionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BeatTransition.
+     * @param {BeatTransitionUpsertArgs} args - Arguments to update or create a BeatTransition.
+     * @example
+     * // Update or create a BeatTransition
+     * const beatTransition = await prisma.beatTransition.upsert({
+     *   create: {
+     *     // ... data to create a BeatTransition
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BeatTransition we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BeatTransitionUpsertArgs>(args: SelectSubset<T, BeatTransitionUpsertArgs<ExtArgs>>): Prisma__BeatTransitionClient<$Result.GetResult<Prisma.$BeatTransitionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BeatTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionCountArgs} args - Arguments to filter BeatTransitions to count.
+     * @example
+     * // Count the number of BeatTransitions
+     * const count = await prisma.beatTransition.count({
+     *   where: {
+     *     // ... the filter for the BeatTransitions we want to count
+     *   }
+     * })
+    **/
+    count<T extends BeatTransitionCountArgs>(
+      args?: Subset<T, BeatTransitionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BeatTransitionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BeatTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BeatTransitionAggregateArgs>(args: Subset<T, BeatTransitionAggregateArgs>): Prisma.PrismaPromise<GetBeatTransitionAggregateType<T>>
+
+    /**
+     * Group by BeatTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BeatTransitionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BeatTransitionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BeatTransitionGroupByArgs['orderBy'] }
+        : { orderBy?: BeatTransitionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BeatTransitionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBeatTransitionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BeatTransition model
+   */
+  readonly fields: BeatTransitionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BeatTransition.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BeatTransitionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fromBeat<T extends BeatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BeatDefaultArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    toBeat<T extends BeatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BeatDefaultArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BeatTransition model
+   */
+  interface BeatTransitionFieldRefs {
+    readonly id: FieldRef<"BeatTransition", 'String'>
+    readonly fromBeatId: FieldRef<"BeatTransition", 'String'>
+    readonly toBeatId: FieldRef<"BeatTransition", 'String'>
+    readonly condition: FieldRef<"BeatTransition", 'String'>
+    readonly description: FieldRef<"BeatTransition", 'String'>
+    readonly createdAt: FieldRef<"BeatTransition", 'DateTime'>
+    readonly updatedAt: FieldRef<"BeatTransition", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BeatTransition findUnique
+   */
+  export type BeatTransitionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which BeatTransition to fetch.
+     */
+    where: BeatTransitionWhereUniqueInput
+  }
+
+  /**
+   * BeatTransition findUniqueOrThrow
+   */
+  export type BeatTransitionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which BeatTransition to fetch.
+     */
+    where: BeatTransitionWhereUniqueInput
+  }
+
+  /**
+   * BeatTransition findFirst
+   */
+  export type BeatTransitionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which BeatTransition to fetch.
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BeatTransitions to fetch.
+     */
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BeatTransitions.
+     */
+    cursor?: BeatTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BeatTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BeatTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BeatTransitions.
+     */
+    distinct?: BeatTransitionScalarFieldEnum | BeatTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * BeatTransition findFirstOrThrow
+   */
+  export type BeatTransitionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which BeatTransition to fetch.
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BeatTransitions to fetch.
+     */
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BeatTransitions.
+     */
+    cursor?: BeatTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BeatTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BeatTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BeatTransitions.
+     */
+    distinct?: BeatTransitionScalarFieldEnum | BeatTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * BeatTransition findMany
+   */
+  export type BeatTransitionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which BeatTransitions to fetch.
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BeatTransitions to fetch.
+     */
+    orderBy?: BeatTransitionOrderByWithRelationInput | BeatTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BeatTransitions.
+     */
+    cursor?: BeatTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BeatTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BeatTransitions.
+     */
+    skip?: number
+    distinct?: BeatTransitionScalarFieldEnum | BeatTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * BeatTransition create
+   */
+  export type BeatTransitionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BeatTransition.
+     */
+    data: XOR<BeatTransitionCreateInput, BeatTransitionUncheckedCreateInput>
+  }
+
+  /**
+   * BeatTransition createMany
+   */
+  export type BeatTransitionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BeatTransitions.
+     */
+    data: BeatTransitionCreateManyInput | BeatTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BeatTransition createManyAndReturn
+   */
+  export type BeatTransitionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to create many BeatTransitions.
+     */
+    data: BeatTransitionCreateManyInput | BeatTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BeatTransition update
+   */
+  export type BeatTransitionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BeatTransition.
+     */
+    data: XOR<BeatTransitionUpdateInput, BeatTransitionUncheckedUpdateInput>
+    /**
+     * Choose, which BeatTransition to update.
+     */
+    where: BeatTransitionWhereUniqueInput
+  }
+
+  /**
+   * BeatTransition updateMany
+   */
+  export type BeatTransitionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BeatTransitions.
+     */
+    data: XOR<BeatTransitionUpdateManyMutationInput, BeatTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which BeatTransitions to update
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * Limit how many BeatTransitions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BeatTransition updateManyAndReturn
+   */
+  export type BeatTransitionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to update BeatTransitions.
+     */
+    data: XOR<BeatTransitionUpdateManyMutationInput, BeatTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which BeatTransitions to update
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * Limit how many BeatTransitions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BeatTransition upsert
+   */
+  export type BeatTransitionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BeatTransition to update in case it exists.
+     */
+    where: BeatTransitionWhereUniqueInput
+    /**
+     * In case the BeatTransition found by the `where` argument doesn't exist, create a new BeatTransition with this data.
+     */
+    create: XOR<BeatTransitionCreateInput, BeatTransitionUncheckedCreateInput>
+    /**
+     * In case the BeatTransition was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BeatTransitionUpdateInput, BeatTransitionUncheckedUpdateInput>
+  }
+
+  /**
+   * BeatTransition delete
+   */
+  export type BeatTransitionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+    /**
+     * Filter which BeatTransition to delete.
+     */
+    where: BeatTransitionWhereUniqueInput
+  }
+
+  /**
+   * BeatTransition deleteMany
+   */
+  export type BeatTransitionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BeatTransitions to delete
+     */
+    where?: BeatTransitionWhereInput
+    /**
+     * Limit how many BeatTransitions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BeatTransition without action
+   */
+  export type BeatTransitionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BeatTransition
+     */
+    select?: BeatTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BeatTransition
+     */
+    omit?: BeatTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatTransitionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Scene
+   */
+
+  export type AggregateScene = {
+    _count: SceneCountAggregateOutputType | null
+    _avg: SceneAvgAggregateOutputType | null
+    _sum: SceneSumAggregateOutputType | null
+    _min: SceneMinAggregateOutputType | null
+    _max: SceneMaxAggregateOutputType | null
+  }
+
+  export type SceneAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type SceneSumAggregateOutputType = {
+    order: number | null
+  }
+
+  export type SceneMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    sequenceId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SceneMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    sequenceId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SceneCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    order: number
+    sequenceId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SceneAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type SceneSumAggregateInputType = {
+    order?: true
+  }
+
+  export type SceneMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    sequenceId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SceneMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    sequenceId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SceneCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    sequenceId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SceneAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Scene to aggregate.
+     */
+    where?: SceneWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Scenes to fetch.
+     */
+    orderBy?: SceneOrderByWithRelationInput | SceneOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SceneWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Scenes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Scenes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Scenes
+    **/
+    _count?: true | SceneCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: SceneAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: SceneSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SceneMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SceneMaxAggregateInputType
+  }
+
+  export type GetSceneAggregateType<T extends SceneAggregateArgs> = {
+        [P in keyof T & keyof AggregateScene]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateScene[P]>
+      : GetScalarType<T[P], AggregateScene[P]>
+  }
+
+
+
+
+  export type SceneGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SceneWhereInput
+    orderBy?: SceneOrderByWithAggregationInput | SceneOrderByWithAggregationInput[]
+    by: SceneScalarFieldEnum[] | SceneScalarFieldEnum
+    having?: SceneScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SceneCountAggregateInputType | true
+    _avg?: SceneAvgAggregateInputType
+    _sum?: SceneSumAggregateInputType
+    _min?: SceneMinAggregateInputType
+    _max?: SceneMaxAggregateInputType
+  }
+
+  export type SceneGroupByOutputType = {
+    id: string
+    title: string
+    description: string | null
+    order: number
+    sequenceId: string
+    createdAt: Date
+    updatedAt: Date
+    _count: SceneCountAggregateOutputType | null
+    _avg: SceneAvgAggregateOutputType | null
+    _sum: SceneSumAggregateOutputType | null
+    _min: SceneMinAggregateOutputType | null
+    _max: SceneMaxAggregateOutputType | null
+  }
+
+  type GetSceneGroupByPayload<T extends SceneGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SceneGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SceneGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SceneGroupByOutputType[P]>
+            : GetScalarType<T[P], SceneGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SceneSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    sequenceId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    beats?: boolean | Scene$beatsArgs<ExtArgs>
+    nextScenes?: boolean | Scene$nextScenesArgs<ExtArgs>
+    previousScenes?: boolean | Scene$previousScenesArgs<ExtArgs>
+    _count?: boolean | SceneCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["scene"]>
+
+  export type SceneSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    sequenceId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["scene"]>
+
+  export type SceneSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    sequenceId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["scene"]>
+
+  export type SceneSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    sequenceId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SceneOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "order" | "sequenceId" | "createdAt" | "updatedAt", ExtArgs["result"]["scene"]>
+  export type SceneInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    beats?: boolean | Scene$beatsArgs<ExtArgs>
+    nextScenes?: boolean | Scene$nextScenesArgs<ExtArgs>
+    previousScenes?: boolean | Scene$previousScenesArgs<ExtArgs>
+    _count?: boolean | SceneCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SceneIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }
+  export type SceneIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }
+
+  export type $ScenePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Scene"
+    objects: {
+      sequence: Prisma.$SequencePayload<ExtArgs>
+      beats: Prisma.$BeatPayload<ExtArgs>[]
+      nextScenes: Prisma.$SceneTransitionPayload<ExtArgs>[]
+      previousScenes: Prisma.$SceneTransitionPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      description: string | null
+      order: number
+      sequenceId: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["scene"]>
+    composites: {}
+  }
+
+  type SceneGetPayload<S extends boolean | null | undefined | SceneDefaultArgs> = $Result.GetResult<Prisma.$ScenePayload, S>
+
+  type SceneCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SceneFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SceneCountAggregateInputType | true
+    }
+
+  export interface SceneDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Scene'], meta: { name: 'Scene' } }
+    /**
+     * Find zero or one Scene that matches the filter.
+     * @param {SceneFindUniqueArgs} args - Arguments to find a Scene
+     * @example
+     * // Get one Scene
+     * const scene = await prisma.scene.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SceneFindUniqueArgs>(args: SelectSubset<T, SceneFindUniqueArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Scene that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SceneFindUniqueOrThrowArgs} args - Arguments to find a Scene
+     * @example
+     * // Get one Scene
+     * const scene = await prisma.scene.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SceneFindUniqueOrThrowArgs>(args: SelectSubset<T, SceneFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Scene that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneFindFirstArgs} args - Arguments to find a Scene
+     * @example
+     * // Get one Scene
+     * const scene = await prisma.scene.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SceneFindFirstArgs>(args?: SelectSubset<T, SceneFindFirstArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Scene that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneFindFirstOrThrowArgs} args - Arguments to find a Scene
+     * @example
+     * // Get one Scene
+     * const scene = await prisma.scene.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SceneFindFirstOrThrowArgs>(args?: SelectSubset<T, SceneFindFirstOrThrowArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Scenes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Scenes
+     * const scenes = await prisma.scene.findMany()
+     * 
+     * // Get first 10 Scenes
+     * const scenes = await prisma.scene.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const sceneWithIdOnly = await prisma.scene.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SceneFindManyArgs>(args?: SelectSubset<T, SceneFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Scene.
+     * @param {SceneCreateArgs} args - Arguments to create a Scene.
+     * @example
+     * // Create one Scene
+     * const Scene = await prisma.scene.create({
+     *   data: {
+     *     // ... data to create a Scene
+     *   }
+     * })
+     * 
+     */
+    create<T extends SceneCreateArgs>(args: SelectSubset<T, SceneCreateArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Scenes.
+     * @param {SceneCreateManyArgs} args - Arguments to create many Scenes.
+     * @example
+     * // Create many Scenes
+     * const scene = await prisma.scene.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SceneCreateManyArgs>(args?: SelectSubset<T, SceneCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Scenes and returns the data saved in the database.
+     * @param {SceneCreateManyAndReturnArgs} args - Arguments to create many Scenes.
+     * @example
+     * // Create many Scenes
+     * const scene = await prisma.scene.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Scenes and only return the `id`
+     * const sceneWithIdOnly = await prisma.scene.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SceneCreateManyAndReturnArgs>(args?: SelectSubset<T, SceneCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Scene.
+     * @param {SceneDeleteArgs} args - Arguments to delete one Scene.
+     * @example
+     * // Delete one Scene
+     * const Scene = await prisma.scene.delete({
+     *   where: {
+     *     // ... filter to delete one Scene
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SceneDeleteArgs>(args: SelectSubset<T, SceneDeleteArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Scene.
+     * @param {SceneUpdateArgs} args - Arguments to update one Scene.
+     * @example
+     * // Update one Scene
+     * const scene = await prisma.scene.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SceneUpdateArgs>(args: SelectSubset<T, SceneUpdateArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Scenes.
+     * @param {SceneDeleteManyArgs} args - Arguments to filter Scenes to delete.
+     * @example
+     * // Delete a few Scenes
+     * const { count } = await prisma.scene.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SceneDeleteManyArgs>(args?: SelectSubset<T, SceneDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Scenes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Scenes
+     * const scene = await prisma.scene.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SceneUpdateManyArgs>(args: SelectSubset<T, SceneUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Scenes and returns the data updated in the database.
+     * @param {SceneUpdateManyAndReturnArgs} args - Arguments to update many Scenes.
+     * @example
+     * // Update many Scenes
+     * const scene = await prisma.scene.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Scenes and only return the `id`
+     * const sceneWithIdOnly = await prisma.scene.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SceneUpdateManyAndReturnArgs>(args: SelectSubset<T, SceneUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Scene.
+     * @param {SceneUpsertArgs} args - Arguments to update or create a Scene.
+     * @example
+     * // Update or create a Scene
+     * const scene = await prisma.scene.upsert({
+     *   create: {
+     *     // ... data to create a Scene
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Scene we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SceneUpsertArgs>(args: SelectSubset<T, SceneUpsertArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Scenes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneCountArgs} args - Arguments to filter Scenes to count.
+     * @example
+     * // Count the number of Scenes
+     * const count = await prisma.scene.count({
+     *   where: {
+     *     // ... the filter for the Scenes we want to count
+     *   }
+     * })
+    **/
+    count<T extends SceneCountArgs>(
+      args?: Subset<T, SceneCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SceneCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Scene.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SceneAggregateArgs>(args: Subset<T, SceneAggregateArgs>): Prisma.PrismaPromise<GetSceneAggregateType<T>>
+
+    /**
+     * Group by Scene.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SceneGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SceneGroupByArgs['orderBy'] }
+        : { orderBy?: SceneGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SceneGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSceneGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Scene model
+   */
+  readonly fields: SceneFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Scene.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SceneClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    sequence<T extends SequenceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SequenceDefaultArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    beats<T extends Scene$beatsArgs<ExtArgs> = {}>(args?: Subset<T, Scene$beatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    nextScenes<T extends Scene$nextScenesArgs<ExtArgs> = {}>(args?: Subset<T, Scene$nextScenesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    previousScenes<T extends Scene$previousScenesArgs<ExtArgs> = {}>(args?: Subset<T, Scene$previousScenesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Scene model
+   */
+  interface SceneFieldRefs {
+    readonly id: FieldRef<"Scene", 'String'>
+    readonly title: FieldRef<"Scene", 'String'>
+    readonly description: FieldRef<"Scene", 'String'>
+    readonly order: FieldRef<"Scene", 'Int'>
+    readonly sequenceId: FieldRef<"Scene", 'String'>
+    readonly createdAt: FieldRef<"Scene", 'DateTime'>
+    readonly updatedAt: FieldRef<"Scene", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Scene findUnique
+   */
+  export type SceneFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter, which Scene to fetch.
+     */
+    where: SceneWhereUniqueInput
+  }
+
+  /**
+   * Scene findUniqueOrThrow
+   */
+  export type SceneFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter, which Scene to fetch.
+     */
+    where: SceneWhereUniqueInput
+  }
+
+  /**
+   * Scene findFirst
+   */
+  export type SceneFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter, which Scene to fetch.
+     */
+    where?: SceneWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Scenes to fetch.
+     */
+    orderBy?: SceneOrderByWithRelationInput | SceneOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Scenes.
+     */
+    cursor?: SceneWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Scenes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Scenes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Scenes.
+     */
+    distinct?: SceneScalarFieldEnum | SceneScalarFieldEnum[]
+  }
+
+  /**
+   * Scene findFirstOrThrow
+   */
+  export type SceneFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter, which Scene to fetch.
+     */
+    where?: SceneWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Scenes to fetch.
+     */
+    orderBy?: SceneOrderByWithRelationInput | SceneOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Scenes.
+     */
+    cursor?: SceneWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Scenes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Scenes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Scenes.
+     */
+    distinct?: SceneScalarFieldEnum | SceneScalarFieldEnum[]
+  }
+
+  /**
+   * Scene findMany
+   */
+  export type SceneFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter, which Scenes to fetch.
+     */
+    where?: SceneWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Scenes to fetch.
+     */
+    orderBy?: SceneOrderByWithRelationInput | SceneOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Scenes.
+     */
+    cursor?: SceneWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Scenes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Scenes.
+     */
+    skip?: number
+    distinct?: SceneScalarFieldEnum | SceneScalarFieldEnum[]
+  }
+
+  /**
+   * Scene create
+   */
+  export type SceneCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Scene.
+     */
+    data: XOR<SceneCreateInput, SceneUncheckedCreateInput>
+  }
+
+  /**
+   * Scene createMany
+   */
+  export type SceneCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Scenes.
+     */
+    data: SceneCreateManyInput | SceneCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Scene createManyAndReturn
+   */
+  export type SceneCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * The data used to create many Scenes.
+     */
+    data: SceneCreateManyInput | SceneCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Scene update
+   */
+  export type SceneUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Scene.
+     */
+    data: XOR<SceneUpdateInput, SceneUncheckedUpdateInput>
+    /**
+     * Choose, which Scene to update.
+     */
+    where: SceneWhereUniqueInput
+  }
+
+  /**
+   * Scene updateMany
+   */
+  export type SceneUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Scenes.
+     */
+    data: XOR<SceneUpdateManyMutationInput, SceneUncheckedUpdateManyInput>
+    /**
+     * Filter which Scenes to update
+     */
+    where?: SceneWhereInput
+    /**
+     * Limit how many Scenes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Scene updateManyAndReturn
+   */
+  export type SceneUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * The data used to update Scenes.
+     */
+    data: XOR<SceneUpdateManyMutationInput, SceneUncheckedUpdateManyInput>
+    /**
+     * Filter which Scenes to update
+     */
+    where?: SceneWhereInput
+    /**
+     * Limit how many Scenes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Scene upsert
+   */
+  export type SceneUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Scene to update in case it exists.
+     */
+    where: SceneWhereUniqueInput
+    /**
+     * In case the Scene found by the `where` argument doesn't exist, create a new Scene with this data.
+     */
+    create: XOR<SceneCreateInput, SceneUncheckedCreateInput>
+    /**
+     * In case the Scene was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SceneUpdateInput, SceneUncheckedUpdateInput>
+  }
+
+  /**
+   * Scene delete
+   */
+  export type SceneDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    /**
+     * Filter which Scene to delete.
+     */
+    where: SceneWhereUniqueInput
+  }
+
+  /**
+   * Scene deleteMany
+   */
+  export type SceneDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Scenes to delete
+     */
+    where?: SceneWhereInput
+    /**
+     * Limit how many Scenes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Scene.beats
+   */
+  export type Scene$beatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    where?: BeatWhereInput
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    cursor?: BeatWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Scene.nextScenes
+   */
+  export type Scene$nextScenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    where?: SceneTransitionWhereInput
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    cursor?: SceneTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SceneTransitionScalarFieldEnum | SceneTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Scene.previousScenes
+   */
+  export type Scene$previousScenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    where?: SceneTransitionWhereInput
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    cursor?: SceneTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SceneTransitionScalarFieldEnum | SceneTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Scene without action
+   */
+  export type SceneDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model SceneTransition
+   */
+
+  export type AggregateSceneTransition = {
+    _count: SceneTransitionCountAggregateOutputType | null
+    _min: SceneTransitionMinAggregateOutputType | null
+    _max: SceneTransitionMaxAggregateOutputType | null
+  }
+
+  export type SceneTransitionMinAggregateOutputType = {
+    id: string | null
+    fromSceneId: string | null
+    toSceneId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SceneTransitionMaxAggregateOutputType = {
+    id: string | null
+    fromSceneId: string | null
+    toSceneId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SceneTransitionCountAggregateOutputType = {
+    id: number
+    fromSceneId: number
+    toSceneId: number
+    condition: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SceneTransitionMinAggregateInputType = {
+    id?: true
+    fromSceneId?: true
+    toSceneId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SceneTransitionMaxAggregateInputType = {
+    id?: true
+    fromSceneId?: true
+    toSceneId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SceneTransitionCountAggregateInputType = {
+    id?: true
+    fromSceneId?: true
+    toSceneId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SceneTransitionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SceneTransition to aggregate.
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SceneTransitions to fetch.
+     */
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SceneTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SceneTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SceneTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned SceneTransitions
+    **/
+    _count?: true | SceneTransitionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SceneTransitionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SceneTransitionMaxAggregateInputType
+  }
+
+  export type GetSceneTransitionAggregateType<T extends SceneTransitionAggregateArgs> = {
+        [P in keyof T & keyof AggregateSceneTransition]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSceneTransition[P]>
+      : GetScalarType<T[P], AggregateSceneTransition[P]>
+  }
+
+
+
+
+  export type SceneTransitionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SceneTransitionWhereInput
+    orderBy?: SceneTransitionOrderByWithAggregationInput | SceneTransitionOrderByWithAggregationInput[]
+    by: SceneTransitionScalarFieldEnum[] | SceneTransitionScalarFieldEnum
+    having?: SceneTransitionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SceneTransitionCountAggregateInputType | true
+    _min?: SceneTransitionMinAggregateInputType
+    _max?: SceneTransitionMaxAggregateInputType
+  }
+
+  export type SceneTransitionGroupByOutputType = {
+    id: string
+    fromSceneId: string
+    toSceneId: string
+    condition: string | null
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: SceneTransitionCountAggregateOutputType | null
+    _min: SceneTransitionMinAggregateOutputType | null
+    _max: SceneTransitionMaxAggregateOutputType | null
+  }
+
+  type GetSceneTransitionGroupByPayload<T extends SceneTransitionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SceneTransitionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SceneTransitionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SceneTransitionGroupByOutputType[P]>
+            : GetScalarType<T[P], SceneTransitionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SceneTransitionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSceneId?: boolean
+    toSceneId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sceneTransition"]>
+
+  export type SceneTransitionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSceneId?: boolean
+    toSceneId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sceneTransition"]>
+
+  export type SceneTransitionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSceneId?: boolean
+    toSceneId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sceneTransition"]>
+
+  export type SceneTransitionSelectScalar = {
+    id?: boolean
+    fromSceneId?: boolean
+    toSceneId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SceneTransitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fromSceneId" | "toSceneId" | "condition" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["sceneTransition"]>
+  export type SceneTransitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }
+  export type SceneTransitionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }
+  export type SceneTransitionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromScene?: boolean | SceneDefaultArgs<ExtArgs>
+    toScene?: boolean | SceneDefaultArgs<ExtArgs>
+  }
+
+  export type $SceneTransitionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SceneTransition"
+    objects: {
+      fromScene: Prisma.$ScenePayload<ExtArgs>
+      toScene: Prisma.$ScenePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fromSceneId: string
+      toSceneId: string
+      condition: string | null
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["sceneTransition"]>
+    composites: {}
+  }
+
+  type SceneTransitionGetPayload<S extends boolean | null | undefined | SceneTransitionDefaultArgs> = $Result.GetResult<Prisma.$SceneTransitionPayload, S>
+
+  type SceneTransitionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SceneTransitionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SceneTransitionCountAggregateInputType | true
+    }
+
+  export interface SceneTransitionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SceneTransition'], meta: { name: 'SceneTransition' } }
+    /**
+     * Find zero or one SceneTransition that matches the filter.
+     * @param {SceneTransitionFindUniqueArgs} args - Arguments to find a SceneTransition
+     * @example
+     * // Get one SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SceneTransitionFindUniqueArgs>(args: SelectSubset<T, SceneTransitionFindUniqueArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one SceneTransition that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SceneTransitionFindUniqueOrThrowArgs} args - Arguments to find a SceneTransition
+     * @example
+     * // Get one SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SceneTransitionFindUniqueOrThrowArgs>(args: SelectSubset<T, SceneTransitionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SceneTransition that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionFindFirstArgs} args - Arguments to find a SceneTransition
+     * @example
+     * // Get one SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SceneTransitionFindFirstArgs>(args?: SelectSubset<T, SceneTransitionFindFirstArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SceneTransition that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionFindFirstOrThrowArgs} args - Arguments to find a SceneTransition
+     * @example
+     * // Get one SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SceneTransitionFindFirstOrThrowArgs>(args?: SelectSubset<T, SceneTransitionFindFirstOrThrowArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more SceneTransitions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SceneTransitions
+     * const sceneTransitions = await prisma.sceneTransition.findMany()
+     * 
+     * // Get first 10 SceneTransitions
+     * const sceneTransitions = await prisma.sceneTransition.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const sceneTransitionWithIdOnly = await prisma.sceneTransition.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SceneTransitionFindManyArgs>(args?: SelectSubset<T, SceneTransitionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a SceneTransition.
+     * @param {SceneTransitionCreateArgs} args - Arguments to create a SceneTransition.
+     * @example
+     * // Create one SceneTransition
+     * const SceneTransition = await prisma.sceneTransition.create({
+     *   data: {
+     *     // ... data to create a SceneTransition
+     *   }
+     * })
+     * 
+     */
+    create<T extends SceneTransitionCreateArgs>(args: SelectSubset<T, SceneTransitionCreateArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many SceneTransitions.
+     * @param {SceneTransitionCreateManyArgs} args - Arguments to create many SceneTransitions.
+     * @example
+     * // Create many SceneTransitions
+     * const sceneTransition = await prisma.sceneTransition.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SceneTransitionCreateManyArgs>(args?: SelectSubset<T, SceneTransitionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many SceneTransitions and returns the data saved in the database.
+     * @param {SceneTransitionCreateManyAndReturnArgs} args - Arguments to create many SceneTransitions.
+     * @example
+     * // Create many SceneTransitions
+     * const sceneTransition = await prisma.sceneTransition.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SceneTransitions and only return the `id`
+     * const sceneTransitionWithIdOnly = await prisma.sceneTransition.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SceneTransitionCreateManyAndReturnArgs>(args?: SelectSubset<T, SceneTransitionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a SceneTransition.
+     * @param {SceneTransitionDeleteArgs} args - Arguments to delete one SceneTransition.
+     * @example
+     * // Delete one SceneTransition
+     * const SceneTransition = await prisma.sceneTransition.delete({
+     *   where: {
+     *     // ... filter to delete one SceneTransition
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SceneTransitionDeleteArgs>(args: SelectSubset<T, SceneTransitionDeleteArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one SceneTransition.
+     * @param {SceneTransitionUpdateArgs} args - Arguments to update one SceneTransition.
+     * @example
+     * // Update one SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SceneTransitionUpdateArgs>(args: SelectSubset<T, SceneTransitionUpdateArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more SceneTransitions.
+     * @param {SceneTransitionDeleteManyArgs} args - Arguments to filter SceneTransitions to delete.
+     * @example
+     * // Delete a few SceneTransitions
+     * const { count } = await prisma.sceneTransition.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SceneTransitionDeleteManyArgs>(args?: SelectSubset<T, SceneTransitionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SceneTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SceneTransitions
+     * const sceneTransition = await prisma.sceneTransition.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SceneTransitionUpdateManyArgs>(args: SelectSubset<T, SceneTransitionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SceneTransitions and returns the data updated in the database.
+     * @param {SceneTransitionUpdateManyAndReturnArgs} args - Arguments to update many SceneTransitions.
+     * @example
+     * // Update many SceneTransitions
+     * const sceneTransition = await prisma.sceneTransition.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SceneTransitions and only return the `id`
+     * const sceneTransitionWithIdOnly = await prisma.sceneTransition.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SceneTransitionUpdateManyAndReturnArgs>(args: SelectSubset<T, SceneTransitionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one SceneTransition.
+     * @param {SceneTransitionUpsertArgs} args - Arguments to update or create a SceneTransition.
+     * @example
+     * // Update or create a SceneTransition
+     * const sceneTransition = await prisma.sceneTransition.upsert({
+     *   create: {
+     *     // ... data to create a SceneTransition
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SceneTransition we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SceneTransitionUpsertArgs>(args: SelectSubset<T, SceneTransitionUpsertArgs<ExtArgs>>): Prisma__SceneTransitionClient<$Result.GetResult<Prisma.$SceneTransitionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of SceneTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionCountArgs} args - Arguments to filter SceneTransitions to count.
+     * @example
+     * // Count the number of SceneTransitions
+     * const count = await prisma.sceneTransition.count({
+     *   where: {
+     *     // ... the filter for the SceneTransitions we want to count
+     *   }
+     * })
+    **/
+    count<T extends SceneTransitionCountArgs>(
+      args?: Subset<T, SceneTransitionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SceneTransitionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a SceneTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SceneTransitionAggregateArgs>(args: Subset<T, SceneTransitionAggregateArgs>): Prisma.PrismaPromise<GetSceneTransitionAggregateType<T>>
+
+    /**
+     * Group by SceneTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SceneTransitionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SceneTransitionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SceneTransitionGroupByArgs['orderBy'] }
+        : { orderBy?: SceneTransitionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SceneTransitionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSceneTransitionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the SceneTransition model
+   */
+  readonly fields: SceneTransitionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SceneTransition.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SceneTransitionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fromScene<T extends SceneDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SceneDefaultArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    toScene<T extends SceneDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SceneDefaultArgs<ExtArgs>>): Prisma__SceneClient<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the SceneTransition model
+   */
+  interface SceneTransitionFieldRefs {
+    readonly id: FieldRef<"SceneTransition", 'String'>
+    readonly fromSceneId: FieldRef<"SceneTransition", 'String'>
+    readonly toSceneId: FieldRef<"SceneTransition", 'String'>
+    readonly condition: FieldRef<"SceneTransition", 'String'>
+    readonly description: FieldRef<"SceneTransition", 'String'>
+    readonly createdAt: FieldRef<"SceneTransition", 'DateTime'>
+    readonly updatedAt: FieldRef<"SceneTransition", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * SceneTransition findUnique
+   */
+  export type SceneTransitionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SceneTransition to fetch.
+     */
+    where: SceneTransitionWhereUniqueInput
+  }
+
+  /**
+   * SceneTransition findUniqueOrThrow
+   */
+  export type SceneTransitionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SceneTransition to fetch.
+     */
+    where: SceneTransitionWhereUniqueInput
+  }
+
+  /**
+   * SceneTransition findFirst
+   */
+  export type SceneTransitionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SceneTransition to fetch.
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SceneTransitions to fetch.
+     */
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SceneTransitions.
+     */
+    cursor?: SceneTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SceneTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SceneTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SceneTransitions.
+     */
+    distinct?: SceneTransitionScalarFieldEnum | SceneTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SceneTransition findFirstOrThrow
+   */
+  export type SceneTransitionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SceneTransition to fetch.
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SceneTransitions to fetch.
+     */
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SceneTransitions.
+     */
+    cursor?: SceneTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SceneTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SceneTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SceneTransitions.
+     */
+    distinct?: SceneTransitionScalarFieldEnum | SceneTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SceneTransition findMany
+   */
+  export type SceneTransitionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SceneTransitions to fetch.
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SceneTransitions to fetch.
+     */
+    orderBy?: SceneTransitionOrderByWithRelationInput | SceneTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing SceneTransitions.
+     */
+    cursor?: SceneTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SceneTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SceneTransitions.
+     */
+    skip?: number
+    distinct?: SceneTransitionScalarFieldEnum | SceneTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SceneTransition create
+   */
+  export type SceneTransitionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a SceneTransition.
+     */
+    data: XOR<SceneTransitionCreateInput, SceneTransitionUncheckedCreateInput>
+  }
+
+  /**
+   * SceneTransition createMany
+   */
+  export type SceneTransitionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many SceneTransitions.
+     */
+    data: SceneTransitionCreateManyInput | SceneTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * SceneTransition createManyAndReturn
+   */
+  export type SceneTransitionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to create many SceneTransitions.
+     */
+    data: SceneTransitionCreateManyInput | SceneTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SceneTransition update
+   */
+  export type SceneTransitionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a SceneTransition.
+     */
+    data: XOR<SceneTransitionUpdateInput, SceneTransitionUncheckedUpdateInput>
+    /**
+     * Choose, which SceneTransition to update.
+     */
+    where: SceneTransitionWhereUniqueInput
+  }
+
+  /**
+   * SceneTransition updateMany
+   */
+  export type SceneTransitionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SceneTransitions.
+     */
+    data: XOR<SceneTransitionUpdateManyMutationInput, SceneTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which SceneTransitions to update
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * Limit how many SceneTransitions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * SceneTransition updateManyAndReturn
+   */
+  export type SceneTransitionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to update SceneTransitions.
+     */
+    data: XOR<SceneTransitionUpdateManyMutationInput, SceneTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which SceneTransitions to update
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * Limit how many SceneTransitions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SceneTransition upsert
+   */
+  export type SceneTransitionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the SceneTransition to update in case it exists.
+     */
+    where: SceneTransitionWhereUniqueInput
+    /**
+     * In case the SceneTransition found by the `where` argument doesn't exist, create a new SceneTransition with this data.
+     */
+    create: XOR<SceneTransitionCreateInput, SceneTransitionUncheckedCreateInput>
+    /**
+     * In case the SceneTransition was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SceneTransitionUpdateInput, SceneTransitionUncheckedUpdateInput>
+  }
+
+  /**
+   * SceneTransition delete
+   */
+  export type SceneTransitionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+    /**
+     * Filter which SceneTransition to delete.
+     */
+    where: SceneTransitionWhereUniqueInput
+  }
+
+  /**
+   * SceneTransition deleteMany
+   */
+  export type SceneTransitionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SceneTransitions to delete
+     */
+    where?: SceneTransitionWhereInput
+    /**
+     * Limit how many SceneTransitions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * SceneTransition without action
+   */
+  export type SceneTransitionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SceneTransition
+     */
+    select?: SceneTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SceneTransition
+     */
+    omit?: SceneTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneTransitionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Sequence
+   */
+
+  export type AggregateSequence = {
+    _count: SequenceCountAggregateOutputType | null
+    _avg: SequenceAvgAggregateOutputType | null
+    _sum: SequenceSumAggregateOutputType | null
+    _min: SequenceMinAggregateOutputType | null
+    _max: SequenceMaxAggregateOutputType | null
+  }
+
+  export type SequenceAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type SequenceSumAggregateOutputType = {
+    order: number | null
+  }
+
+  export type SequenceMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    actId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SequenceMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    actId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SequenceCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    order: number
+    actId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SequenceAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type SequenceSumAggregateInputType = {
+    order?: true
+  }
+
+  export type SequenceMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    actId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SequenceMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    actId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SequenceCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    actId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SequenceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Sequence to aggregate.
+     */
+    where?: SequenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sequences to fetch.
+     */
+    orderBy?: SequenceOrderByWithRelationInput | SequenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SequenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sequences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sequences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Sequences
+    **/
+    _count?: true | SequenceCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: SequenceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: SequenceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SequenceMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SequenceMaxAggregateInputType
+  }
+
+  export type GetSequenceAggregateType<T extends SequenceAggregateArgs> = {
+        [P in keyof T & keyof AggregateSequence]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSequence[P]>
+      : GetScalarType<T[P], AggregateSequence[P]>
+  }
+
+
+
+
+  export type SequenceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SequenceWhereInput
+    orderBy?: SequenceOrderByWithAggregationInput | SequenceOrderByWithAggregationInput[]
+    by: SequenceScalarFieldEnum[] | SequenceScalarFieldEnum
+    having?: SequenceScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SequenceCountAggregateInputType | true
+    _avg?: SequenceAvgAggregateInputType
+    _sum?: SequenceSumAggregateInputType
+    _min?: SequenceMinAggregateInputType
+    _max?: SequenceMaxAggregateInputType
+  }
+
+  export type SequenceGroupByOutputType = {
+    id: string
+    title: string
+    description: string | null
+    order: number
+    actId: string
+    createdAt: Date
+    updatedAt: Date
+    _count: SequenceCountAggregateOutputType | null
+    _avg: SequenceAvgAggregateOutputType | null
+    _sum: SequenceSumAggregateOutputType | null
+    _min: SequenceMinAggregateOutputType | null
+    _max: SequenceMaxAggregateOutputType | null
+  }
+
+  type GetSequenceGroupByPayload<T extends SequenceGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SequenceGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SequenceGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SequenceGroupByOutputType[P]>
+            : GetScalarType<T[P], SequenceGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SequenceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    actId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    act?: boolean | ActDefaultArgs<ExtArgs>
+    scenes?: boolean | Sequence$scenesArgs<ExtArgs>
+    nextSequences?: boolean | Sequence$nextSequencesArgs<ExtArgs>
+    previousSequences?: boolean | Sequence$previousSequencesArgs<ExtArgs>
+    _count?: boolean | SequenceCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequence"]>
+
+  export type SequenceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    actId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    act?: boolean | ActDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequence"]>
+
+  export type SequenceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    actId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    act?: boolean | ActDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequence"]>
+
+  export type SequenceSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    actId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SequenceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "order" | "actId" | "createdAt" | "updatedAt", ExtArgs["result"]["sequence"]>
+  export type SequenceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    act?: boolean | ActDefaultArgs<ExtArgs>
+    scenes?: boolean | Sequence$scenesArgs<ExtArgs>
+    nextSequences?: boolean | Sequence$nextSequencesArgs<ExtArgs>
+    previousSequences?: boolean | Sequence$previousSequencesArgs<ExtArgs>
+    _count?: boolean | SequenceCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SequenceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    act?: boolean | ActDefaultArgs<ExtArgs>
+  }
+  export type SequenceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    act?: boolean | ActDefaultArgs<ExtArgs>
+  }
+
+  export type $SequencePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Sequence"
+    objects: {
+      act: Prisma.$ActPayload<ExtArgs>
+      scenes: Prisma.$ScenePayload<ExtArgs>[]
+      nextSequences: Prisma.$SequenceTransitionPayload<ExtArgs>[]
+      previousSequences: Prisma.$SequenceTransitionPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      description: string | null
+      order: number
+      actId: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["sequence"]>
+    composites: {}
+  }
+
+  type SequenceGetPayload<S extends boolean | null | undefined | SequenceDefaultArgs> = $Result.GetResult<Prisma.$SequencePayload, S>
+
+  type SequenceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SequenceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SequenceCountAggregateInputType | true
+    }
+
+  export interface SequenceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Sequence'], meta: { name: 'Sequence' } }
+    /**
+     * Find zero or one Sequence that matches the filter.
+     * @param {SequenceFindUniqueArgs} args - Arguments to find a Sequence
+     * @example
+     * // Get one Sequence
+     * const sequence = await prisma.sequence.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SequenceFindUniqueArgs>(args: SelectSubset<T, SequenceFindUniqueArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Sequence that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SequenceFindUniqueOrThrowArgs} args - Arguments to find a Sequence
+     * @example
+     * // Get one Sequence
+     * const sequence = await prisma.sequence.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SequenceFindUniqueOrThrowArgs>(args: SelectSubset<T, SequenceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Sequence that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceFindFirstArgs} args - Arguments to find a Sequence
+     * @example
+     * // Get one Sequence
+     * const sequence = await prisma.sequence.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SequenceFindFirstArgs>(args?: SelectSubset<T, SequenceFindFirstArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Sequence that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceFindFirstOrThrowArgs} args - Arguments to find a Sequence
+     * @example
+     * // Get one Sequence
+     * const sequence = await prisma.sequence.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SequenceFindFirstOrThrowArgs>(args?: SelectSubset<T, SequenceFindFirstOrThrowArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Sequences that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Sequences
+     * const sequences = await prisma.sequence.findMany()
+     * 
+     * // Get first 10 Sequences
+     * const sequences = await prisma.sequence.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const sequenceWithIdOnly = await prisma.sequence.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SequenceFindManyArgs>(args?: SelectSubset<T, SequenceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Sequence.
+     * @param {SequenceCreateArgs} args - Arguments to create a Sequence.
+     * @example
+     * // Create one Sequence
+     * const Sequence = await prisma.sequence.create({
+     *   data: {
+     *     // ... data to create a Sequence
+     *   }
+     * })
+     * 
+     */
+    create<T extends SequenceCreateArgs>(args: SelectSubset<T, SequenceCreateArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Sequences.
+     * @param {SequenceCreateManyArgs} args - Arguments to create many Sequences.
+     * @example
+     * // Create many Sequences
+     * const sequence = await prisma.sequence.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SequenceCreateManyArgs>(args?: SelectSubset<T, SequenceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Sequences and returns the data saved in the database.
+     * @param {SequenceCreateManyAndReturnArgs} args - Arguments to create many Sequences.
+     * @example
+     * // Create many Sequences
+     * const sequence = await prisma.sequence.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Sequences and only return the `id`
+     * const sequenceWithIdOnly = await prisma.sequence.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SequenceCreateManyAndReturnArgs>(args?: SelectSubset<T, SequenceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Sequence.
+     * @param {SequenceDeleteArgs} args - Arguments to delete one Sequence.
+     * @example
+     * // Delete one Sequence
+     * const Sequence = await prisma.sequence.delete({
+     *   where: {
+     *     // ... filter to delete one Sequence
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SequenceDeleteArgs>(args: SelectSubset<T, SequenceDeleteArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Sequence.
+     * @param {SequenceUpdateArgs} args - Arguments to update one Sequence.
+     * @example
+     * // Update one Sequence
+     * const sequence = await prisma.sequence.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SequenceUpdateArgs>(args: SelectSubset<T, SequenceUpdateArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Sequences.
+     * @param {SequenceDeleteManyArgs} args - Arguments to filter Sequences to delete.
+     * @example
+     * // Delete a few Sequences
+     * const { count } = await prisma.sequence.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SequenceDeleteManyArgs>(args?: SelectSubset<T, SequenceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sequences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Sequences
+     * const sequence = await prisma.sequence.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SequenceUpdateManyArgs>(args: SelectSubset<T, SequenceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sequences and returns the data updated in the database.
+     * @param {SequenceUpdateManyAndReturnArgs} args - Arguments to update many Sequences.
+     * @example
+     * // Update many Sequences
+     * const sequence = await prisma.sequence.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Sequences and only return the `id`
+     * const sequenceWithIdOnly = await prisma.sequence.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SequenceUpdateManyAndReturnArgs>(args: SelectSubset<T, SequenceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Sequence.
+     * @param {SequenceUpsertArgs} args - Arguments to update or create a Sequence.
+     * @example
+     * // Update or create a Sequence
+     * const sequence = await prisma.sequence.upsert({
+     *   create: {
+     *     // ... data to create a Sequence
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Sequence we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SequenceUpsertArgs>(args: SelectSubset<T, SequenceUpsertArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Sequences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceCountArgs} args - Arguments to filter Sequences to count.
+     * @example
+     * // Count the number of Sequences
+     * const count = await prisma.sequence.count({
+     *   where: {
+     *     // ... the filter for the Sequences we want to count
+     *   }
+     * })
+    **/
+    count<T extends SequenceCountArgs>(
+      args?: Subset<T, SequenceCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SequenceCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Sequence.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SequenceAggregateArgs>(args: Subset<T, SequenceAggregateArgs>): Prisma.PrismaPromise<GetSequenceAggregateType<T>>
+
+    /**
+     * Group by Sequence.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SequenceGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SequenceGroupByArgs['orderBy'] }
+        : { orderBy?: SequenceGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SequenceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSequenceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Sequence model
+   */
+  readonly fields: SequenceFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Sequence.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SequenceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    act<T extends ActDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActDefaultArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    scenes<T extends Sequence$scenesArgs<ExtArgs> = {}>(args?: Subset<T, Sequence$scenesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ScenePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    nextSequences<T extends Sequence$nextSequencesArgs<ExtArgs> = {}>(args?: Subset<T, Sequence$nextSequencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    previousSequences<T extends Sequence$previousSequencesArgs<ExtArgs> = {}>(args?: Subset<T, Sequence$previousSequencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Sequence model
+   */
+  interface SequenceFieldRefs {
+    readonly id: FieldRef<"Sequence", 'String'>
+    readonly title: FieldRef<"Sequence", 'String'>
+    readonly description: FieldRef<"Sequence", 'String'>
+    readonly order: FieldRef<"Sequence", 'Int'>
+    readonly actId: FieldRef<"Sequence", 'String'>
+    readonly createdAt: FieldRef<"Sequence", 'DateTime'>
+    readonly updatedAt: FieldRef<"Sequence", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Sequence findUnique
+   */
+  export type SequenceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter, which Sequence to fetch.
+     */
+    where: SequenceWhereUniqueInput
+  }
+
+  /**
+   * Sequence findUniqueOrThrow
+   */
+  export type SequenceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter, which Sequence to fetch.
+     */
+    where: SequenceWhereUniqueInput
+  }
+
+  /**
+   * Sequence findFirst
+   */
+  export type SequenceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter, which Sequence to fetch.
+     */
+    where?: SequenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sequences to fetch.
+     */
+    orderBy?: SequenceOrderByWithRelationInput | SequenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Sequences.
+     */
+    cursor?: SequenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sequences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sequences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Sequences.
+     */
+    distinct?: SequenceScalarFieldEnum | SequenceScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence findFirstOrThrow
+   */
+  export type SequenceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter, which Sequence to fetch.
+     */
+    where?: SequenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sequences to fetch.
+     */
+    orderBy?: SequenceOrderByWithRelationInput | SequenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Sequences.
+     */
+    cursor?: SequenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sequences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sequences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Sequences.
+     */
+    distinct?: SequenceScalarFieldEnum | SequenceScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence findMany
+   */
+  export type SequenceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter, which Sequences to fetch.
+     */
+    where?: SequenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sequences to fetch.
+     */
+    orderBy?: SequenceOrderByWithRelationInput | SequenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Sequences.
+     */
+    cursor?: SequenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sequences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sequences.
+     */
+    skip?: number
+    distinct?: SequenceScalarFieldEnum | SequenceScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence create
+   */
+  export type SequenceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Sequence.
+     */
+    data: XOR<SequenceCreateInput, SequenceUncheckedCreateInput>
+  }
+
+  /**
+   * Sequence createMany
+   */
+  export type SequenceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Sequences.
+     */
+    data: SequenceCreateManyInput | SequenceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Sequence createManyAndReturn
+   */
+  export type SequenceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * The data used to create many Sequences.
+     */
+    data: SequenceCreateManyInput | SequenceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Sequence update
+   */
+  export type SequenceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Sequence.
+     */
+    data: XOR<SequenceUpdateInput, SequenceUncheckedUpdateInput>
+    /**
+     * Choose, which Sequence to update.
+     */
+    where: SequenceWhereUniqueInput
+  }
+
+  /**
+   * Sequence updateMany
+   */
+  export type SequenceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Sequences.
+     */
+    data: XOR<SequenceUpdateManyMutationInput, SequenceUncheckedUpdateManyInput>
+    /**
+     * Filter which Sequences to update
+     */
+    where?: SequenceWhereInput
+    /**
+     * Limit how many Sequences to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Sequence updateManyAndReturn
+   */
+  export type SequenceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * The data used to update Sequences.
+     */
+    data: XOR<SequenceUpdateManyMutationInput, SequenceUncheckedUpdateManyInput>
+    /**
+     * Filter which Sequences to update
+     */
+    where?: SequenceWhereInput
+    /**
+     * Limit how many Sequences to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Sequence upsert
+   */
+  export type SequenceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Sequence to update in case it exists.
+     */
+    where: SequenceWhereUniqueInput
+    /**
+     * In case the Sequence found by the `where` argument doesn't exist, create a new Sequence with this data.
+     */
+    create: XOR<SequenceCreateInput, SequenceUncheckedCreateInput>
+    /**
+     * In case the Sequence was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SequenceUpdateInput, SequenceUncheckedUpdateInput>
+  }
+
+  /**
+   * Sequence delete
+   */
+  export type SequenceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    /**
+     * Filter which Sequence to delete.
+     */
+    where: SequenceWhereUniqueInput
+  }
+
+  /**
+   * Sequence deleteMany
+   */
+  export type SequenceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Sequences to delete
+     */
+    where?: SequenceWhereInput
+    /**
+     * Limit how many Sequences to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Sequence.scenes
+   */
+  export type Sequence$scenesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Scene
+     */
+    select?: SceneSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Scene
+     */
+    omit?: SceneOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SceneInclude<ExtArgs> | null
+    where?: SceneWhereInput
+    orderBy?: SceneOrderByWithRelationInput | SceneOrderByWithRelationInput[]
+    cursor?: SceneWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SceneScalarFieldEnum | SceneScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence.nextSequences
+   */
+  export type Sequence$nextSequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    where?: SequenceTransitionWhereInput
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    cursor?: SequenceTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SequenceTransitionScalarFieldEnum | SequenceTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence.previousSequences
+   */
+  export type Sequence$previousSequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    where?: SequenceTransitionWhereInput
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    cursor?: SequenceTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SequenceTransitionScalarFieldEnum | SequenceTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Sequence without action
+   */
+  export type SequenceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model SequenceTransition
+   */
+
+  export type AggregateSequenceTransition = {
+    _count: SequenceTransitionCountAggregateOutputType | null
+    _min: SequenceTransitionMinAggregateOutputType | null
+    _max: SequenceTransitionMaxAggregateOutputType | null
+  }
+
+  export type SequenceTransitionMinAggregateOutputType = {
+    id: string | null
+    fromSequenceId: string | null
+    toSequenceId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SequenceTransitionMaxAggregateOutputType = {
+    id: string | null
+    fromSequenceId: string | null
+    toSequenceId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SequenceTransitionCountAggregateOutputType = {
+    id: number
+    fromSequenceId: number
+    toSequenceId: number
+    condition: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SequenceTransitionMinAggregateInputType = {
+    id?: true
+    fromSequenceId?: true
+    toSequenceId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SequenceTransitionMaxAggregateInputType = {
+    id?: true
+    fromSequenceId?: true
+    toSequenceId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SequenceTransitionCountAggregateInputType = {
+    id?: true
+    fromSequenceId?: true
+    toSequenceId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SequenceTransitionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SequenceTransition to aggregate.
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SequenceTransitions to fetch.
+     */
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SequenceTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SequenceTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SequenceTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned SequenceTransitions
+    **/
+    _count?: true | SequenceTransitionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SequenceTransitionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SequenceTransitionMaxAggregateInputType
+  }
+
+  export type GetSequenceTransitionAggregateType<T extends SequenceTransitionAggregateArgs> = {
+        [P in keyof T & keyof AggregateSequenceTransition]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSequenceTransition[P]>
+      : GetScalarType<T[P], AggregateSequenceTransition[P]>
+  }
+
+
+
+
+  export type SequenceTransitionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SequenceTransitionWhereInput
+    orderBy?: SequenceTransitionOrderByWithAggregationInput | SequenceTransitionOrderByWithAggregationInput[]
+    by: SequenceTransitionScalarFieldEnum[] | SequenceTransitionScalarFieldEnum
+    having?: SequenceTransitionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SequenceTransitionCountAggregateInputType | true
+    _min?: SequenceTransitionMinAggregateInputType
+    _max?: SequenceTransitionMaxAggregateInputType
+  }
+
+  export type SequenceTransitionGroupByOutputType = {
+    id: string
+    fromSequenceId: string
+    toSequenceId: string
+    condition: string | null
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: SequenceTransitionCountAggregateOutputType | null
+    _min: SequenceTransitionMinAggregateOutputType | null
+    _max: SequenceTransitionMaxAggregateOutputType | null
+  }
+
+  type GetSequenceTransitionGroupByPayload<T extends SequenceTransitionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SequenceTransitionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SequenceTransitionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SequenceTransitionGroupByOutputType[P]>
+            : GetScalarType<T[P], SequenceTransitionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SequenceTransitionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSequenceId?: boolean
+    toSequenceId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequenceTransition"]>
+
+  export type SequenceTransitionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSequenceId?: boolean
+    toSequenceId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequenceTransition"]>
+
+  export type SequenceTransitionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromSequenceId?: boolean
+    toSequenceId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["sequenceTransition"]>
+
+  export type SequenceTransitionSelectScalar = {
+    id?: boolean
+    fromSequenceId?: boolean
+    toSequenceId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SequenceTransitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fromSequenceId" | "toSequenceId" | "condition" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["sequenceTransition"]>
+  export type SequenceTransitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }
+  export type SequenceTransitionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }
+  export type SequenceTransitionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+    toSequence?: boolean | SequenceDefaultArgs<ExtArgs>
+  }
+
+  export type $SequenceTransitionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SequenceTransition"
+    objects: {
+      fromSequence: Prisma.$SequencePayload<ExtArgs>
+      toSequence: Prisma.$SequencePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fromSequenceId: string
+      toSequenceId: string
+      condition: string | null
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["sequenceTransition"]>
+    composites: {}
+  }
+
+  type SequenceTransitionGetPayload<S extends boolean | null | undefined | SequenceTransitionDefaultArgs> = $Result.GetResult<Prisma.$SequenceTransitionPayload, S>
+
+  type SequenceTransitionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SequenceTransitionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SequenceTransitionCountAggregateInputType | true
+    }
+
+  export interface SequenceTransitionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SequenceTransition'], meta: { name: 'SequenceTransition' } }
+    /**
+     * Find zero or one SequenceTransition that matches the filter.
+     * @param {SequenceTransitionFindUniqueArgs} args - Arguments to find a SequenceTransition
+     * @example
+     * // Get one SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SequenceTransitionFindUniqueArgs>(args: SelectSubset<T, SequenceTransitionFindUniqueArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one SequenceTransition that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SequenceTransitionFindUniqueOrThrowArgs} args - Arguments to find a SequenceTransition
+     * @example
+     * // Get one SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SequenceTransitionFindUniqueOrThrowArgs>(args: SelectSubset<T, SequenceTransitionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SequenceTransition that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionFindFirstArgs} args - Arguments to find a SequenceTransition
+     * @example
+     * // Get one SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SequenceTransitionFindFirstArgs>(args?: SelectSubset<T, SequenceTransitionFindFirstArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SequenceTransition that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionFindFirstOrThrowArgs} args - Arguments to find a SequenceTransition
+     * @example
+     * // Get one SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SequenceTransitionFindFirstOrThrowArgs>(args?: SelectSubset<T, SequenceTransitionFindFirstOrThrowArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more SequenceTransitions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SequenceTransitions
+     * const sequenceTransitions = await prisma.sequenceTransition.findMany()
+     * 
+     * // Get first 10 SequenceTransitions
+     * const sequenceTransitions = await prisma.sequenceTransition.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const sequenceTransitionWithIdOnly = await prisma.sequenceTransition.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SequenceTransitionFindManyArgs>(args?: SelectSubset<T, SequenceTransitionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a SequenceTransition.
+     * @param {SequenceTransitionCreateArgs} args - Arguments to create a SequenceTransition.
+     * @example
+     * // Create one SequenceTransition
+     * const SequenceTransition = await prisma.sequenceTransition.create({
+     *   data: {
+     *     // ... data to create a SequenceTransition
+     *   }
+     * })
+     * 
+     */
+    create<T extends SequenceTransitionCreateArgs>(args: SelectSubset<T, SequenceTransitionCreateArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many SequenceTransitions.
+     * @param {SequenceTransitionCreateManyArgs} args - Arguments to create many SequenceTransitions.
+     * @example
+     * // Create many SequenceTransitions
+     * const sequenceTransition = await prisma.sequenceTransition.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SequenceTransitionCreateManyArgs>(args?: SelectSubset<T, SequenceTransitionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many SequenceTransitions and returns the data saved in the database.
+     * @param {SequenceTransitionCreateManyAndReturnArgs} args - Arguments to create many SequenceTransitions.
+     * @example
+     * // Create many SequenceTransitions
+     * const sequenceTransition = await prisma.sequenceTransition.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SequenceTransitions and only return the `id`
+     * const sequenceTransitionWithIdOnly = await prisma.sequenceTransition.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SequenceTransitionCreateManyAndReturnArgs>(args?: SelectSubset<T, SequenceTransitionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a SequenceTransition.
+     * @param {SequenceTransitionDeleteArgs} args - Arguments to delete one SequenceTransition.
+     * @example
+     * // Delete one SequenceTransition
+     * const SequenceTransition = await prisma.sequenceTransition.delete({
+     *   where: {
+     *     // ... filter to delete one SequenceTransition
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SequenceTransitionDeleteArgs>(args: SelectSubset<T, SequenceTransitionDeleteArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one SequenceTransition.
+     * @param {SequenceTransitionUpdateArgs} args - Arguments to update one SequenceTransition.
+     * @example
+     * // Update one SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SequenceTransitionUpdateArgs>(args: SelectSubset<T, SequenceTransitionUpdateArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more SequenceTransitions.
+     * @param {SequenceTransitionDeleteManyArgs} args - Arguments to filter SequenceTransitions to delete.
+     * @example
+     * // Delete a few SequenceTransitions
+     * const { count } = await prisma.sequenceTransition.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SequenceTransitionDeleteManyArgs>(args?: SelectSubset<T, SequenceTransitionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SequenceTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SequenceTransitions
+     * const sequenceTransition = await prisma.sequenceTransition.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SequenceTransitionUpdateManyArgs>(args: SelectSubset<T, SequenceTransitionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SequenceTransitions and returns the data updated in the database.
+     * @param {SequenceTransitionUpdateManyAndReturnArgs} args - Arguments to update many SequenceTransitions.
+     * @example
+     * // Update many SequenceTransitions
+     * const sequenceTransition = await prisma.sequenceTransition.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SequenceTransitions and only return the `id`
+     * const sequenceTransitionWithIdOnly = await prisma.sequenceTransition.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SequenceTransitionUpdateManyAndReturnArgs>(args: SelectSubset<T, SequenceTransitionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one SequenceTransition.
+     * @param {SequenceTransitionUpsertArgs} args - Arguments to update or create a SequenceTransition.
+     * @example
+     * // Update or create a SequenceTransition
+     * const sequenceTransition = await prisma.sequenceTransition.upsert({
+     *   create: {
+     *     // ... data to create a SequenceTransition
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SequenceTransition we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SequenceTransitionUpsertArgs>(args: SelectSubset<T, SequenceTransitionUpsertArgs<ExtArgs>>): Prisma__SequenceTransitionClient<$Result.GetResult<Prisma.$SequenceTransitionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of SequenceTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionCountArgs} args - Arguments to filter SequenceTransitions to count.
+     * @example
+     * // Count the number of SequenceTransitions
+     * const count = await prisma.sequenceTransition.count({
+     *   where: {
+     *     // ... the filter for the SequenceTransitions we want to count
+     *   }
+     * })
+    **/
+    count<T extends SequenceTransitionCountArgs>(
+      args?: Subset<T, SequenceTransitionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SequenceTransitionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a SequenceTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SequenceTransitionAggregateArgs>(args: Subset<T, SequenceTransitionAggregateArgs>): Prisma.PrismaPromise<GetSequenceTransitionAggregateType<T>>
+
+    /**
+     * Group by SequenceTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SequenceTransitionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SequenceTransitionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SequenceTransitionGroupByArgs['orderBy'] }
+        : { orderBy?: SequenceTransitionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SequenceTransitionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSequenceTransitionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the SequenceTransition model
+   */
+  readonly fields: SequenceTransitionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SequenceTransition.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SequenceTransitionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fromSequence<T extends SequenceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SequenceDefaultArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    toSequence<T extends SequenceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SequenceDefaultArgs<ExtArgs>>): Prisma__SequenceClient<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the SequenceTransition model
+   */
+  interface SequenceTransitionFieldRefs {
+    readonly id: FieldRef<"SequenceTransition", 'String'>
+    readonly fromSequenceId: FieldRef<"SequenceTransition", 'String'>
+    readonly toSequenceId: FieldRef<"SequenceTransition", 'String'>
+    readonly condition: FieldRef<"SequenceTransition", 'String'>
+    readonly description: FieldRef<"SequenceTransition", 'String'>
+    readonly createdAt: FieldRef<"SequenceTransition", 'DateTime'>
+    readonly updatedAt: FieldRef<"SequenceTransition", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * SequenceTransition findUnique
+   */
+  export type SequenceTransitionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SequenceTransition to fetch.
+     */
+    where: SequenceTransitionWhereUniqueInput
+  }
+
+  /**
+   * SequenceTransition findUniqueOrThrow
+   */
+  export type SequenceTransitionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SequenceTransition to fetch.
+     */
+    where: SequenceTransitionWhereUniqueInput
+  }
+
+  /**
+   * SequenceTransition findFirst
+   */
+  export type SequenceTransitionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SequenceTransition to fetch.
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SequenceTransitions to fetch.
+     */
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SequenceTransitions.
+     */
+    cursor?: SequenceTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SequenceTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SequenceTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SequenceTransitions.
+     */
+    distinct?: SequenceTransitionScalarFieldEnum | SequenceTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SequenceTransition findFirstOrThrow
+   */
+  export type SequenceTransitionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SequenceTransition to fetch.
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SequenceTransitions to fetch.
+     */
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SequenceTransitions.
+     */
+    cursor?: SequenceTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SequenceTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SequenceTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SequenceTransitions.
+     */
+    distinct?: SequenceTransitionScalarFieldEnum | SequenceTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SequenceTransition findMany
+   */
+  export type SequenceTransitionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which SequenceTransitions to fetch.
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SequenceTransitions to fetch.
+     */
+    orderBy?: SequenceTransitionOrderByWithRelationInput | SequenceTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing SequenceTransitions.
+     */
+    cursor?: SequenceTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SequenceTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SequenceTransitions.
+     */
+    skip?: number
+    distinct?: SequenceTransitionScalarFieldEnum | SequenceTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * SequenceTransition create
+   */
+  export type SequenceTransitionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a SequenceTransition.
+     */
+    data: XOR<SequenceTransitionCreateInput, SequenceTransitionUncheckedCreateInput>
+  }
+
+  /**
+   * SequenceTransition createMany
+   */
+  export type SequenceTransitionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many SequenceTransitions.
+     */
+    data: SequenceTransitionCreateManyInput | SequenceTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * SequenceTransition createManyAndReturn
+   */
+  export type SequenceTransitionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to create many SequenceTransitions.
+     */
+    data: SequenceTransitionCreateManyInput | SequenceTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SequenceTransition update
+   */
+  export type SequenceTransitionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a SequenceTransition.
+     */
+    data: XOR<SequenceTransitionUpdateInput, SequenceTransitionUncheckedUpdateInput>
+    /**
+     * Choose, which SequenceTransition to update.
+     */
+    where: SequenceTransitionWhereUniqueInput
+  }
+
+  /**
+   * SequenceTransition updateMany
+   */
+  export type SequenceTransitionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SequenceTransitions.
+     */
+    data: XOR<SequenceTransitionUpdateManyMutationInput, SequenceTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which SequenceTransitions to update
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * Limit how many SequenceTransitions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * SequenceTransition updateManyAndReturn
+   */
+  export type SequenceTransitionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to update SequenceTransitions.
+     */
+    data: XOR<SequenceTransitionUpdateManyMutationInput, SequenceTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which SequenceTransitions to update
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * Limit how many SequenceTransitions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SequenceTransition upsert
+   */
+  export type SequenceTransitionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the SequenceTransition to update in case it exists.
+     */
+    where: SequenceTransitionWhereUniqueInput
+    /**
+     * In case the SequenceTransition found by the `where` argument doesn't exist, create a new SequenceTransition with this data.
+     */
+    create: XOR<SequenceTransitionCreateInput, SequenceTransitionUncheckedCreateInput>
+    /**
+     * In case the SequenceTransition was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SequenceTransitionUpdateInput, SequenceTransitionUncheckedUpdateInput>
+  }
+
+  /**
+   * SequenceTransition delete
+   */
+  export type SequenceTransitionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+    /**
+     * Filter which SequenceTransition to delete.
+     */
+    where: SequenceTransitionWhereUniqueInput
+  }
+
+  /**
+   * SequenceTransition deleteMany
+   */
+  export type SequenceTransitionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SequenceTransitions to delete
+     */
+    where?: SequenceTransitionWhereInput
+    /**
+     * Limit how many SequenceTransitions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * SequenceTransition without action
+   */
+  export type SequenceTransitionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SequenceTransition
+     */
+    select?: SequenceTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SequenceTransition
+     */
+    omit?: SequenceTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceTransitionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Act
+   */
+
+  export type AggregateAct = {
+    _count: ActCountAggregateOutputType | null
+    _avg: ActAvgAggregateOutputType | null
+    _sum: ActSumAggregateOutputType | null
+    _min: ActMinAggregateOutputType | null
+    _max: ActMaxAggregateOutputType | null
+  }
+
+  export type ActAvgAggregateOutputType = {
+    order: number | null
+  }
+
+  export type ActSumAggregateOutputType = {
+    order: number | null
+  }
+
+  export type ActMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ActMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    order: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ActCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    order: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ActAvgAggregateInputType = {
+    order?: true
+  }
+
+  export type ActSumAggregateInputType = {
+    order?: true
+  }
+
+  export type ActMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ActMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ActCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    order?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ActAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Act to aggregate.
+     */
+    where?: ActWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Acts to fetch.
+     */
+    orderBy?: ActOrderByWithRelationInput | ActOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ActWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Acts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Acts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Acts
+    **/
+    _count?: true | ActCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ActAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ActSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ActMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ActMaxAggregateInputType
+  }
+
+  export type GetActAggregateType<T extends ActAggregateArgs> = {
+        [P in keyof T & keyof AggregateAct]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAct[P]>
+      : GetScalarType<T[P], AggregateAct[P]>
+  }
+
+
+
+
+  export type ActGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ActWhereInput
+    orderBy?: ActOrderByWithAggregationInput | ActOrderByWithAggregationInput[]
+    by: ActScalarFieldEnum[] | ActScalarFieldEnum
+    having?: ActScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ActCountAggregateInputType | true
+    _avg?: ActAvgAggregateInputType
+    _sum?: ActSumAggregateInputType
+    _min?: ActMinAggregateInputType
+    _max?: ActMaxAggregateInputType
+  }
+
+  export type ActGroupByOutputType = {
+    id: string
+    title: string
+    description: string | null
+    order: number
+    createdAt: Date
+    updatedAt: Date
+    _count: ActCountAggregateOutputType | null
+    _avg: ActAvgAggregateOutputType | null
+    _sum: ActSumAggregateOutputType | null
+    _min: ActMinAggregateOutputType | null
+    _max: ActMaxAggregateOutputType | null
+  }
+
+  type GetActGroupByPayload<T extends ActGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ActGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ActGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ActGroupByOutputType[P]>
+            : GetScalarType<T[P], ActGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ActSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    sequences?: boolean | Act$sequencesArgs<ExtArgs>
+    nextActs?: boolean | Act$nextActsArgs<ExtArgs>
+    previousActs?: boolean | Act$previousActsArgs<ExtArgs>
+    _count?: boolean | ActCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["act"]>
+
+  export type ActSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["act"]>
+
+  export type ActSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["act"]>
+
+  export type ActSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    order?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ActOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "order" | "createdAt" | "updatedAt", ExtArgs["result"]["act"]>
+  export type ActInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sequences?: boolean | Act$sequencesArgs<ExtArgs>
+    nextActs?: boolean | Act$nextActsArgs<ExtArgs>
+    previousActs?: boolean | Act$previousActsArgs<ExtArgs>
+    _count?: boolean | ActCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ActIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ActIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $ActPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Act"
+    objects: {
+      sequences: Prisma.$SequencePayload<ExtArgs>[]
+      nextActs: Prisma.$ActTransitionPayload<ExtArgs>[]
+      previousActs: Prisma.$ActTransitionPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      description: string | null
+      order: number
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["act"]>
+    composites: {}
+  }
+
+  type ActGetPayload<S extends boolean | null | undefined | ActDefaultArgs> = $Result.GetResult<Prisma.$ActPayload, S>
+
+  type ActCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ActFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ActCountAggregateInputType | true
+    }
+
+  export interface ActDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Act'], meta: { name: 'Act' } }
+    /**
+     * Find zero or one Act that matches the filter.
+     * @param {ActFindUniqueArgs} args - Arguments to find a Act
+     * @example
+     * // Get one Act
+     * const act = await prisma.act.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ActFindUniqueArgs>(args: SelectSubset<T, ActFindUniqueArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Act that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ActFindUniqueOrThrowArgs} args - Arguments to find a Act
+     * @example
+     * // Get one Act
+     * const act = await prisma.act.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ActFindUniqueOrThrowArgs>(args: SelectSubset<T, ActFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Act that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActFindFirstArgs} args - Arguments to find a Act
+     * @example
+     * // Get one Act
+     * const act = await prisma.act.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ActFindFirstArgs>(args?: SelectSubset<T, ActFindFirstArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Act that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActFindFirstOrThrowArgs} args - Arguments to find a Act
+     * @example
+     * // Get one Act
+     * const act = await prisma.act.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ActFindFirstOrThrowArgs>(args?: SelectSubset<T, ActFindFirstOrThrowArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Acts that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Acts
+     * const acts = await prisma.act.findMany()
+     * 
+     * // Get first 10 Acts
+     * const acts = await prisma.act.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const actWithIdOnly = await prisma.act.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ActFindManyArgs>(args?: SelectSubset<T, ActFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Act.
+     * @param {ActCreateArgs} args - Arguments to create a Act.
+     * @example
+     * // Create one Act
+     * const Act = await prisma.act.create({
+     *   data: {
+     *     // ... data to create a Act
+     *   }
+     * })
+     * 
+     */
+    create<T extends ActCreateArgs>(args: SelectSubset<T, ActCreateArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Acts.
+     * @param {ActCreateManyArgs} args - Arguments to create many Acts.
+     * @example
+     * // Create many Acts
+     * const act = await prisma.act.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ActCreateManyArgs>(args?: SelectSubset<T, ActCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Acts and returns the data saved in the database.
+     * @param {ActCreateManyAndReturnArgs} args - Arguments to create many Acts.
+     * @example
+     * // Create many Acts
+     * const act = await prisma.act.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Acts and only return the `id`
+     * const actWithIdOnly = await prisma.act.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ActCreateManyAndReturnArgs>(args?: SelectSubset<T, ActCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Act.
+     * @param {ActDeleteArgs} args - Arguments to delete one Act.
+     * @example
+     * // Delete one Act
+     * const Act = await prisma.act.delete({
+     *   where: {
+     *     // ... filter to delete one Act
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ActDeleteArgs>(args: SelectSubset<T, ActDeleteArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Act.
+     * @param {ActUpdateArgs} args - Arguments to update one Act.
+     * @example
+     * // Update one Act
+     * const act = await prisma.act.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ActUpdateArgs>(args: SelectSubset<T, ActUpdateArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Acts.
+     * @param {ActDeleteManyArgs} args - Arguments to filter Acts to delete.
+     * @example
+     * // Delete a few Acts
+     * const { count } = await prisma.act.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ActDeleteManyArgs>(args?: SelectSubset<T, ActDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Acts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Acts
+     * const act = await prisma.act.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ActUpdateManyArgs>(args: SelectSubset<T, ActUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Acts and returns the data updated in the database.
+     * @param {ActUpdateManyAndReturnArgs} args - Arguments to update many Acts.
+     * @example
+     * // Update many Acts
+     * const act = await prisma.act.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Acts and only return the `id`
+     * const actWithIdOnly = await prisma.act.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ActUpdateManyAndReturnArgs>(args: SelectSubset<T, ActUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Act.
+     * @param {ActUpsertArgs} args - Arguments to update or create a Act.
+     * @example
+     * // Update or create a Act
+     * const act = await prisma.act.upsert({
+     *   create: {
+     *     // ... data to create a Act
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Act we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ActUpsertArgs>(args: SelectSubset<T, ActUpsertArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Acts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActCountArgs} args - Arguments to filter Acts to count.
+     * @example
+     * // Count the number of Acts
+     * const count = await prisma.act.count({
+     *   where: {
+     *     // ... the filter for the Acts we want to count
+     *   }
+     * })
+    **/
+    count<T extends ActCountArgs>(
+      args?: Subset<T, ActCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ActCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Act.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ActAggregateArgs>(args: Subset<T, ActAggregateArgs>): Prisma.PrismaPromise<GetActAggregateType<T>>
+
+    /**
+     * Group by Act.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ActGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ActGroupByArgs['orderBy'] }
+        : { orderBy?: ActGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ActGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetActGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Act model
+   */
+  readonly fields: ActFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Act.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ActClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    sequences<T extends Act$sequencesArgs<ExtArgs> = {}>(args?: Subset<T, Act$sequencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SequencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    nextActs<T extends Act$nextActsArgs<ExtArgs> = {}>(args?: Subset<T, Act$nextActsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    previousActs<T extends Act$previousActsArgs<ExtArgs> = {}>(args?: Subset<T, Act$previousActsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Act model
+   */
+  interface ActFieldRefs {
+    readonly id: FieldRef<"Act", 'String'>
+    readonly title: FieldRef<"Act", 'String'>
+    readonly description: FieldRef<"Act", 'String'>
+    readonly order: FieldRef<"Act", 'Int'>
+    readonly createdAt: FieldRef<"Act", 'DateTime'>
+    readonly updatedAt: FieldRef<"Act", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Act findUnique
+   */
+  export type ActFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter, which Act to fetch.
+     */
+    where: ActWhereUniqueInput
+  }
+
+  /**
+   * Act findUniqueOrThrow
+   */
+  export type ActFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter, which Act to fetch.
+     */
+    where: ActWhereUniqueInput
+  }
+
+  /**
+   * Act findFirst
+   */
+  export type ActFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter, which Act to fetch.
+     */
+    where?: ActWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Acts to fetch.
+     */
+    orderBy?: ActOrderByWithRelationInput | ActOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Acts.
+     */
+    cursor?: ActWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Acts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Acts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Acts.
+     */
+    distinct?: ActScalarFieldEnum | ActScalarFieldEnum[]
+  }
+
+  /**
+   * Act findFirstOrThrow
+   */
+  export type ActFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter, which Act to fetch.
+     */
+    where?: ActWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Acts to fetch.
+     */
+    orderBy?: ActOrderByWithRelationInput | ActOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Acts.
+     */
+    cursor?: ActWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Acts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Acts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Acts.
+     */
+    distinct?: ActScalarFieldEnum | ActScalarFieldEnum[]
+  }
+
+  /**
+   * Act findMany
+   */
+  export type ActFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter, which Acts to fetch.
+     */
+    where?: ActWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Acts to fetch.
+     */
+    orderBy?: ActOrderByWithRelationInput | ActOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Acts.
+     */
+    cursor?: ActWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Acts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Acts.
+     */
+    skip?: number
+    distinct?: ActScalarFieldEnum | ActScalarFieldEnum[]
+  }
+
+  /**
+   * Act create
+   */
+  export type ActCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Act.
+     */
+    data: XOR<ActCreateInput, ActUncheckedCreateInput>
+  }
+
+  /**
+   * Act createMany
+   */
+  export type ActCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Acts.
+     */
+    data: ActCreateManyInput | ActCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Act createManyAndReturn
+   */
+  export type ActCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * The data used to create many Acts.
+     */
+    data: ActCreateManyInput | ActCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Act update
+   */
+  export type ActUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Act.
+     */
+    data: XOR<ActUpdateInput, ActUncheckedUpdateInput>
+    /**
+     * Choose, which Act to update.
+     */
+    where: ActWhereUniqueInput
+  }
+
+  /**
+   * Act updateMany
+   */
+  export type ActUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Acts.
+     */
+    data: XOR<ActUpdateManyMutationInput, ActUncheckedUpdateManyInput>
+    /**
+     * Filter which Acts to update
+     */
+    where?: ActWhereInput
+    /**
+     * Limit how many Acts to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Act updateManyAndReturn
+   */
+  export type ActUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * The data used to update Acts.
+     */
+    data: XOR<ActUpdateManyMutationInput, ActUncheckedUpdateManyInput>
+    /**
+     * Filter which Acts to update
+     */
+    where?: ActWhereInput
+    /**
+     * Limit how many Acts to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Act upsert
+   */
+  export type ActUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Act to update in case it exists.
+     */
+    where: ActWhereUniqueInput
+    /**
+     * In case the Act found by the `where` argument doesn't exist, create a new Act with this data.
+     */
+    create: XOR<ActCreateInput, ActUncheckedCreateInput>
+    /**
+     * In case the Act was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ActUpdateInput, ActUncheckedUpdateInput>
+  }
+
+  /**
+   * Act delete
+   */
+  export type ActDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+    /**
+     * Filter which Act to delete.
+     */
+    where: ActWhereUniqueInput
+  }
+
+  /**
+   * Act deleteMany
+   */
+  export type ActDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Acts to delete
+     */
+    where?: ActWhereInput
+    /**
+     * Limit how many Acts to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Act.sequences
+   */
+  export type Act$sequencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Sequence
+     */
+    select?: SequenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Sequence
+     */
+    omit?: SequenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SequenceInclude<ExtArgs> | null
+    where?: SequenceWhereInput
+    orderBy?: SequenceOrderByWithRelationInput | SequenceOrderByWithRelationInput[]
+    cursor?: SequenceWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SequenceScalarFieldEnum | SequenceScalarFieldEnum[]
+  }
+
+  /**
+   * Act.nextActs
+   */
+  export type Act$nextActsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    where?: ActTransitionWhereInput
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    cursor?: ActTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ActTransitionScalarFieldEnum | ActTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Act.previousActs
+   */
+  export type Act$previousActsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    where?: ActTransitionWhereInput
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    cursor?: ActTransitionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ActTransitionScalarFieldEnum | ActTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * Act without action
+   */
+  export type ActDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Act
+     */
+    select?: ActSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Act
+     */
+    omit?: ActOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ActTransition
+   */
+
+  export type AggregateActTransition = {
+    _count: ActTransitionCountAggregateOutputType | null
+    _min: ActTransitionMinAggregateOutputType | null
+    _max: ActTransitionMaxAggregateOutputType | null
+  }
+
+  export type ActTransitionMinAggregateOutputType = {
+    id: string | null
+    fromActId: string | null
+    toActId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ActTransitionMaxAggregateOutputType = {
+    id: string | null
+    fromActId: string | null
+    toActId: string | null
+    condition: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ActTransitionCountAggregateOutputType = {
+    id: number
+    fromActId: number
+    toActId: number
+    condition: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ActTransitionMinAggregateInputType = {
+    id?: true
+    fromActId?: true
+    toActId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ActTransitionMaxAggregateInputType = {
+    id?: true
+    fromActId?: true
+    toActId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ActTransitionCountAggregateInputType = {
+    id?: true
+    fromActId?: true
+    toActId?: true
+    condition?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ActTransitionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ActTransition to aggregate.
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ActTransitions to fetch.
+     */
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ActTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ActTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ActTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ActTransitions
+    **/
+    _count?: true | ActTransitionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ActTransitionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ActTransitionMaxAggregateInputType
+  }
+
+  export type GetActTransitionAggregateType<T extends ActTransitionAggregateArgs> = {
+        [P in keyof T & keyof AggregateActTransition]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateActTransition[P]>
+      : GetScalarType<T[P], AggregateActTransition[P]>
+  }
+
+
+
+
+  export type ActTransitionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ActTransitionWhereInput
+    orderBy?: ActTransitionOrderByWithAggregationInput | ActTransitionOrderByWithAggregationInput[]
+    by: ActTransitionScalarFieldEnum[] | ActTransitionScalarFieldEnum
+    having?: ActTransitionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ActTransitionCountAggregateInputType | true
+    _min?: ActTransitionMinAggregateInputType
+    _max?: ActTransitionMaxAggregateInputType
+  }
+
+  export type ActTransitionGroupByOutputType = {
+    id: string
+    fromActId: string
+    toActId: string
+    condition: string | null
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ActTransitionCountAggregateOutputType | null
+    _min: ActTransitionMinAggregateOutputType | null
+    _max: ActTransitionMaxAggregateOutputType | null
+  }
+
+  type GetActTransitionGroupByPayload<T extends ActTransitionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ActTransitionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ActTransitionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ActTransitionGroupByOutputType[P]>
+            : GetScalarType<T[P], ActTransitionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ActTransitionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromActId?: boolean
+    toActId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["actTransition"]>
+
+  export type ActTransitionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromActId?: boolean
+    toActId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["actTransition"]>
+
+  export type ActTransitionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fromActId?: boolean
+    toActId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["actTransition"]>
+
+  export type ActTransitionSelectScalar = {
+    id?: boolean
+    fromActId?: boolean
+    toActId?: boolean
+    condition?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ActTransitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fromActId" | "toActId" | "condition" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["actTransition"]>
+  export type ActTransitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }
+  export type ActTransitionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }
+  export type ActTransitionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fromAct?: boolean | ActDefaultArgs<ExtArgs>
+    toAct?: boolean | ActDefaultArgs<ExtArgs>
+  }
+
+  export type $ActTransitionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ActTransition"
+    objects: {
+      fromAct: Prisma.$ActPayload<ExtArgs>
+      toAct: Prisma.$ActPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fromActId: string
+      toActId: string
+      condition: string | null
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["actTransition"]>
+    composites: {}
+  }
+
+  type ActTransitionGetPayload<S extends boolean | null | undefined | ActTransitionDefaultArgs> = $Result.GetResult<Prisma.$ActTransitionPayload, S>
+
+  type ActTransitionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ActTransitionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ActTransitionCountAggregateInputType | true
+    }
+
+  export interface ActTransitionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ActTransition'], meta: { name: 'ActTransition' } }
+    /**
+     * Find zero or one ActTransition that matches the filter.
+     * @param {ActTransitionFindUniqueArgs} args - Arguments to find a ActTransition
+     * @example
+     * // Get one ActTransition
+     * const actTransition = await prisma.actTransition.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ActTransitionFindUniqueArgs>(args: SelectSubset<T, ActTransitionFindUniqueArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ActTransition that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ActTransitionFindUniqueOrThrowArgs} args - Arguments to find a ActTransition
+     * @example
+     * // Get one ActTransition
+     * const actTransition = await prisma.actTransition.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ActTransitionFindUniqueOrThrowArgs>(args: SelectSubset<T, ActTransitionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ActTransition that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionFindFirstArgs} args - Arguments to find a ActTransition
+     * @example
+     * // Get one ActTransition
+     * const actTransition = await prisma.actTransition.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ActTransitionFindFirstArgs>(args?: SelectSubset<T, ActTransitionFindFirstArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ActTransition that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionFindFirstOrThrowArgs} args - Arguments to find a ActTransition
+     * @example
+     * // Get one ActTransition
+     * const actTransition = await prisma.actTransition.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ActTransitionFindFirstOrThrowArgs>(args?: SelectSubset<T, ActTransitionFindFirstOrThrowArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ActTransitions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ActTransitions
+     * const actTransitions = await prisma.actTransition.findMany()
+     * 
+     * // Get first 10 ActTransitions
+     * const actTransitions = await prisma.actTransition.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const actTransitionWithIdOnly = await prisma.actTransition.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ActTransitionFindManyArgs>(args?: SelectSubset<T, ActTransitionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ActTransition.
+     * @param {ActTransitionCreateArgs} args - Arguments to create a ActTransition.
+     * @example
+     * // Create one ActTransition
+     * const ActTransition = await prisma.actTransition.create({
+     *   data: {
+     *     // ... data to create a ActTransition
+     *   }
+     * })
+     * 
+     */
+    create<T extends ActTransitionCreateArgs>(args: SelectSubset<T, ActTransitionCreateArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ActTransitions.
+     * @param {ActTransitionCreateManyArgs} args - Arguments to create many ActTransitions.
+     * @example
+     * // Create many ActTransitions
+     * const actTransition = await prisma.actTransition.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ActTransitionCreateManyArgs>(args?: SelectSubset<T, ActTransitionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ActTransitions and returns the data saved in the database.
+     * @param {ActTransitionCreateManyAndReturnArgs} args - Arguments to create many ActTransitions.
+     * @example
+     * // Create many ActTransitions
+     * const actTransition = await prisma.actTransition.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ActTransitions and only return the `id`
+     * const actTransitionWithIdOnly = await prisma.actTransition.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ActTransitionCreateManyAndReturnArgs>(args?: SelectSubset<T, ActTransitionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ActTransition.
+     * @param {ActTransitionDeleteArgs} args - Arguments to delete one ActTransition.
+     * @example
+     * // Delete one ActTransition
+     * const ActTransition = await prisma.actTransition.delete({
+     *   where: {
+     *     // ... filter to delete one ActTransition
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ActTransitionDeleteArgs>(args: SelectSubset<T, ActTransitionDeleteArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ActTransition.
+     * @param {ActTransitionUpdateArgs} args - Arguments to update one ActTransition.
+     * @example
+     * // Update one ActTransition
+     * const actTransition = await prisma.actTransition.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ActTransitionUpdateArgs>(args: SelectSubset<T, ActTransitionUpdateArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ActTransitions.
+     * @param {ActTransitionDeleteManyArgs} args - Arguments to filter ActTransitions to delete.
+     * @example
+     * // Delete a few ActTransitions
+     * const { count } = await prisma.actTransition.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ActTransitionDeleteManyArgs>(args?: SelectSubset<T, ActTransitionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ActTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ActTransitions
+     * const actTransition = await prisma.actTransition.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ActTransitionUpdateManyArgs>(args: SelectSubset<T, ActTransitionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ActTransitions and returns the data updated in the database.
+     * @param {ActTransitionUpdateManyAndReturnArgs} args - Arguments to update many ActTransitions.
+     * @example
+     * // Update many ActTransitions
+     * const actTransition = await prisma.actTransition.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ActTransitions and only return the `id`
+     * const actTransitionWithIdOnly = await prisma.actTransition.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ActTransitionUpdateManyAndReturnArgs>(args: SelectSubset<T, ActTransitionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ActTransition.
+     * @param {ActTransitionUpsertArgs} args - Arguments to update or create a ActTransition.
+     * @example
+     * // Update or create a ActTransition
+     * const actTransition = await prisma.actTransition.upsert({
+     *   create: {
+     *     // ... data to create a ActTransition
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ActTransition we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ActTransitionUpsertArgs>(args: SelectSubset<T, ActTransitionUpsertArgs<ExtArgs>>): Prisma__ActTransitionClient<$Result.GetResult<Prisma.$ActTransitionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ActTransitions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionCountArgs} args - Arguments to filter ActTransitions to count.
+     * @example
+     * // Count the number of ActTransitions
+     * const count = await prisma.actTransition.count({
+     *   where: {
+     *     // ... the filter for the ActTransitions we want to count
+     *   }
+     * })
+    **/
+    count<T extends ActTransitionCountArgs>(
+      args?: Subset<T, ActTransitionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ActTransitionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ActTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ActTransitionAggregateArgs>(args: Subset<T, ActTransitionAggregateArgs>): Prisma.PrismaPromise<GetActTransitionAggregateType<T>>
+
+    /**
+     * Group by ActTransition.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ActTransitionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ActTransitionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ActTransitionGroupByArgs['orderBy'] }
+        : { orderBy?: ActTransitionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ActTransitionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetActTransitionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ActTransition model
+   */
+  readonly fields: ActTransitionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ActTransition.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ActTransitionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fromAct<T extends ActDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActDefaultArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    toAct<T extends ActDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActDefaultArgs<ExtArgs>>): Prisma__ActClient<$Result.GetResult<Prisma.$ActPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ActTransition model
+   */
+  interface ActTransitionFieldRefs {
+    readonly id: FieldRef<"ActTransition", 'String'>
+    readonly fromActId: FieldRef<"ActTransition", 'String'>
+    readonly toActId: FieldRef<"ActTransition", 'String'>
+    readonly condition: FieldRef<"ActTransition", 'String'>
+    readonly description: FieldRef<"ActTransition", 'String'>
+    readonly createdAt: FieldRef<"ActTransition", 'DateTime'>
+    readonly updatedAt: FieldRef<"ActTransition", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ActTransition findUnique
+   */
+  export type ActTransitionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which ActTransition to fetch.
+     */
+    where: ActTransitionWhereUniqueInput
+  }
+
+  /**
+   * ActTransition findUniqueOrThrow
+   */
+  export type ActTransitionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which ActTransition to fetch.
+     */
+    where: ActTransitionWhereUniqueInput
+  }
+
+  /**
+   * ActTransition findFirst
+   */
+  export type ActTransitionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which ActTransition to fetch.
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ActTransitions to fetch.
+     */
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ActTransitions.
+     */
+    cursor?: ActTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ActTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ActTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ActTransitions.
+     */
+    distinct?: ActTransitionScalarFieldEnum | ActTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * ActTransition findFirstOrThrow
+   */
+  export type ActTransitionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which ActTransition to fetch.
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ActTransitions to fetch.
+     */
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ActTransitions.
+     */
+    cursor?: ActTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ActTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ActTransitions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ActTransitions.
+     */
+    distinct?: ActTransitionScalarFieldEnum | ActTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * ActTransition findMany
+   */
+  export type ActTransitionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter, which ActTransitions to fetch.
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ActTransitions to fetch.
+     */
+    orderBy?: ActTransitionOrderByWithRelationInput | ActTransitionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ActTransitions.
+     */
+    cursor?: ActTransitionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ActTransitions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ActTransitions.
+     */
+    skip?: number
+    distinct?: ActTransitionScalarFieldEnum | ActTransitionScalarFieldEnum[]
+  }
+
+  /**
+   * ActTransition create
+   */
+  export type ActTransitionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ActTransition.
+     */
+    data: XOR<ActTransitionCreateInput, ActTransitionUncheckedCreateInput>
+  }
+
+  /**
+   * ActTransition createMany
+   */
+  export type ActTransitionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ActTransitions.
+     */
+    data: ActTransitionCreateManyInput | ActTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ActTransition createManyAndReturn
+   */
+  export type ActTransitionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to create many ActTransitions.
+     */
+    data: ActTransitionCreateManyInput | ActTransitionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ActTransition update
+   */
+  export type ActTransitionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ActTransition.
+     */
+    data: XOR<ActTransitionUpdateInput, ActTransitionUncheckedUpdateInput>
+    /**
+     * Choose, which ActTransition to update.
+     */
+    where: ActTransitionWhereUniqueInput
+  }
+
+  /**
+   * ActTransition updateMany
+   */
+  export type ActTransitionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ActTransitions.
+     */
+    data: XOR<ActTransitionUpdateManyMutationInput, ActTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which ActTransitions to update
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * Limit how many ActTransitions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ActTransition updateManyAndReturn
+   */
+  export type ActTransitionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * The data used to update ActTransitions.
+     */
+    data: XOR<ActTransitionUpdateManyMutationInput, ActTransitionUncheckedUpdateManyInput>
+    /**
+     * Filter which ActTransitions to update
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * Limit how many ActTransitions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ActTransition upsert
+   */
+  export type ActTransitionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ActTransition to update in case it exists.
+     */
+    where: ActTransitionWhereUniqueInput
+    /**
+     * In case the ActTransition found by the `where` argument doesn't exist, create a new ActTransition with this data.
+     */
+    create: XOR<ActTransitionCreateInput, ActTransitionUncheckedCreateInput>
+    /**
+     * In case the ActTransition was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ActTransitionUpdateInput, ActTransitionUncheckedUpdateInput>
+  }
+
+  /**
+   * ActTransition delete
+   */
+  export type ActTransitionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+    /**
+     * Filter which ActTransition to delete.
+     */
+    where: ActTransitionWhereUniqueInput
+  }
+
+  /**
+   * ActTransition deleteMany
+   */
+  export type ActTransitionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ActTransitions to delete
+     */
+    where?: ActTransitionWhereInput
+    /**
+     * Limit how many ActTransitions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ActTransition without action
+   */
+  export type ActTransitionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ActTransition
+     */
+    select?: ActTransitionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ActTransition
+     */
+    omit?: ActTransitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActTransitionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Location
+   */
+
+  export type AggregateLocation = {
+    _count: LocationCountAggregateOutputType | null
+    _min: LocationMinAggregateOutputType | null
+    _max: LocationMaxAggregateOutputType | null
+  }
+
+  export type LocationMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type LocationMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type LocationCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type LocationMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type LocationMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type LocationCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type LocationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Location to aggregate.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Locations
+    **/
+    _count?: true | LocationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LocationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LocationMaxAggregateInputType
+  }
+
+  export type GetLocationAggregateType<T extends LocationAggregateArgs> = {
+        [P in keyof T & keyof AggregateLocation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLocation[P]>
+      : GetScalarType<T[P], AggregateLocation[P]>
+  }
+
+
+
+
+  export type LocationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LocationWhereInput
+    orderBy?: LocationOrderByWithAggregationInput | LocationOrderByWithAggregationInput[]
+    by: LocationScalarFieldEnum[] | LocationScalarFieldEnum
+    having?: LocationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LocationCountAggregateInputType | true
+    _min?: LocationMinAggregateInputType
+    _max?: LocationMaxAggregateInputType
+  }
+
+  export type LocationGroupByOutputType = {
+    id: string
+    name: string
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: LocationCountAggregateOutputType | null
+    _min: LocationMinAggregateOutputType | null
+    _max: LocationMaxAggregateOutputType | null
+  }
+
+  type GetLocationGroupByPayload<T extends LocationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LocationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LocationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LocationGroupByOutputType[P]>
+            : GetScalarType<T[P], LocationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LocationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    beats?: boolean | Location$beatsArgs<ExtArgs>
+    _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type LocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["location"]>
+  export type LocationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beats?: boolean | Location$beatsArgs<ExtArgs>
+    _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type LocationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type LocationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $LocationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Location"
+    objects: {
+      beats: Prisma.$BeatPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["location"]>
+    composites: {}
+  }
+
+  type LocationGetPayload<S extends boolean | null | undefined | LocationDefaultArgs> = $Result.GetResult<Prisma.$LocationPayload, S>
+
+  type LocationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LocationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LocationCountAggregateInputType | true
+    }
+
+  export interface LocationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Location'], meta: { name: 'Location' } }
+    /**
+     * Find zero or one Location that matches the filter.
+     * @param {LocationFindUniqueArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LocationFindUniqueArgs>(args: SelectSubset<T, LocationFindUniqueArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Location that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LocationFindUniqueOrThrowArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LocationFindUniqueOrThrowArgs>(args: SelectSubset<T, LocationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Location that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindFirstArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LocationFindFirstArgs>(args?: SelectSubset<T, LocationFindFirstArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Location that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindFirstOrThrowArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LocationFindFirstOrThrowArgs>(args?: SelectSubset<T, LocationFindFirstOrThrowArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Locations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Locations
+     * const locations = await prisma.location.findMany()
+     * 
+     * // Get first 10 Locations
+     * const locations = await prisma.location.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const locationWithIdOnly = await prisma.location.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LocationFindManyArgs>(args?: SelectSubset<T, LocationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Location.
+     * @param {LocationCreateArgs} args - Arguments to create a Location.
+     * @example
+     * // Create one Location
+     * const Location = await prisma.location.create({
+     *   data: {
+     *     // ... data to create a Location
+     *   }
+     * })
+     * 
+     */
+    create<T extends LocationCreateArgs>(args: SelectSubset<T, LocationCreateArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Locations.
+     * @param {LocationCreateManyArgs} args - Arguments to create many Locations.
+     * @example
+     * // Create many Locations
+     * const location = await prisma.location.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LocationCreateManyArgs>(args?: SelectSubset<T, LocationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Locations and returns the data saved in the database.
+     * @param {LocationCreateManyAndReturnArgs} args - Arguments to create many Locations.
+     * @example
+     * // Create many Locations
+     * const location = await prisma.location.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Locations and only return the `id`
+     * const locationWithIdOnly = await prisma.location.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LocationCreateManyAndReturnArgs>(args?: SelectSubset<T, LocationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Location.
+     * @param {LocationDeleteArgs} args - Arguments to delete one Location.
+     * @example
+     * // Delete one Location
+     * const Location = await prisma.location.delete({
+     *   where: {
+     *     // ... filter to delete one Location
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LocationDeleteArgs>(args: SelectSubset<T, LocationDeleteArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Location.
+     * @param {LocationUpdateArgs} args - Arguments to update one Location.
+     * @example
+     * // Update one Location
+     * const location = await prisma.location.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LocationUpdateArgs>(args: SelectSubset<T, LocationUpdateArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Locations.
+     * @param {LocationDeleteManyArgs} args - Arguments to filter Locations to delete.
+     * @example
+     * // Delete a few Locations
+     * const { count } = await prisma.location.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LocationDeleteManyArgs>(args?: SelectSubset<T, LocationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Locations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Locations
+     * const location = await prisma.location.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LocationUpdateManyArgs>(args: SelectSubset<T, LocationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Locations and returns the data updated in the database.
+     * @param {LocationUpdateManyAndReturnArgs} args - Arguments to update many Locations.
+     * @example
+     * // Update many Locations
+     * const location = await prisma.location.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Locations and only return the `id`
+     * const locationWithIdOnly = await prisma.location.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LocationUpdateManyAndReturnArgs>(args: SelectSubset<T, LocationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Location.
+     * @param {LocationUpsertArgs} args - Arguments to update or create a Location.
+     * @example
+     * // Update or create a Location
+     * const location = await prisma.location.upsert({
+     *   create: {
+     *     // ... data to create a Location
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Location we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LocationUpsertArgs>(args: SelectSubset<T, LocationUpsertArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Locations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationCountArgs} args - Arguments to filter Locations to count.
+     * @example
+     * // Count the number of Locations
+     * const count = await prisma.location.count({
+     *   where: {
+     *     // ... the filter for the Locations we want to count
+     *   }
+     * })
+    **/
+    count<T extends LocationCountArgs>(
+      args?: Subset<T, LocationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LocationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Location.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LocationAggregateArgs>(args: Subset<T, LocationAggregateArgs>): Prisma.PrismaPromise<GetLocationAggregateType<T>>
+
+    /**
+     * Group by Location.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LocationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LocationGroupByArgs['orderBy'] }
+        : { orderBy?: LocationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LocationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLocationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Location model
+   */
+  readonly fields: LocationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Location.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    beats<T extends Location$beatsArgs<ExtArgs> = {}>(args?: Subset<T, Location$beatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Location model
+   */
+  interface LocationFieldRefs {
+    readonly id: FieldRef<"Location", 'String'>
+    readonly name: FieldRef<"Location", 'String'>
+    readonly description: FieldRef<"Location", 'String'>
+    readonly createdAt: FieldRef<"Location", 'DateTime'>
+    readonly updatedAt: FieldRef<"Location", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Location findUnique
+   */
+  export type LocationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location findUniqueOrThrow
+   */
+  export type LocationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location findFirst
+   */
+  export type LocationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Locations.
+     */
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location findFirstOrThrow
+   */
+  export type LocationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Locations.
+     */
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location findMany
+   */
+  export type LocationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Locations to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location create
+   */
+  export type LocationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Location.
+     */
+    data: XOR<LocationCreateInput, LocationUncheckedCreateInput>
+  }
+
+  /**
+   * Location createMany
+   */
+  export type LocationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Locations.
+     */
+    data: LocationCreateManyInput | LocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Location createManyAndReturn
+   */
+  export type LocationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * The data used to create many Locations.
+     */
+    data: LocationCreateManyInput | LocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Location update
+   */
+  export type LocationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Location.
+     */
+    data: XOR<LocationUpdateInput, LocationUncheckedUpdateInput>
+    /**
+     * Choose, which Location to update.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location updateMany
+   */
+  export type LocationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Locations.
+     */
+    data: XOR<LocationUpdateManyMutationInput, LocationUncheckedUpdateManyInput>
+    /**
+     * Filter which Locations to update
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Location updateManyAndReturn
+   */
+  export type LocationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * The data used to update Locations.
+     */
+    data: XOR<LocationUpdateManyMutationInput, LocationUncheckedUpdateManyInput>
+    /**
+     * Filter which Locations to update
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Location upsert
+   */
+  export type LocationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Location to update in case it exists.
+     */
+    where: LocationWhereUniqueInput
+    /**
+     * In case the Location found by the `where` argument doesn't exist, create a new Location with this data.
+     */
+    create: XOR<LocationCreateInput, LocationUncheckedCreateInput>
+    /**
+     * In case the Location was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LocationUpdateInput, LocationUncheckedUpdateInput>
+  }
+
+  /**
+   * Location delete
+   */
+  export type LocationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter which Location to delete.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location deleteMany
+   */
+  export type LocationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Locations to delete
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Location.beats
+   */
+  export type Location$beatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    where?: BeatWhereInput
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    cursor?: BeatWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Location without action
+   */
+  export type LocationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Character
+   */
+
+  export type AggregateCharacter = {
+    _count: CharacterCountAggregateOutputType | null
+    _min: CharacterMinAggregateOutputType | null
+    _max: CharacterMaxAggregateOutputType | null
+  }
+
+  export type CharacterMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CharacterMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CharacterCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CharacterMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CharacterMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CharacterCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CharacterAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Character to aggregate.
+     */
+    where?: CharacterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Characters to fetch.
+     */
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CharacterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Characters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Characters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Characters
+    **/
+    _count?: true | CharacterCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CharacterMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CharacterMaxAggregateInputType
+  }
+
+  export type GetCharacterAggregateType<T extends CharacterAggregateArgs> = {
+        [P in keyof T & keyof AggregateCharacter]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCharacter[P]>
+      : GetScalarType<T[P], AggregateCharacter[P]>
+  }
+
+
+
+
+  export type CharacterGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CharacterWhereInput
+    orderBy?: CharacterOrderByWithAggregationInput | CharacterOrderByWithAggregationInput[]
+    by: CharacterScalarFieldEnum[] | CharacterScalarFieldEnum
+    having?: CharacterScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CharacterCountAggregateInputType | true
+    _min?: CharacterMinAggregateInputType
+    _max?: CharacterMaxAggregateInputType
+  }
+
+  export type CharacterGroupByOutputType = {
+    id: string
+    name: string
+    description: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: CharacterCountAggregateOutputType | null
+    _min: CharacterMinAggregateOutputType | null
+    _max: CharacterMaxAggregateOutputType | null
+  }
+
+  type GetCharacterGroupByPayload<T extends CharacterGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CharacterGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CharacterGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CharacterGroupByOutputType[P]>
+            : GetScalarType<T[P], CharacterGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CharacterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    beats?: boolean | Character$beatsArgs<ExtArgs>
+    clues?: boolean | Character$cluesArgs<ExtArgs>
+    _count?: boolean | CharacterCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["character"]>
+
+  export type CharacterSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["character"]>
+
+  export type CharacterSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["character"]>
+
+  export type CharacterSelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CharacterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["character"]>
+  export type CharacterInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beats?: boolean | Character$beatsArgs<ExtArgs>
+    clues?: boolean | Character$cluesArgs<ExtArgs>
+    _count?: boolean | CharacterCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CharacterIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CharacterIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $CharacterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Character"
+    objects: {
+      beats: Prisma.$BeatPayload<ExtArgs>[]
+      clues: Prisma.$CluePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      description: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["character"]>
+    composites: {}
+  }
+
+  type CharacterGetPayload<S extends boolean | null | undefined | CharacterDefaultArgs> = $Result.GetResult<Prisma.$CharacterPayload, S>
+
+  type CharacterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CharacterFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CharacterCountAggregateInputType | true
+    }
+
+  export interface CharacterDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Character'], meta: { name: 'Character' } }
+    /**
+     * Find zero or one Character that matches the filter.
+     * @param {CharacterFindUniqueArgs} args - Arguments to find a Character
+     * @example
+     * // Get one Character
+     * const character = await prisma.character.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CharacterFindUniqueArgs>(args: SelectSubset<T, CharacterFindUniqueArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Character that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CharacterFindUniqueOrThrowArgs} args - Arguments to find a Character
+     * @example
+     * // Get one Character
+     * const character = await prisma.character.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CharacterFindUniqueOrThrowArgs>(args: SelectSubset<T, CharacterFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Character that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterFindFirstArgs} args - Arguments to find a Character
+     * @example
+     * // Get one Character
+     * const character = await prisma.character.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CharacterFindFirstArgs>(args?: SelectSubset<T, CharacterFindFirstArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Character that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterFindFirstOrThrowArgs} args - Arguments to find a Character
+     * @example
+     * // Get one Character
+     * const character = await prisma.character.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CharacterFindFirstOrThrowArgs>(args?: SelectSubset<T, CharacterFindFirstOrThrowArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Characters that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Characters
+     * const characters = await prisma.character.findMany()
+     * 
+     * // Get first 10 Characters
+     * const characters = await prisma.character.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const characterWithIdOnly = await prisma.character.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CharacterFindManyArgs>(args?: SelectSubset<T, CharacterFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Character.
+     * @param {CharacterCreateArgs} args - Arguments to create a Character.
+     * @example
+     * // Create one Character
+     * const Character = await prisma.character.create({
+     *   data: {
+     *     // ... data to create a Character
+     *   }
+     * })
+     * 
+     */
+    create<T extends CharacterCreateArgs>(args: SelectSubset<T, CharacterCreateArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Characters.
+     * @param {CharacterCreateManyArgs} args - Arguments to create many Characters.
+     * @example
+     * // Create many Characters
+     * const character = await prisma.character.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CharacterCreateManyArgs>(args?: SelectSubset<T, CharacterCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Characters and returns the data saved in the database.
+     * @param {CharacterCreateManyAndReturnArgs} args - Arguments to create many Characters.
+     * @example
+     * // Create many Characters
+     * const character = await prisma.character.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Characters and only return the `id`
+     * const characterWithIdOnly = await prisma.character.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CharacterCreateManyAndReturnArgs>(args?: SelectSubset<T, CharacterCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Character.
+     * @param {CharacterDeleteArgs} args - Arguments to delete one Character.
+     * @example
+     * // Delete one Character
+     * const Character = await prisma.character.delete({
+     *   where: {
+     *     // ... filter to delete one Character
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CharacterDeleteArgs>(args: SelectSubset<T, CharacterDeleteArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Character.
+     * @param {CharacterUpdateArgs} args - Arguments to update one Character.
+     * @example
+     * // Update one Character
+     * const character = await prisma.character.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CharacterUpdateArgs>(args: SelectSubset<T, CharacterUpdateArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Characters.
+     * @param {CharacterDeleteManyArgs} args - Arguments to filter Characters to delete.
+     * @example
+     * // Delete a few Characters
+     * const { count } = await prisma.character.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CharacterDeleteManyArgs>(args?: SelectSubset<T, CharacterDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Characters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Characters
+     * const character = await prisma.character.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CharacterUpdateManyArgs>(args: SelectSubset<T, CharacterUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Characters and returns the data updated in the database.
+     * @param {CharacterUpdateManyAndReturnArgs} args - Arguments to update many Characters.
+     * @example
+     * // Update many Characters
+     * const character = await prisma.character.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Characters and only return the `id`
+     * const characterWithIdOnly = await prisma.character.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CharacterUpdateManyAndReturnArgs>(args: SelectSubset<T, CharacterUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Character.
+     * @param {CharacterUpsertArgs} args - Arguments to update or create a Character.
+     * @example
+     * // Update or create a Character
+     * const character = await prisma.character.upsert({
+     *   create: {
+     *     // ... data to create a Character
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Character we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CharacterUpsertArgs>(args: SelectSubset<T, CharacterUpsertArgs<ExtArgs>>): Prisma__CharacterClient<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Characters.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterCountArgs} args - Arguments to filter Characters to count.
+     * @example
+     * // Count the number of Characters
+     * const count = await prisma.character.count({
+     *   where: {
+     *     // ... the filter for the Characters we want to count
+     *   }
+     * })
+    **/
+    count<T extends CharacterCountArgs>(
+      args?: Subset<T, CharacterCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CharacterCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Character.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CharacterAggregateArgs>(args: Subset<T, CharacterAggregateArgs>): Prisma.PrismaPromise<GetCharacterAggregateType<T>>
+
+    /**
+     * Group by Character.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CharacterGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CharacterGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CharacterGroupByArgs['orderBy'] }
+        : { orderBy?: CharacterGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CharacterGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCharacterGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Character model
+   */
+  readonly fields: CharacterFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Character.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CharacterClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    beats<T extends Character$beatsArgs<ExtArgs> = {}>(args?: Subset<T, Character$beatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    clues<T extends Character$cluesArgs<ExtArgs> = {}>(args?: Subset<T, Character$cluesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Character model
+   */
+  interface CharacterFieldRefs {
+    readonly id: FieldRef<"Character", 'String'>
+    readonly name: FieldRef<"Character", 'String'>
+    readonly description: FieldRef<"Character", 'String'>
+    readonly createdAt: FieldRef<"Character", 'DateTime'>
+    readonly updatedAt: FieldRef<"Character", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Character findUnique
+   */
+  export type CharacterFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter, which Character to fetch.
+     */
+    where: CharacterWhereUniqueInput
+  }
+
+  /**
+   * Character findUniqueOrThrow
+   */
+  export type CharacterFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter, which Character to fetch.
+     */
+    where: CharacterWhereUniqueInput
+  }
+
+  /**
+   * Character findFirst
+   */
+  export type CharacterFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter, which Character to fetch.
+     */
+    where?: CharacterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Characters to fetch.
+     */
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Characters.
+     */
+    cursor?: CharacterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Characters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Characters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Characters.
+     */
+    distinct?: CharacterScalarFieldEnum | CharacterScalarFieldEnum[]
+  }
+
+  /**
+   * Character findFirstOrThrow
+   */
+  export type CharacterFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter, which Character to fetch.
+     */
+    where?: CharacterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Characters to fetch.
+     */
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Characters.
+     */
+    cursor?: CharacterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Characters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Characters.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Characters.
+     */
+    distinct?: CharacterScalarFieldEnum | CharacterScalarFieldEnum[]
+  }
+
+  /**
+   * Character findMany
+   */
+  export type CharacterFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter, which Characters to fetch.
+     */
+    where?: CharacterWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Characters to fetch.
+     */
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Characters.
+     */
+    cursor?: CharacterWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Characters from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Characters.
+     */
+    skip?: number
+    distinct?: CharacterScalarFieldEnum | CharacterScalarFieldEnum[]
+  }
+
+  /**
+   * Character create
+   */
+  export type CharacterCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Character.
+     */
+    data: XOR<CharacterCreateInput, CharacterUncheckedCreateInput>
+  }
+
+  /**
+   * Character createMany
+   */
+  export type CharacterCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Characters.
+     */
+    data: CharacterCreateManyInput | CharacterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Character createManyAndReturn
+   */
+  export type CharacterCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * The data used to create many Characters.
+     */
+    data: CharacterCreateManyInput | CharacterCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Character update
+   */
+  export type CharacterUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Character.
+     */
+    data: XOR<CharacterUpdateInput, CharacterUncheckedUpdateInput>
+    /**
+     * Choose, which Character to update.
+     */
+    where: CharacterWhereUniqueInput
+  }
+
+  /**
+   * Character updateMany
+   */
+  export type CharacterUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Characters.
+     */
+    data: XOR<CharacterUpdateManyMutationInput, CharacterUncheckedUpdateManyInput>
+    /**
+     * Filter which Characters to update
+     */
+    where?: CharacterWhereInput
+    /**
+     * Limit how many Characters to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Character updateManyAndReturn
+   */
+  export type CharacterUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * The data used to update Characters.
+     */
+    data: XOR<CharacterUpdateManyMutationInput, CharacterUncheckedUpdateManyInput>
+    /**
+     * Filter which Characters to update
+     */
+    where?: CharacterWhereInput
+    /**
+     * Limit how many Characters to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Character upsert
+   */
+  export type CharacterUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Character to update in case it exists.
+     */
+    where: CharacterWhereUniqueInput
+    /**
+     * In case the Character found by the `where` argument doesn't exist, create a new Character with this data.
+     */
+    create: XOR<CharacterCreateInput, CharacterUncheckedCreateInput>
+    /**
+     * In case the Character was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CharacterUpdateInput, CharacterUncheckedUpdateInput>
+  }
+
+  /**
+   * Character delete
+   */
+  export type CharacterDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    /**
+     * Filter which Character to delete.
+     */
+    where: CharacterWhereUniqueInput
+  }
+
+  /**
+   * Character deleteMany
+   */
+  export type CharacterDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Characters to delete
+     */
+    where?: CharacterWhereInput
+    /**
+     * Limit how many Characters to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Character.beats
+   */
+  export type Character$beatsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Beat
+     */
+    select?: BeatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Beat
+     */
+    omit?: BeatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BeatInclude<ExtArgs> | null
+    where?: BeatWhereInput
+    orderBy?: BeatOrderByWithRelationInput | BeatOrderByWithRelationInput[]
+    cursor?: BeatWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BeatScalarFieldEnum | BeatScalarFieldEnum[]
+  }
+
+  /**
+   * Character.clues
+   */
+  export type Character$cluesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    where?: ClueWhereInput
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    cursor?: ClueWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ClueScalarFieldEnum | ClueScalarFieldEnum[]
+  }
+
+  /**
+   * Character without action
+   */
+  export type CharacterDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Clue
+   */
+
+  export type AggregateClue = {
+    _count: ClueCountAggregateOutputType | null
+    _min: ClueMinAggregateOutputType | null
+    _max: ClueMaxAggregateOutputType | null
+  }
+
+  export type ClueMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    beatId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ClueMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    beatId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ClueCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    beatId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ClueMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    beatId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ClueMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    beatId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ClueCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    beatId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ClueAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Clue to aggregate.
+     */
+    where?: ClueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Clues to fetch.
+     */
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ClueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Clues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Clues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Clues
+    **/
+    _count?: true | ClueCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ClueMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ClueMaxAggregateInputType
+  }
+
+  export type GetClueAggregateType<T extends ClueAggregateArgs> = {
+        [P in keyof T & keyof AggregateClue]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateClue[P]>
+      : GetScalarType<T[P], AggregateClue[P]>
+  }
+
+
+
+
+  export type ClueGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ClueWhereInput
+    orderBy?: ClueOrderByWithAggregationInput | ClueOrderByWithAggregationInput[]
+    by: ClueScalarFieldEnum[] | ClueScalarFieldEnum
+    having?: ClueScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ClueCountAggregateInputType | true
+    _min?: ClueMinAggregateInputType
+    _max?: ClueMaxAggregateInputType
+  }
+
+  export type ClueGroupByOutputType = {
+    id: string
+    title: string
+    description: string | null
+    beatId: string
+    createdAt: Date
+    updatedAt: Date
+    _count: ClueCountAggregateOutputType | null
+    _min: ClueMinAggregateOutputType | null
+    _max: ClueMaxAggregateOutputType | null
+  }
+
+  type GetClueGroupByPayload<T extends ClueGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ClueGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ClueGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ClueGroupByOutputType[P]>
+            : GetScalarType<T[P], ClueGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ClueSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    beatId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+    characters?: boolean | Clue$charactersArgs<ExtArgs>
+    _count?: boolean | ClueCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["clue"]>
+
+  export type ClueSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    beatId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["clue"]>
+
+  export type ClueSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    beatId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["clue"]>
+
+  export type ClueSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    beatId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ClueOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "beatId" | "createdAt" | "updatedAt", ExtArgs["result"]["clue"]>
+  export type ClueInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+    characters?: boolean | Clue$charactersArgs<ExtArgs>
+    _count?: boolean | ClueCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ClueIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+  }
+  export type ClueIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    beat?: boolean | BeatDefaultArgs<ExtArgs>
+  }
+
+  export type $CluePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Clue"
+    objects: {
+      beat: Prisma.$BeatPayload<ExtArgs>
+      characters: Prisma.$CharacterPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      description: string | null
+      beatId: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["clue"]>
+    composites: {}
+  }
+
+  type ClueGetPayload<S extends boolean | null | undefined | ClueDefaultArgs> = $Result.GetResult<Prisma.$CluePayload, S>
+
+  type ClueCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ClueFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ClueCountAggregateInputType | true
+    }
+
+  export interface ClueDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Clue'], meta: { name: 'Clue' } }
+    /**
+     * Find zero or one Clue that matches the filter.
+     * @param {ClueFindUniqueArgs} args - Arguments to find a Clue
+     * @example
+     * // Get one Clue
+     * const clue = await prisma.clue.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ClueFindUniqueArgs>(args: SelectSubset<T, ClueFindUniqueArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Clue that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ClueFindUniqueOrThrowArgs} args - Arguments to find a Clue
+     * @example
+     * // Get one Clue
+     * const clue = await prisma.clue.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ClueFindUniqueOrThrowArgs>(args: SelectSubset<T, ClueFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Clue that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueFindFirstArgs} args - Arguments to find a Clue
+     * @example
+     * // Get one Clue
+     * const clue = await prisma.clue.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ClueFindFirstArgs>(args?: SelectSubset<T, ClueFindFirstArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Clue that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueFindFirstOrThrowArgs} args - Arguments to find a Clue
+     * @example
+     * // Get one Clue
+     * const clue = await prisma.clue.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ClueFindFirstOrThrowArgs>(args?: SelectSubset<T, ClueFindFirstOrThrowArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Clues that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Clues
+     * const clues = await prisma.clue.findMany()
+     * 
+     * // Get first 10 Clues
+     * const clues = await prisma.clue.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const clueWithIdOnly = await prisma.clue.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ClueFindManyArgs>(args?: SelectSubset<T, ClueFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Clue.
+     * @param {ClueCreateArgs} args - Arguments to create a Clue.
+     * @example
+     * // Create one Clue
+     * const Clue = await prisma.clue.create({
+     *   data: {
+     *     // ... data to create a Clue
+     *   }
+     * })
+     * 
+     */
+    create<T extends ClueCreateArgs>(args: SelectSubset<T, ClueCreateArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Clues.
+     * @param {ClueCreateManyArgs} args - Arguments to create many Clues.
+     * @example
+     * // Create many Clues
+     * const clue = await prisma.clue.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ClueCreateManyArgs>(args?: SelectSubset<T, ClueCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Clues and returns the data saved in the database.
+     * @param {ClueCreateManyAndReturnArgs} args - Arguments to create many Clues.
+     * @example
+     * // Create many Clues
+     * const clue = await prisma.clue.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Clues and only return the `id`
+     * const clueWithIdOnly = await prisma.clue.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ClueCreateManyAndReturnArgs>(args?: SelectSubset<T, ClueCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Clue.
+     * @param {ClueDeleteArgs} args - Arguments to delete one Clue.
+     * @example
+     * // Delete one Clue
+     * const Clue = await prisma.clue.delete({
+     *   where: {
+     *     // ... filter to delete one Clue
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ClueDeleteArgs>(args: SelectSubset<T, ClueDeleteArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Clue.
+     * @param {ClueUpdateArgs} args - Arguments to update one Clue.
+     * @example
+     * // Update one Clue
+     * const clue = await prisma.clue.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ClueUpdateArgs>(args: SelectSubset<T, ClueUpdateArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Clues.
+     * @param {ClueDeleteManyArgs} args - Arguments to filter Clues to delete.
+     * @example
+     * // Delete a few Clues
+     * const { count } = await prisma.clue.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ClueDeleteManyArgs>(args?: SelectSubset<T, ClueDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Clues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Clues
+     * const clue = await prisma.clue.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ClueUpdateManyArgs>(args: SelectSubset<T, ClueUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Clues and returns the data updated in the database.
+     * @param {ClueUpdateManyAndReturnArgs} args - Arguments to update many Clues.
+     * @example
+     * // Update many Clues
+     * const clue = await prisma.clue.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Clues and only return the `id`
+     * const clueWithIdOnly = await prisma.clue.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ClueUpdateManyAndReturnArgs>(args: SelectSubset<T, ClueUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Clue.
+     * @param {ClueUpsertArgs} args - Arguments to update or create a Clue.
+     * @example
+     * // Update or create a Clue
+     * const clue = await prisma.clue.upsert({
+     *   create: {
+     *     // ... data to create a Clue
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Clue we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ClueUpsertArgs>(args: SelectSubset<T, ClueUpsertArgs<ExtArgs>>): Prisma__ClueClient<$Result.GetResult<Prisma.$CluePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Clues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueCountArgs} args - Arguments to filter Clues to count.
+     * @example
+     * // Count the number of Clues
+     * const count = await prisma.clue.count({
+     *   where: {
+     *     // ... the filter for the Clues we want to count
+     *   }
+     * })
+    **/
+    count<T extends ClueCountArgs>(
+      args?: Subset<T, ClueCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ClueCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Clue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ClueAggregateArgs>(args: Subset<T, ClueAggregateArgs>): Prisma.PrismaPromise<GetClueAggregateType<T>>
+
+    /**
+     * Group by Clue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ClueGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ClueGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ClueGroupByArgs['orderBy'] }
+        : { orderBy?: ClueGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ClueGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetClueGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Clue model
+   */
+  readonly fields: ClueFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Clue.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ClueClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    beat<T extends BeatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BeatDefaultArgs<ExtArgs>>): Prisma__BeatClient<$Result.GetResult<Prisma.$BeatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    characters<T extends Clue$charactersArgs<ExtArgs> = {}>(args?: Subset<T, Clue$charactersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CharacterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Clue model
+   */
+  interface ClueFieldRefs {
+    readonly id: FieldRef<"Clue", 'String'>
+    readonly title: FieldRef<"Clue", 'String'>
+    readonly description: FieldRef<"Clue", 'String'>
+    readonly beatId: FieldRef<"Clue", 'String'>
+    readonly createdAt: FieldRef<"Clue", 'DateTime'>
+    readonly updatedAt: FieldRef<"Clue", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Clue findUnique
+   */
+  export type ClueFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter, which Clue to fetch.
+     */
+    where: ClueWhereUniqueInput
+  }
+
+  /**
+   * Clue findUniqueOrThrow
+   */
+  export type ClueFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter, which Clue to fetch.
+     */
+    where: ClueWhereUniqueInput
+  }
+
+  /**
+   * Clue findFirst
+   */
+  export type ClueFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter, which Clue to fetch.
+     */
+    where?: ClueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Clues to fetch.
+     */
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Clues.
+     */
+    cursor?: ClueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Clues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Clues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Clues.
+     */
+    distinct?: ClueScalarFieldEnum | ClueScalarFieldEnum[]
+  }
+
+  /**
+   * Clue findFirstOrThrow
+   */
+  export type ClueFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter, which Clue to fetch.
+     */
+    where?: ClueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Clues to fetch.
+     */
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Clues.
+     */
+    cursor?: ClueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Clues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Clues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Clues.
+     */
+    distinct?: ClueScalarFieldEnum | ClueScalarFieldEnum[]
+  }
+
+  /**
+   * Clue findMany
+   */
+  export type ClueFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter, which Clues to fetch.
+     */
+    where?: ClueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Clues to fetch.
+     */
+    orderBy?: ClueOrderByWithRelationInput | ClueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Clues.
+     */
+    cursor?: ClueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Clues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Clues.
+     */
+    skip?: number
+    distinct?: ClueScalarFieldEnum | ClueScalarFieldEnum[]
+  }
+
+  /**
+   * Clue create
+   */
+  export type ClueCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Clue.
+     */
+    data: XOR<ClueCreateInput, ClueUncheckedCreateInput>
+  }
+
+  /**
+   * Clue createMany
+   */
+  export type ClueCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Clues.
+     */
+    data: ClueCreateManyInput | ClueCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Clue createManyAndReturn
+   */
+  export type ClueCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * The data used to create many Clues.
+     */
+    data: ClueCreateManyInput | ClueCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Clue update
+   */
+  export type ClueUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Clue.
+     */
+    data: XOR<ClueUpdateInput, ClueUncheckedUpdateInput>
+    /**
+     * Choose, which Clue to update.
+     */
+    where: ClueWhereUniqueInput
+  }
+
+  /**
+   * Clue updateMany
+   */
+  export type ClueUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Clues.
+     */
+    data: XOR<ClueUpdateManyMutationInput, ClueUncheckedUpdateManyInput>
+    /**
+     * Filter which Clues to update
+     */
+    where?: ClueWhereInput
+    /**
+     * Limit how many Clues to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Clue updateManyAndReturn
+   */
+  export type ClueUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * The data used to update Clues.
+     */
+    data: XOR<ClueUpdateManyMutationInput, ClueUncheckedUpdateManyInput>
+    /**
+     * Filter which Clues to update
+     */
+    where?: ClueWhereInput
+    /**
+     * Limit how many Clues to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Clue upsert
+   */
+  export type ClueUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Clue to update in case it exists.
+     */
+    where: ClueWhereUniqueInput
+    /**
+     * In case the Clue found by the `where` argument doesn't exist, create a new Clue with this data.
+     */
+    create: XOR<ClueCreateInput, ClueUncheckedCreateInput>
+    /**
+     * In case the Clue was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ClueUpdateInput, ClueUncheckedUpdateInput>
+  }
+
+  /**
+   * Clue delete
+   */
+  export type ClueDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+    /**
+     * Filter which Clue to delete.
+     */
+    where: ClueWhereUniqueInput
+  }
+
+  /**
+   * Clue deleteMany
+   */
+  export type ClueDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Clues to delete
+     */
+    where?: ClueWhereInput
+    /**
+     * Limit how many Clues to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Clue.characters
+   */
+  export type Clue$charactersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Character
+     */
+    select?: CharacterSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Character
+     */
+    omit?: CharacterOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CharacterInclude<ExtArgs> | null
+    where?: CharacterWhereInput
+    orderBy?: CharacterOrderByWithRelationInput | CharacterOrderByWithRelationInput[]
+    cursor?: CharacterWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CharacterScalarFieldEnum | CharacterScalarFieldEnum[]
+  }
+
+  /**
+   * Clue without action
+   */
+  export type ClueDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Clue
+     */
+    select?: ClueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Clue
+     */
+    omit?: ClueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClueInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -11695,6 +25493,144 @@ export namespace Prisma {
   };
 
   export type RolePermissionScalarFieldEnum = (typeof RolePermissionScalarFieldEnum)[keyof typeof RolePermissionScalarFieldEnum]
+
+
+  export const BeatScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    content: 'content',
+    order: 'order',
+    sceneId: 'sceneId',
+    locationId: 'locationId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type BeatScalarFieldEnum = (typeof BeatScalarFieldEnum)[keyof typeof BeatScalarFieldEnum]
+
+
+  export const BeatTransitionScalarFieldEnum: {
+    id: 'id',
+    fromBeatId: 'fromBeatId',
+    toBeatId: 'toBeatId',
+    condition: 'condition',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type BeatTransitionScalarFieldEnum = (typeof BeatTransitionScalarFieldEnum)[keyof typeof BeatTransitionScalarFieldEnum]
+
+
+  export const SceneScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    order: 'order',
+    sequenceId: 'sequenceId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SceneScalarFieldEnum = (typeof SceneScalarFieldEnum)[keyof typeof SceneScalarFieldEnum]
+
+
+  export const SceneTransitionScalarFieldEnum: {
+    id: 'id',
+    fromSceneId: 'fromSceneId',
+    toSceneId: 'toSceneId',
+    condition: 'condition',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SceneTransitionScalarFieldEnum = (typeof SceneTransitionScalarFieldEnum)[keyof typeof SceneTransitionScalarFieldEnum]
+
+
+  export const SequenceScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    order: 'order',
+    actId: 'actId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SequenceScalarFieldEnum = (typeof SequenceScalarFieldEnum)[keyof typeof SequenceScalarFieldEnum]
+
+
+  export const SequenceTransitionScalarFieldEnum: {
+    id: 'id',
+    fromSequenceId: 'fromSequenceId',
+    toSequenceId: 'toSequenceId',
+    condition: 'condition',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SequenceTransitionScalarFieldEnum = (typeof SequenceTransitionScalarFieldEnum)[keyof typeof SequenceTransitionScalarFieldEnum]
+
+
+  export const ActScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    order: 'order',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ActScalarFieldEnum = (typeof ActScalarFieldEnum)[keyof typeof ActScalarFieldEnum]
+
+
+  export const ActTransitionScalarFieldEnum: {
+    id: 'id',
+    fromActId: 'fromActId',
+    toActId: 'toActId',
+    condition: 'condition',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ActTransitionScalarFieldEnum = (typeof ActTransitionScalarFieldEnum)[keyof typeof ActTransitionScalarFieldEnum]
+
+
+  export const LocationScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type LocationScalarFieldEnum = (typeof LocationScalarFieldEnum)[keyof typeof LocationScalarFieldEnum]
+
+
+  export const CharacterScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CharacterScalarFieldEnum = (typeof CharacterScalarFieldEnum)[keyof typeof CharacterScalarFieldEnum]
+
+
+  export const ClueScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    beatId: 'beatId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ClueScalarFieldEnum = (typeof ClueScalarFieldEnum)[keyof typeof ClueScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -12371,6 +26307,765 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"RolePermission"> | Date | string
   }
 
+  export type BeatWhereInput = {
+    AND?: BeatWhereInput | BeatWhereInput[]
+    OR?: BeatWhereInput[]
+    NOT?: BeatWhereInput | BeatWhereInput[]
+    id?: StringFilter<"Beat"> | string
+    title?: StringFilter<"Beat"> | string
+    content?: StringFilter<"Beat"> | string
+    order?: IntFilter<"Beat"> | number
+    sceneId?: StringFilter<"Beat"> | string
+    locationId?: StringNullableFilter<"Beat"> | string | null
+    createdAt?: DateTimeFilter<"Beat"> | Date | string
+    updatedAt?: DateTimeFilter<"Beat"> | Date | string
+    scene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+    characters?: CharacterListRelationFilter
+    clues?: ClueListRelationFilter
+    location?: XOR<LocationNullableScalarRelationFilter, LocationWhereInput> | null
+    nextBeats?: BeatTransitionListRelationFilter
+    previousBeats?: BeatTransitionListRelationFilter
+  }
+
+  export type BeatOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    order?: SortOrder
+    sceneId?: SortOrder
+    locationId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    scene?: SceneOrderByWithRelationInput
+    characters?: CharacterOrderByRelationAggregateInput
+    clues?: ClueOrderByRelationAggregateInput
+    location?: LocationOrderByWithRelationInput
+    nextBeats?: BeatTransitionOrderByRelationAggregateInput
+    previousBeats?: BeatTransitionOrderByRelationAggregateInput
+  }
+
+  export type BeatWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: BeatWhereInput | BeatWhereInput[]
+    OR?: BeatWhereInput[]
+    NOT?: BeatWhereInput | BeatWhereInput[]
+    title?: StringFilter<"Beat"> | string
+    content?: StringFilter<"Beat"> | string
+    order?: IntFilter<"Beat"> | number
+    sceneId?: StringFilter<"Beat"> | string
+    locationId?: StringNullableFilter<"Beat"> | string | null
+    createdAt?: DateTimeFilter<"Beat"> | Date | string
+    updatedAt?: DateTimeFilter<"Beat"> | Date | string
+    scene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+    characters?: CharacterListRelationFilter
+    clues?: ClueListRelationFilter
+    location?: XOR<LocationNullableScalarRelationFilter, LocationWhereInput> | null
+    nextBeats?: BeatTransitionListRelationFilter
+    previousBeats?: BeatTransitionListRelationFilter
+  }, "id">
+
+  export type BeatOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    order?: SortOrder
+    sceneId?: SortOrder
+    locationId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: BeatCountOrderByAggregateInput
+    _avg?: BeatAvgOrderByAggregateInput
+    _max?: BeatMaxOrderByAggregateInput
+    _min?: BeatMinOrderByAggregateInput
+    _sum?: BeatSumOrderByAggregateInput
+  }
+
+  export type BeatScalarWhereWithAggregatesInput = {
+    AND?: BeatScalarWhereWithAggregatesInput | BeatScalarWhereWithAggregatesInput[]
+    OR?: BeatScalarWhereWithAggregatesInput[]
+    NOT?: BeatScalarWhereWithAggregatesInput | BeatScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Beat"> | string
+    title?: StringWithAggregatesFilter<"Beat"> | string
+    content?: StringWithAggregatesFilter<"Beat"> | string
+    order?: IntWithAggregatesFilter<"Beat"> | number
+    sceneId?: StringWithAggregatesFilter<"Beat"> | string
+    locationId?: StringNullableWithAggregatesFilter<"Beat"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Beat"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Beat"> | Date | string
+  }
+
+  export type BeatTransitionWhereInput = {
+    AND?: BeatTransitionWhereInput | BeatTransitionWhereInput[]
+    OR?: BeatTransitionWhereInput[]
+    NOT?: BeatTransitionWhereInput | BeatTransitionWhereInput[]
+    id?: StringFilter<"BeatTransition"> | string
+    fromBeatId?: StringFilter<"BeatTransition"> | string
+    toBeatId?: StringFilter<"BeatTransition"> | string
+    condition?: StringNullableFilter<"BeatTransition"> | string | null
+    description?: StringNullableFilter<"BeatTransition"> | string | null
+    createdAt?: DateTimeFilter<"BeatTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"BeatTransition"> | Date | string
+    fromBeat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+    toBeat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+  }
+
+  export type BeatTransitionOrderByWithRelationInput = {
+    id?: SortOrder
+    fromBeatId?: SortOrder
+    toBeatId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    fromBeat?: BeatOrderByWithRelationInput
+    toBeat?: BeatOrderByWithRelationInput
+  }
+
+  export type BeatTransitionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    fromBeatId_toBeatId?: BeatTransitionFromBeatIdToBeatIdCompoundUniqueInput
+    AND?: BeatTransitionWhereInput | BeatTransitionWhereInput[]
+    OR?: BeatTransitionWhereInput[]
+    NOT?: BeatTransitionWhereInput | BeatTransitionWhereInput[]
+    fromBeatId?: StringFilter<"BeatTransition"> | string
+    toBeatId?: StringFilter<"BeatTransition"> | string
+    condition?: StringNullableFilter<"BeatTransition"> | string | null
+    description?: StringNullableFilter<"BeatTransition"> | string | null
+    createdAt?: DateTimeFilter<"BeatTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"BeatTransition"> | Date | string
+    fromBeat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+    toBeat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+  }, "id" | "fromBeatId_toBeatId">
+
+  export type BeatTransitionOrderByWithAggregationInput = {
+    id?: SortOrder
+    fromBeatId?: SortOrder
+    toBeatId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: BeatTransitionCountOrderByAggregateInput
+    _max?: BeatTransitionMaxOrderByAggregateInput
+    _min?: BeatTransitionMinOrderByAggregateInput
+  }
+
+  export type BeatTransitionScalarWhereWithAggregatesInput = {
+    AND?: BeatTransitionScalarWhereWithAggregatesInput | BeatTransitionScalarWhereWithAggregatesInput[]
+    OR?: BeatTransitionScalarWhereWithAggregatesInput[]
+    NOT?: BeatTransitionScalarWhereWithAggregatesInput | BeatTransitionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"BeatTransition"> | string
+    fromBeatId?: StringWithAggregatesFilter<"BeatTransition"> | string
+    toBeatId?: StringWithAggregatesFilter<"BeatTransition"> | string
+    condition?: StringNullableWithAggregatesFilter<"BeatTransition"> | string | null
+    description?: StringNullableWithAggregatesFilter<"BeatTransition"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"BeatTransition"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BeatTransition"> | Date | string
+  }
+
+  export type SceneWhereInput = {
+    AND?: SceneWhereInput | SceneWhereInput[]
+    OR?: SceneWhereInput[]
+    NOT?: SceneWhereInput | SceneWhereInput[]
+    id?: StringFilter<"Scene"> | string
+    title?: StringFilter<"Scene"> | string
+    description?: StringNullableFilter<"Scene"> | string | null
+    order?: IntFilter<"Scene"> | number
+    sequenceId?: StringFilter<"Scene"> | string
+    createdAt?: DateTimeFilter<"Scene"> | Date | string
+    updatedAt?: DateTimeFilter<"Scene"> | Date | string
+    sequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+    beats?: BeatListRelationFilter
+    nextScenes?: SceneTransitionListRelationFilter
+    previousScenes?: SceneTransitionListRelationFilter
+  }
+
+  export type SceneOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    sequenceId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    sequence?: SequenceOrderByWithRelationInput
+    beats?: BeatOrderByRelationAggregateInput
+    nextScenes?: SceneTransitionOrderByRelationAggregateInput
+    previousScenes?: SceneTransitionOrderByRelationAggregateInput
+  }
+
+  export type SceneWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: SceneWhereInput | SceneWhereInput[]
+    OR?: SceneWhereInput[]
+    NOT?: SceneWhereInput | SceneWhereInput[]
+    title?: StringFilter<"Scene"> | string
+    description?: StringNullableFilter<"Scene"> | string | null
+    order?: IntFilter<"Scene"> | number
+    sequenceId?: StringFilter<"Scene"> | string
+    createdAt?: DateTimeFilter<"Scene"> | Date | string
+    updatedAt?: DateTimeFilter<"Scene"> | Date | string
+    sequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+    beats?: BeatListRelationFilter
+    nextScenes?: SceneTransitionListRelationFilter
+    previousScenes?: SceneTransitionListRelationFilter
+  }, "id">
+
+  export type SceneOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    sequenceId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: SceneCountOrderByAggregateInput
+    _avg?: SceneAvgOrderByAggregateInput
+    _max?: SceneMaxOrderByAggregateInput
+    _min?: SceneMinOrderByAggregateInput
+    _sum?: SceneSumOrderByAggregateInput
+  }
+
+  export type SceneScalarWhereWithAggregatesInput = {
+    AND?: SceneScalarWhereWithAggregatesInput | SceneScalarWhereWithAggregatesInput[]
+    OR?: SceneScalarWhereWithAggregatesInput[]
+    NOT?: SceneScalarWhereWithAggregatesInput | SceneScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Scene"> | string
+    title?: StringWithAggregatesFilter<"Scene"> | string
+    description?: StringNullableWithAggregatesFilter<"Scene"> | string | null
+    order?: IntWithAggregatesFilter<"Scene"> | number
+    sequenceId?: StringWithAggregatesFilter<"Scene"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Scene"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Scene"> | Date | string
+  }
+
+  export type SceneTransitionWhereInput = {
+    AND?: SceneTransitionWhereInput | SceneTransitionWhereInput[]
+    OR?: SceneTransitionWhereInput[]
+    NOT?: SceneTransitionWhereInput | SceneTransitionWhereInput[]
+    id?: StringFilter<"SceneTransition"> | string
+    fromSceneId?: StringFilter<"SceneTransition"> | string
+    toSceneId?: StringFilter<"SceneTransition"> | string
+    condition?: StringNullableFilter<"SceneTransition"> | string | null
+    description?: StringNullableFilter<"SceneTransition"> | string | null
+    createdAt?: DateTimeFilter<"SceneTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SceneTransition"> | Date | string
+    fromScene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+    toScene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+  }
+
+  export type SceneTransitionOrderByWithRelationInput = {
+    id?: SortOrder
+    fromSceneId?: SortOrder
+    toSceneId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    fromScene?: SceneOrderByWithRelationInput
+    toScene?: SceneOrderByWithRelationInput
+  }
+
+  export type SceneTransitionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    fromSceneId_toSceneId?: SceneTransitionFromSceneIdToSceneIdCompoundUniqueInput
+    AND?: SceneTransitionWhereInput | SceneTransitionWhereInput[]
+    OR?: SceneTransitionWhereInput[]
+    NOT?: SceneTransitionWhereInput | SceneTransitionWhereInput[]
+    fromSceneId?: StringFilter<"SceneTransition"> | string
+    toSceneId?: StringFilter<"SceneTransition"> | string
+    condition?: StringNullableFilter<"SceneTransition"> | string | null
+    description?: StringNullableFilter<"SceneTransition"> | string | null
+    createdAt?: DateTimeFilter<"SceneTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SceneTransition"> | Date | string
+    fromScene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+    toScene?: XOR<SceneScalarRelationFilter, SceneWhereInput>
+  }, "id" | "fromSceneId_toSceneId">
+
+  export type SceneTransitionOrderByWithAggregationInput = {
+    id?: SortOrder
+    fromSceneId?: SortOrder
+    toSceneId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: SceneTransitionCountOrderByAggregateInput
+    _max?: SceneTransitionMaxOrderByAggregateInput
+    _min?: SceneTransitionMinOrderByAggregateInput
+  }
+
+  export type SceneTransitionScalarWhereWithAggregatesInput = {
+    AND?: SceneTransitionScalarWhereWithAggregatesInput | SceneTransitionScalarWhereWithAggregatesInput[]
+    OR?: SceneTransitionScalarWhereWithAggregatesInput[]
+    NOT?: SceneTransitionScalarWhereWithAggregatesInput | SceneTransitionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SceneTransition"> | string
+    fromSceneId?: StringWithAggregatesFilter<"SceneTransition"> | string
+    toSceneId?: StringWithAggregatesFilter<"SceneTransition"> | string
+    condition?: StringNullableWithAggregatesFilter<"SceneTransition"> | string | null
+    description?: StringNullableWithAggregatesFilter<"SceneTransition"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"SceneTransition"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"SceneTransition"> | Date | string
+  }
+
+  export type SequenceWhereInput = {
+    AND?: SequenceWhereInput | SequenceWhereInput[]
+    OR?: SequenceWhereInput[]
+    NOT?: SequenceWhereInput | SequenceWhereInput[]
+    id?: StringFilter<"Sequence"> | string
+    title?: StringFilter<"Sequence"> | string
+    description?: StringNullableFilter<"Sequence"> | string | null
+    order?: IntFilter<"Sequence"> | number
+    actId?: StringFilter<"Sequence"> | string
+    createdAt?: DateTimeFilter<"Sequence"> | Date | string
+    updatedAt?: DateTimeFilter<"Sequence"> | Date | string
+    act?: XOR<ActScalarRelationFilter, ActWhereInput>
+    scenes?: SceneListRelationFilter
+    nextSequences?: SequenceTransitionListRelationFilter
+    previousSequences?: SequenceTransitionListRelationFilter
+  }
+
+  export type SequenceOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    actId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    act?: ActOrderByWithRelationInput
+    scenes?: SceneOrderByRelationAggregateInput
+    nextSequences?: SequenceTransitionOrderByRelationAggregateInput
+    previousSequences?: SequenceTransitionOrderByRelationAggregateInput
+  }
+
+  export type SequenceWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: SequenceWhereInput | SequenceWhereInput[]
+    OR?: SequenceWhereInput[]
+    NOT?: SequenceWhereInput | SequenceWhereInput[]
+    title?: StringFilter<"Sequence"> | string
+    description?: StringNullableFilter<"Sequence"> | string | null
+    order?: IntFilter<"Sequence"> | number
+    actId?: StringFilter<"Sequence"> | string
+    createdAt?: DateTimeFilter<"Sequence"> | Date | string
+    updatedAt?: DateTimeFilter<"Sequence"> | Date | string
+    act?: XOR<ActScalarRelationFilter, ActWhereInput>
+    scenes?: SceneListRelationFilter
+    nextSequences?: SequenceTransitionListRelationFilter
+    previousSequences?: SequenceTransitionListRelationFilter
+  }, "id">
+
+  export type SequenceOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    actId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: SequenceCountOrderByAggregateInput
+    _avg?: SequenceAvgOrderByAggregateInput
+    _max?: SequenceMaxOrderByAggregateInput
+    _min?: SequenceMinOrderByAggregateInput
+    _sum?: SequenceSumOrderByAggregateInput
+  }
+
+  export type SequenceScalarWhereWithAggregatesInput = {
+    AND?: SequenceScalarWhereWithAggregatesInput | SequenceScalarWhereWithAggregatesInput[]
+    OR?: SequenceScalarWhereWithAggregatesInput[]
+    NOT?: SequenceScalarWhereWithAggregatesInput | SequenceScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Sequence"> | string
+    title?: StringWithAggregatesFilter<"Sequence"> | string
+    description?: StringNullableWithAggregatesFilter<"Sequence"> | string | null
+    order?: IntWithAggregatesFilter<"Sequence"> | number
+    actId?: StringWithAggregatesFilter<"Sequence"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Sequence"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Sequence"> | Date | string
+  }
+
+  export type SequenceTransitionWhereInput = {
+    AND?: SequenceTransitionWhereInput | SequenceTransitionWhereInput[]
+    OR?: SequenceTransitionWhereInput[]
+    NOT?: SequenceTransitionWhereInput | SequenceTransitionWhereInput[]
+    id?: StringFilter<"SequenceTransition"> | string
+    fromSequenceId?: StringFilter<"SequenceTransition"> | string
+    toSequenceId?: StringFilter<"SequenceTransition"> | string
+    condition?: StringNullableFilter<"SequenceTransition"> | string | null
+    description?: StringNullableFilter<"SequenceTransition"> | string | null
+    createdAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+    fromSequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+    toSequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+  }
+
+  export type SequenceTransitionOrderByWithRelationInput = {
+    id?: SortOrder
+    fromSequenceId?: SortOrder
+    toSequenceId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    fromSequence?: SequenceOrderByWithRelationInput
+    toSequence?: SequenceOrderByWithRelationInput
+  }
+
+  export type SequenceTransitionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    fromSequenceId_toSequenceId?: SequenceTransitionFromSequenceIdToSequenceIdCompoundUniqueInput
+    AND?: SequenceTransitionWhereInput | SequenceTransitionWhereInput[]
+    OR?: SequenceTransitionWhereInput[]
+    NOT?: SequenceTransitionWhereInput | SequenceTransitionWhereInput[]
+    fromSequenceId?: StringFilter<"SequenceTransition"> | string
+    toSequenceId?: StringFilter<"SequenceTransition"> | string
+    condition?: StringNullableFilter<"SequenceTransition"> | string | null
+    description?: StringNullableFilter<"SequenceTransition"> | string | null
+    createdAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+    fromSequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+    toSequence?: XOR<SequenceScalarRelationFilter, SequenceWhereInput>
+  }, "id" | "fromSequenceId_toSequenceId">
+
+  export type SequenceTransitionOrderByWithAggregationInput = {
+    id?: SortOrder
+    fromSequenceId?: SortOrder
+    toSequenceId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: SequenceTransitionCountOrderByAggregateInput
+    _max?: SequenceTransitionMaxOrderByAggregateInput
+    _min?: SequenceTransitionMinOrderByAggregateInput
+  }
+
+  export type SequenceTransitionScalarWhereWithAggregatesInput = {
+    AND?: SequenceTransitionScalarWhereWithAggregatesInput | SequenceTransitionScalarWhereWithAggregatesInput[]
+    OR?: SequenceTransitionScalarWhereWithAggregatesInput[]
+    NOT?: SequenceTransitionScalarWhereWithAggregatesInput | SequenceTransitionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SequenceTransition"> | string
+    fromSequenceId?: StringWithAggregatesFilter<"SequenceTransition"> | string
+    toSequenceId?: StringWithAggregatesFilter<"SequenceTransition"> | string
+    condition?: StringNullableWithAggregatesFilter<"SequenceTransition"> | string | null
+    description?: StringNullableWithAggregatesFilter<"SequenceTransition"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"SequenceTransition"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"SequenceTransition"> | Date | string
+  }
+
+  export type ActWhereInput = {
+    AND?: ActWhereInput | ActWhereInput[]
+    OR?: ActWhereInput[]
+    NOT?: ActWhereInput | ActWhereInput[]
+    id?: StringFilter<"Act"> | string
+    title?: StringFilter<"Act"> | string
+    description?: StringNullableFilter<"Act"> | string | null
+    order?: IntFilter<"Act"> | number
+    createdAt?: DateTimeFilter<"Act"> | Date | string
+    updatedAt?: DateTimeFilter<"Act"> | Date | string
+    sequences?: SequenceListRelationFilter
+    nextActs?: ActTransitionListRelationFilter
+    previousActs?: ActTransitionListRelationFilter
+  }
+
+  export type ActOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    sequences?: SequenceOrderByRelationAggregateInput
+    nextActs?: ActTransitionOrderByRelationAggregateInput
+    previousActs?: ActTransitionOrderByRelationAggregateInput
+  }
+
+  export type ActWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ActWhereInput | ActWhereInput[]
+    OR?: ActWhereInput[]
+    NOT?: ActWhereInput | ActWhereInput[]
+    title?: StringFilter<"Act"> | string
+    description?: StringNullableFilter<"Act"> | string | null
+    order?: IntFilter<"Act"> | number
+    createdAt?: DateTimeFilter<"Act"> | Date | string
+    updatedAt?: DateTimeFilter<"Act"> | Date | string
+    sequences?: SequenceListRelationFilter
+    nextActs?: ActTransitionListRelationFilter
+    previousActs?: ActTransitionListRelationFilter
+  }, "id">
+
+  export type ActOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ActCountOrderByAggregateInput
+    _avg?: ActAvgOrderByAggregateInput
+    _max?: ActMaxOrderByAggregateInput
+    _min?: ActMinOrderByAggregateInput
+    _sum?: ActSumOrderByAggregateInput
+  }
+
+  export type ActScalarWhereWithAggregatesInput = {
+    AND?: ActScalarWhereWithAggregatesInput | ActScalarWhereWithAggregatesInput[]
+    OR?: ActScalarWhereWithAggregatesInput[]
+    NOT?: ActScalarWhereWithAggregatesInput | ActScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Act"> | string
+    title?: StringWithAggregatesFilter<"Act"> | string
+    description?: StringNullableWithAggregatesFilter<"Act"> | string | null
+    order?: IntWithAggregatesFilter<"Act"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Act"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Act"> | Date | string
+  }
+
+  export type ActTransitionWhereInput = {
+    AND?: ActTransitionWhereInput | ActTransitionWhereInput[]
+    OR?: ActTransitionWhereInput[]
+    NOT?: ActTransitionWhereInput | ActTransitionWhereInput[]
+    id?: StringFilter<"ActTransition"> | string
+    fromActId?: StringFilter<"ActTransition"> | string
+    toActId?: StringFilter<"ActTransition"> | string
+    condition?: StringNullableFilter<"ActTransition"> | string | null
+    description?: StringNullableFilter<"ActTransition"> | string | null
+    createdAt?: DateTimeFilter<"ActTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"ActTransition"> | Date | string
+    fromAct?: XOR<ActScalarRelationFilter, ActWhereInput>
+    toAct?: XOR<ActScalarRelationFilter, ActWhereInput>
+  }
+
+  export type ActTransitionOrderByWithRelationInput = {
+    id?: SortOrder
+    fromActId?: SortOrder
+    toActId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    fromAct?: ActOrderByWithRelationInput
+    toAct?: ActOrderByWithRelationInput
+  }
+
+  export type ActTransitionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    fromActId_toActId?: ActTransitionFromActIdToActIdCompoundUniqueInput
+    AND?: ActTransitionWhereInput | ActTransitionWhereInput[]
+    OR?: ActTransitionWhereInput[]
+    NOT?: ActTransitionWhereInput | ActTransitionWhereInput[]
+    fromActId?: StringFilter<"ActTransition"> | string
+    toActId?: StringFilter<"ActTransition"> | string
+    condition?: StringNullableFilter<"ActTransition"> | string | null
+    description?: StringNullableFilter<"ActTransition"> | string | null
+    createdAt?: DateTimeFilter<"ActTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"ActTransition"> | Date | string
+    fromAct?: XOR<ActScalarRelationFilter, ActWhereInput>
+    toAct?: XOR<ActScalarRelationFilter, ActWhereInput>
+  }, "id" | "fromActId_toActId">
+
+  export type ActTransitionOrderByWithAggregationInput = {
+    id?: SortOrder
+    fromActId?: SortOrder
+    toActId?: SortOrder
+    condition?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ActTransitionCountOrderByAggregateInput
+    _max?: ActTransitionMaxOrderByAggregateInput
+    _min?: ActTransitionMinOrderByAggregateInput
+  }
+
+  export type ActTransitionScalarWhereWithAggregatesInput = {
+    AND?: ActTransitionScalarWhereWithAggregatesInput | ActTransitionScalarWhereWithAggregatesInput[]
+    OR?: ActTransitionScalarWhereWithAggregatesInput[]
+    NOT?: ActTransitionScalarWhereWithAggregatesInput | ActTransitionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ActTransition"> | string
+    fromActId?: StringWithAggregatesFilter<"ActTransition"> | string
+    toActId?: StringWithAggregatesFilter<"ActTransition"> | string
+    condition?: StringNullableWithAggregatesFilter<"ActTransition"> | string | null
+    description?: StringNullableWithAggregatesFilter<"ActTransition"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ActTransition"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ActTransition"> | Date | string
+  }
+
+  export type LocationWhereInput = {
+    AND?: LocationWhereInput | LocationWhereInput[]
+    OR?: LocationWhereInput[]
+    NOT?: LocationWhereInput | LocationWhereInput[]
+    id?: StringFilter<"Location"> | string
+    name?: StringFilter<"Location"> | string
+    description?: StringNullableFilter<"Location"> | string | null
+    createdAt?: DateTimeFilter<"Location"> | Date | string
+    updatedAt?: DateTimeFilter<"Location"> | Date | string
+    beats?: BeatListRelationFilter
+  }
+
+  export type LocationOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    beats?: BeatOrderByRelationAggregateInput
+  }
+
+  export type LocationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: LocationWhereInput | LocationWhereInput[]
+    OR?: LocationWhereInput[]
+    NOT?: LocationWhereInput | LocationWhereInput[]
+    name?: StringFilter<"Location"> | string
+    description?: StringNullableFilter<"Location"> | string | null
+    createdAt?: DateTimeFilter<"Location"> | Date | string
+    updatedAt?: DateTimeFilter<"Location"> | Date | string
+    beats?: BeatListRelationFilter
+  }, "id">
+
+  export type LocationOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: LocationCountOrderByAggregateInput
+    _max?: LocationMaxOrderByAggregateInput
+    _min?: LocationMinOrderByAggregateInput
+  }
+
+  export type LocationScalarWhereWithAggregatesInput = {
+    AND?: LocationScalarWhereWithAggregatesInput | LocationScalarWhereWithAggregatesInput[]
+    OR?: LocationScalarWhereWithAggregatesInput[]
+    NOT?: LocationScalarWhereWithAggregatesInput | LocationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Location"> | string
+    name?: StringWithAggregatesFilter<"Location"> | string
+    description?: StringNullableWithAggregatesFilter<"Location"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Location"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Location"> | Date | string
+  }
+
+  export type CharacterWhereInput = {
+    AND?: CharacterWhereInput | CharacterWhereInput[]
+    OR?: CharacterWhereInput[]
+    NOT?: CharacterWhereInput | CharacterWhereInput[]
+    id?: StringFilter<"Character"> | string
+    name?: StringFilter<"Character"> | string
+    description?: StringNullableFilter<"Character"> | string | null
+    createdAt?: DateTimeFilter<"Character"> | Date | string
+    updatedAt?: DateTimeFilter<"Character"> | Date | string
+    beats?: BeatListRelationFilter
+    clues?: ClueListRelationFilter
+  }
+
+  export type CharacterOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    beats?: BeatOrderByRelationAggregateInput
+    clues?: ClueOrderByRelationAggregateInput
+  }
+
+  export type CharacterWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CharacterWhereInput | CharacterWhereInput[]
+    OR?: CharacterWhereInput[]
+    NOT?: CharacterWhereInput | CharacterWhereInput[]
+    name?: StringFilter<"Character"> | string
+    description?: StringNullableFilter<"Character"> | string | null
+    createdAt?: DateTimeFilter<"Character"> | Date | string
+    updatedAt?: DateTimeFilter<"Character"> | Date | string
+    beats?: BeatListRelationFilter
+    clues?: ClueListRelationFilter
+  }, "id">
+
+  export type CharacterOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: CharacterCountOrderByAggregateInput
+    _max?: CharacterMaxOrderByAggregateInput
+    _min?: CharacterMinOrderByAggregateInput
+  }
+
+  export type CharacterScalarWhereWithAggregatesInput = {
+    AND?: CharacterScalarWhereWithAggregatesInput | CharacterScalarWhereWithAggregatesInput[]
+    OR?: CharacterScalarWhereWithAggregatesInput[]
+    NOT?: CharacterScalarWhereWithAggregatesInput | CharacterScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Character"> | string
+    name?: StringWithAggregatesFilter<"Character"> | string
+    description?: StringNullableWithAggregatesFilter<"Character"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Character"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Character"> | Date | string
+  }
+
+  export type ClueWhereInput = {
+    AND?: ClueWhereInput | ClueWhereInput[]
+    OR?: ClueWhereInput[]
+    NOT?: ClueWhereInput | ClueWhereInput[]
+    id?: StringFilter<"Clue"> | string
+    title?: StringFilter<"Clue"> | string
+    description?: StringNullableFilter<"Clue"> | string | null
+    beatId?: StringFilter<"Clue"> | string
+    createdAt?: DateTimeFilter<"Clue"> | Date | string
+    updatedAt?: DateTimeFilter<"Clue"> | Date | string
+    beat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+    characters?: CharacterListRelationFilter
+  }
+
+  export type ClueOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    beatId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    beat?: BeatOrderByWithRelationInput
+    characters?: CharacterOrderByRelationAggregateInput
+  }
+
+  export type ClueWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ClueWhereInput | ClueWhereInput[]
+    OR?: ClueWhereInput[]
+    NOT?: ClueWhereInput | ClueWhereInput[]
+    title?: StringFilter<"Clue"> | string
+    description?: StringNullableFilter<"Clue"> | string | null
+    beatId?: StringFilter<"Clue"> | string
+    createdAt?: DateTimeFilter<"Clue"> | Date | string
+    updatedAt?: DateTimeFilter<"Clue"> | Date | string
+    beat?: XOR<BeatScalarRelationFilter, BeatWhereInput>
+    characters?: CharacterListRelationFilter
+  }, "id">
+
+  export type ClueOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    beatId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ClueCountOrderByAggregateInput
+    _max?: ClueMaxOrderByAggregateInput
+    _min?: ClueMinOrderByAggregateInput
+  }
+
+  export type ClueScalarWhereWithAggregatesInput = {
+    AND?: ClueScalarWhereWithAggregatesInput | ClueScalarWhereWithAggregatesInput[]
+    OR?: ClueScalarWhereWithAggregatesInput[]
+    NOT?: ClueScalarWhereWithAggregatesInput | ClueScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Clue"> | string
+    title?: StringWithAggregatesFilter<"Clue"> | string
+    description?: StringNullableWithAggregatesFilter<"Clue"> | string | null
+    beatId?: StringWithAggregatesFilter<"Clue"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Clue"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Clue"> | Date | string
+  }
+
   export type UserCreateInput = {
     id?: string
     name?: string | null
@@ -12980,6 +27675,796 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type BeatCreateInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatCreateManyInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionCreateInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromBeat: BeatCreateNestedOneWithoutNextBeatsInput
+    toBeat: BeatCreateNestedOneWithoutPreviousBeatsInput
+  }
+
+  export type BeatTransitionUncheckedCreateInput = {
+    id?: string
+    fromBeatId: string
+    toBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromBeat?: BeatUpdateOneRequiredWithoutNextBeatsNestedInput
+    toBeat?: BeatUpdateOneRequiredWithoutPreviousBeatsNestedInput
+  }
+
+  export type BeatTransitionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromBeatId?: StringFieldUpdateOperationsInput | string
+    toBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionCreateManyInput = {
+    id?: string
+    fromBeatId: string
+    toBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromBeatId?: StringFieldUpdateOperationsInput | string
+    toBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequence: SequenceCreateNestedOneWithoutScenesInput
+    beats?: BeatCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneUncheckedCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    sequenceId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionUncheckedCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionUncheckedCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequence?: SequenceUpdateOneRequiredWithoutScenesNestedInput
+    beats?: BeatUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    sequenceId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUncheckedUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUncheckedUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneCreateManyInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    sequenceId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    sequenceId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionCreateInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromScene: SceneCreateNestedOneWithoutNextScenesInput
+    toScene: SceneCreateNestedOneWithoutPreviousScenesInput
+  }
+
+  export type SceneTransitionUncheckedCreateInput = {
+    id?: string
+    fromSceneId: string
+    toSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromScene?: SceneUpdateOneRequiredWithoutNextScenesNestedInput
+    toScene?: SceneUpdateOneRequiredWithoutPreviousScenesNestedInput
+  }
+
+  export type SceneTransitionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSceneId?: StringFieldUpdateOperationsInput | string
+    toSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionCreateManyInput = {
+    id?: string
+    fromSceneId: string
+    toSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSceneId?: StringFieldUpdateOperationsInput | string
+    toSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    act: ActCreateNestedOneWithoutSequencesInput
+    scenes?: SceneCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceUncheckedCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    actId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scenes?: SceneUncheckedCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    act?: ActUpdateOneRequiredWithoutSequencesNestedInput
+    scenes?: SceneUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    actId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scenes?: SceneUncheckedUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUncheckedUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUncheckedUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceCreateManyInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    actId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    actId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionCreateInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromSequence: SequenceCreateNestedOneWithoutNextSequencesInput
+    toSequence: SequenceCreateNestedOneWithoutPreviousSequencesInput
+  }
+
+  export type SequenceTransitionUncheckedCreateInput = {
+    id?: string
+    fromSequenceId: string
+    toSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromSequence?: SequenceUpdateOneRequiredWithoutNextSequencesNestedInput
+    toSequence?: SequenceUpdateOneRequiredWithoutPreviousSequencesNestedInput
+  }
+
+  export type SequenceTransitionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSequenceId?: StringFieldUpdateOperationsInput | string
+    toSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionCreateManyInput = {
+    id?: string
+    fromSequenceId: string
+    toSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSequenceId?: StringFieldUpdateOperationsInput | string
+    toSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceCreateNestedManyWithoutActInput
+    nextActs?: ActTransitionCreateNestedManyWithoutFromActInput
+    previousActs?: ActTransitionCreateNestedManyWithoutToActInput
+  }
+
+  export type ActUncheckedCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceUncheckedCreateNestedManyWithoutActInput
+    nextActs?: ActTransitionUncheckedCreateNestedManyWithoutFromActInput
+    previousActs?: ActTransitionUncheckedCreateNestedManyWithoutToActInput
+  }
+
+  export type ActUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUpdateManyWithoutActNestedInput
+    nextActs?: ActTransitionUpdateManyWithoutFromActNestedInput
+    previousActs?: ActTransitionUpdateManyWithoutToActNestedInput
+  }
+
+  export type ActUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUncheckedUpdateManyWithoutActNestedInput
+    nextActs?: ActTransitionUncheckedUpdateManyWithoutFromActNestedInput
+    previousActs?: ActTransitionUncheckedUpdateManyWithoutToActNestedInput
+  }
+
+  export type ActCreateManyInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionCreateInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromAct: ActCreateNestedOneWithoutNextActsInput
+    toAct: ActCreateNestedOneWithoutPreviousActsInput
+  }
+
+  export type ActTransitionUncheckedCreateInput = {
+    id?: string
+    fromActId: string
+    toActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromAct?: ActUpdateOneRequiredWithoutNextActsNestedInput
+    toAct?: ActUpdateOneRequiredWithoutPreviousActsNestedInput
+  }
+
+  export type ActTransitionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromActId?: StringFieldUpdateOperationsInput | string
+    toActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionCreateManyInput = {
+    id?: string
+    fromActId: string
+    toActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromActId?: StringFieldUpdateOperationsInput | string
+    toActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationCreateInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatCreateNestedManyWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutLocationInput
+  }
+
+  export type LocationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUpdateManyWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutLocationNestedInput
+  }
+
+  export type LocationCreateManyInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type LocationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CharacterCreateInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatCreateNestedManyWithoutCharactersInput
+    clues?: ClueCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterUncheckedCreateInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutCharactersInput
+    clues?: ClueUncheckedCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUpdateManyWithoutCharactersNestedInput
+    clues?: ClueUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutCharactersNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterCreateManyInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CharacterUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CharacterUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beat: BeatCreateNestedOneWithoutCluesInput
+    characters?: CharacterCreateNestedManyWithoutCluesInput
+  }
+
+  export type ClueUncheckedCreateInput = {
+    id?: string
+    title: string
+    description?: string | null
+    beatId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutCluesInput
+  }
+
+  export type ClueUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beat?: BeatUpdateOneRequiredWithoutCluesNestedInput
+    characters?: CharacterUpdateManyWithoutCluesNestedInput
+  }
+
+  export type ClueUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    beatId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutCluesNestedInput
+  }
+
+  export type ClueCreateManyInput = {
+    id?: string
+    title: string
+    description?: string | null
+    beatId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ClueUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    beatId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -13526,6 +29011,488 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type SceneScalarRelationFilter = {
+    is?: SceneWhereInput
+    isNot?: SceneWhereInput
+  }
+
+  export type CharacterListRelationFilter = {
+    every?: CharacterWhereInput
+    some?: CharacterWhereInput
+    none?: CharacterWhereInput
+  }
+
+  export type ClueListRelationFilter = {
+    every?: ClueWhereInput
+    some?: ClueWhereInput
+    none?: ClueWhereInput
+  }
+
+  export type LocationNullableScalarRelationFilter = {
+    is?: LocationWhereInput | null
+    isNot?: LocationWhereInput | null
+  }
+
+  export type BeatTransitionListRelationFilter = {
+    every?: BeatTransitionWhereInput
+    some?: BeatTransitionWhereInput
+    none?: BeatTransitionWhereInput
+  }
+
+  export type CharacterOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ClueOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BeatTransitionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BeatCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    order?: SortOrder
+    sceneId?: SortOrder
+    locationId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BeatAvgOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type BeatMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    order?: SortOrder
+    sceneId?: SortOrder
+    locationId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BeatMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    order?: SortOrder
+    sceneId?: SortOrder
+    locationId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BeatSumOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type BeatScalarRelationFilter = {
+    is?: BeatWhereInput
+    isNot?: BeatWhereInput
+  }
+
+  export type BeatTransitionFromBeatIdToBeatIdCompoundUniqueInput = {
+    fromBeatId: string
+    toBeatId: string
+  }
+
+  export type BeatTransitionCountOrderByAggregateInput = {
+    id?: SortOrder
+    fromBeatId?: SortOrder
+    toBeatId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BeatTransitionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fromBeatId?: SortOrder
+    toBeatId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BeatTransitionMinOrderByAggregateInput = {
+    id?: SortOrder
+    fromBeatId?: SortOrder
+    toBeatId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceScalarRelationFilter = {
+    is?: SequenceWhereInput
+    isNot?: SequenceWhereInput
+  }
+
+  export type BeatListRelationFilter = {
+    every?: BeatWhereInput
+    some?: BeatWhereInput
+    none?: BeatWhereInput
+  }
+
+  export type SceneTransitionListRelationFilter = {
+    every?: SceneTransitionWhereInput
+    some?: SceneTransitionWhereInput
+    none?: SceneTransitionWhereInput
+  }
+
+  export type BeatOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SceneTransitionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SceneCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    sequenceId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SceneAvgOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type SceneMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    sequenceId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SceneMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    sequenceId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SceneSumOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type SceneTransitionFromSceneIdToSceneIdCompoundUniqueInput = {
+    fromSceneId: string
+    toSceneId: string
+  }
+
+  export type SceneTransitionCountOrderByAggregateInput = {
+    id?: SortOrder
+    fromSceneId?: SortOrder
+    toSceneId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SceneTransitionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fromSceneId?: SortOrder
+    toSceneId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SceneTransitionMinOrderByAggregateInput = {
+    id?: SortOrder
+    fromSceneId?: SortOrder
+    toSceneId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActScalarRelationFilter = {
+    is?: ActWhereInput
+    isNot?: ActWhereInput
+  }
+
+  export type SceneListRelationFilter = {
+    every?: SceneWhereInput
+    some?: SceneWhereInput
+    none?: SceneWhereInput
+  }
+
+  export type SequenceTransitionListRelationFilter = {
+    every?: SequenceTransitionWhereInput
+    some?: SequenceTransitionWhereInput
+    none?: SequenceTransitionWhereInput
+  }
+
+  export type SceneOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SequenceTransitionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SequenceCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    actId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceAvgOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type SequenceMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    actId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    actId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceSumOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type SequenceTransitionFromSequenceIdToSequenceIdCompoundUniqueInput = {
+    fromSequenceId: string
+    toSequenceId: string
+  }
+
+  export type SequenceTransitionCountOrderByAggregateInput = {
+    id?: SortOrder
+    fromSequenceId?: SortOrder
+    toSequenceId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceTransitionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fromSequenceId?: SortOrder
+    toSequenceId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceTransitionMinOrderByAggregateInput = {
+    id?: SortOrder
+    fromSequenceId?: SortOrder
+    toSequenceId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SequenceListRelationFilter = {
+    every?: SequenceWhereInput
+    some?: SequenceWhereInput
+    none?: SequenceWhereInput
+  }
+
+  export type ActTransitionListRelationFilter = {
+    every?: ActTransitionWhereInput
+    some?: ActTransitionWhereInput
+    none?: ActTransitionWhereInput
+  }
+
+  export type SequenceOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ActTransitionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ActCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActAvgOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type ActMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActSumOrderByAggregateInput = {
+    order?: SortOrder
+  }
+
+  export type ActTransitionFromActIdToActIdCompoundUniqueInput = {
+    fromActId: string
+    toActId: string
+  }
+
+  export type ActTransitionCountOrderByAggregateInput = {
+    id?: SortOrder
+    fromActId?: SortOrder
+    toActId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActTransitionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fromActId?: SortOrder
+    toActId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ActTransitionMinOrderByAggregateInput = {
+    id?: SortOrder
+    fromActId?: SortOrder
+    toActId?: SortOrder
+    condition?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LocationCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LocationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LocationMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CharacterCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CharacterMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CharacterMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ClueCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    beatId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ClueMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    beatId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ClueMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    beatId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
   export type AccountCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -13952,6 +29919,888 @@ export namespace Prisma {
     upsert?: PermissionUpsertWithoutRolesInput
     connect?: PermissionWhereUniqueInput
     update?: XOR<XOR<PermissionUpdateToOneWithWhereWithoutRolesInput, PermissionUpdateWithoutRolesInput>, PermissionUncheckedUpdateWithoutRolesInput>
+  }
+
+  export type SceneCreateNestedOneWithoutBeatsInput = {
+    create?: XOR<SceneCreateWithoutBeatsInput, SceneUncheckedCreateWithoutBeatsInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutBeatsInput
+    connect?: SceneWhereUniqueInput
+  }
+
+  export type CharacterCreateNestedManyWithoutBeatsInput = {
+    create?: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput> | CharacterCreateWithoutBeatsInput[] | CharacterUncheckedCreateWithoutBeatsInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutBeatsInput | CharacterCreateOrConnectWithoutBeatsInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+  }
+
+  export type ClueCreateNestedManyWithoutBeatInput = {
+    create?: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput> | ClueCreateWithoutBeatInput[] | ClueUncheckedCreateWithoutBeatInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutBeatInput | ClueCreateOrConnectWithoutBeatInput[]
+    createMany?: ClueCreateManyBeatInputEnvelope
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+  }
+
+  export type LocationCreateNestedOneWithoutBeatsInput = {
+    create?: XOR<LocationCreateWithoutBeatsInput, LocationUncheckedCreateWithoutBeatsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutBeatsInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type BeatTransitionCreateNestedManyWithoutFromBeatInput = {
+    create?: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput> | BeatTransitionCreateWithoutFromBeatInput[] | BeatTransitionUncheckedCreateWithoutFromBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutFromBeatInput | BeatTransitionCreateOrConnectWithoutFromBeatInput[]
+    createMany?: BeatTransitionCreateManyFromBeatInputEnvelope
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+  }
+
+  export type BeatTransitionCreateNestedManyWithoutToBeatInput = {
+    create?: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput> | BeatTransitionCreateWithoutToBeatInput[] | BeatTransitionUncheckedCreateWithoutToBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutToBeatInput | BeatTransitionCreateOrConnectWithoutToBeatInput[]
+    createMany?: BeatTransitionCreateManyToBeatInputEnvelope
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+  }
+
+  export type CharacterUncheckedCreateNestedManyWithoutBeatsInput = {
+    create?: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput> | CharacterCreateWithoutBeatsInput[] | CharacterUncheckedCreateWithoutBeatsInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutBeatsInput | CharacterCreateOrConnectWithoutBeatsInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+  }
+
+  export type ClueUncheckedCreateNestedManyWithoutBeatInput = {
+    create?: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput> | ClueCreateWithoutBeatInput[] | ClueUncheckedCreateWithoutBeatInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutBeatInput | ClueCreateOrConnectWithoutBeatInput[]
+    createMany?: ClueCreateManyBeatInputEnvelope
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+  }
+
+  export type BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput = {
+    create?: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput> | BeatTransitionCreateWithoutFromBeatInput[] | BeatTransitionUncheckedCreateWithoutFromBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutFromBeatInput | BeatTransitionCreateOrConnectWithoutFromBeatInput[]
+    createMany?: BeatTransitionCreateManyFromBeatInputEnvelope
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+  }
+
+  export type BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput = {
+    create?: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput> | BeatTransitionCreateWithoutToBeatInput[] | BeatTransitionUncheckedCreateWithoutToBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutToBeatInput | BeatTransitionCreateOrConnectWithoutToBeatInput[]
+    createMany?: BeatTransitionCreateManyToBeatInputEnvelope
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+  }
+
+  export type SceneUpdateOneRequiredWithoutBeatsNestedInput = {
+    create?: XOR<SceneCreateWithoutBeatsInput, SceneUncheckedCreateWithoutBeatsInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutBeatsInput
+    upsert?: SceneUpsertWithoutBeatsInput
+    connect?: SceneWhereUniqueInput
+    update?: XOR<XOR<SceneUpdateToOneWithWhereWithoutBeatsInput, SceneUpdateWithoutBeatsInput>, SceneUncheckedUpdateWithoutBeatsInput>
+  }
+
+  export type CharacterUpdateManyWithoutBeatsNestedInput = {
+    create?: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput> | CharacterCreateWithoutBeatsInput[] | CharacterUncheckedCreateWithoutBeatsInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutBeatsInput | CharacterCreateOrConnectWithoutBeatsInput[]
+    upsert?: CharacterUpsertWithWhereUniqueWithoutBeatsInput | CharacterUpsertWithWhereUniqueWithoutBeatsInput[]
+    set?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    disconnect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    delete?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    update?: CharacterUpdateWithWhereUniqueWithoutBeatsInput | CharacterUpdateWithWhereUniqueWithoutBeatsInput[]
+    updateMany?: CharacterUpdateManyWithWhereWithoutBeatsInput | CharacterUpdateManyWithWhereWithoutBeatsInput[]
+    deleteMany?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
+  }
+
+  export type ClueUpdateManyWithoutBeatNestedInput = {
+    create?: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput> | ClueCreateWithoutBeatInput[] | ClueUncheckedCreateWithoutBeatInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutBeatInput | ClueCreateOrConnectWithoutBeatInput[]
+    upsert?: ClueUpsertWithWhereUniqueWithoutBeatInput | ClueUpsertWithWhereUniqueWithoutBeatInput[]
+    createMany?: ClueCreateManyBeatInputEnvelope
+    set?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    disconnect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    delete?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    update?: ClueUpdateWithWhereUniqueWithoutBeatInput | ClueUpdateWithWhereUniqueWithoutBeatInput[]
+    updateMany?: ClueUpdateManyWithWhereWithoutBeatInput | ClueUpdateManyWithWhereWithoutBeatInput[]
+    deleteMany?: ClueScalarWhereInput | ClueScalarWhereInput[]
+  }
+
+  export type LocationUpdateOneWithoutBeatsNestedInput = {
+    create?: XOR<LocationCreateWithoutBeatsInput, LocationUncheckedCreateWithoutBeatsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutBeatsInput
+    upsert?: LocationUpsertWithoutBeatsInput
+    disconnect?: LocationWhereInput | boolean
+    delete?: LocationWhereInput | boolean
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutBeatsInput, LocationUpdateWithoutBeatsInput>, LocationUncheckedUpdateWithoutBeatsInput>
+  }
+
+  export type BeatTransitionUpdateManyWithoutFromBeatNestedInput = {
+    create?: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput> | BeatTransitionCreateWithoutFromBeatInput[] | BeatTransitionUncheckedCreateWithoutFromBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutFromBeatInput | BeatTransitionCreateOrConnectWithoutFromBeatInput[]
+    upsert?: BeatTransitionUpsertWithWhereUniqueWithoutFromBeatInput | BeatTransitionUpsertWithWhereUniqueWithoutFromBeatInput[]
+    createMany?: BeatTransitionCreateManyFromBeatInputEnvelope
+    set?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    disconnect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    delete?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    update?: BeatTransitionUpdateWithWhereUniqueWithoutFromBeatInput | BeatTransitionUpdateWithWhereUniqueWithoutFromBeatInput[]
+    updateMany?: BeatTransitionUpdateManyWithWhereWithoutFromBeatInput | BeatTransitionUpdateManyWithWhereWithoutFromBeatInput[]
+    deleteMany?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+  }
+
+  export type BeatTransitionUpdateManyWithoutToBeatNestedInput = {
+    create?: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput> | BeatTransitionCreateWithoutToBeatInput[] | BeatTransitionUncheckedCreateWithoutToBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutToBeatInput | BeatTransitionCreateOrConnectWithoutToBeatInput[]
+    upsert?: BeatTransitionUpsertWithWhereUniqueWithoutToBeatInput | BeatTransitionUpsertWithWhereUniqueWithoutToBeatInput[]
+    createMany?: BeatTransitionCreateManyToBeatInputEnvelope
+    set?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    disconnect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    delete?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    update?: BeatTransitionUpdateWithWhereUniqueWithoutToBeatInput | BeatTransitionUpdateWithWhereUniqueWithoutToBeatInput[]
+    updateMany?: BeatTransitionUpdateManyWithWhereWithoutToBeatInput | BeatTransitionUpdateManyWithWhereWithoutToBeatInput[]
+    deleteMany?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+  }
+
+  export type CharacterUncheckedUpdateManyWithoutBeatsNestedInput = {
+    create?: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput> | CharacterCreateWithoutBeatsInput[] | CharacterUncheckedCreateWithoutBeatsInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutBeatsInput | CharacterCreateOrConnectWithoutBeatsInput[]
+    upsert?: CharacterUpsertWithWhereUniqueWithoutBeatsInput | CharacterUpsertWithWhereUniqueWithoutBeatsInput[]
+    set?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    disconnect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    delete?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    update?: CharacterUpdateWithWhereUniqueWithoutBeatsInput | CharacterUpdateWithWhereUniqueWithoutBeatsInput[]
+    updateMany?: CharacterUpdateManyWithWhereWithoutBeatsInput | CharacterUpdateManyWithWhereWithoutBeatsInput[]
+    deleteMany?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
+  }
+
+  export type ClueUncheckedUpdateManyWithoutBeatNestedInput = {
+    create?: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput> | ClueCreateWithoutBeatInput[] | ClueUncheckedCreateWithoutBeatInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutBeatInput | ClueCreateOrConnectWithoutBeatInput[]
+    upsert?: ClueUpsertWithWhereUniqueWithoutBeatInput | ClueUpsertWithWhereUniqueWithoutBeatInput[]
+    createMany?: ClueCreateManyBeatInputEnvelope
+    set?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    disconnect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    delete?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    update?: ClueUpdateWithWhereUniqueWithoutBeatInput | ClueUpdateWithWhereUniqueWithoutBeatInput[]
+    updateMany?: ClueUpdateManyWithWhereWithoutBeatInput | ClueUpdateManyWithWhereWithoutBeatInput[]
+    deleteMany?: ClueScalarWhereInput | ClueScalarWhereInput[]
+  }
+
+  export type BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput = {
+    create?: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput> | BeatTransitionCreateWithoutFromBeatInput[] | BeatTransitionUncheckedCreateWithoutFromBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutFromBeatInput | BeatTransitionCreateOrConnectWithoutFromBeatInput[]
+    upsert?: BeatTransitionUpsertWithWhereUniqueWithoutFromBeatInput | BeatTransitionUpsertWithWhereUniqueWithoutFromBeatInput[]
+    createMany?: BeatTransitionCreateManyFromBeatInputEnvelope
+    set?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    disconnect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    delete?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    update?: BeatTransitionUpdateWithWhereUniqueWithoutFromBeatInput | BeatTransitionUpdateWithWhereUniqueWithoutFromBeatInput[]
+    updateMany?: BeatTransitionUpdateManyWithWhereWithoutFromBeatInput | BeatTransitionUpdateManyWithWhereWithoutFromBeatInput[]
+    deleteMany?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+  }
+
+  export type BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput = {
+    create?: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput> | BeatTransitionCreateWithoutToBeatInput[] | BeatTransitionUncheckedCreateWithoutToBeatInput[]
+    connectOrCreate?: BeatTransitionCreateOrConnectWithoutToBeatInput | BeatTransitionCreateOrConnectWithoutToBeatInput[]
+    upsert?: BeatTransitionUpsertWithWhereUniqueWithoutToBeatInput | BeatTransitionUpsertWithWhereUniqueWithoutToBeatInput[]
+    createMany?: BeatTransitionCreateManyToBeatInputEnvelope
+    set?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    disconnect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    delete?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    connect?: BeatTransitionWhereUniqueInput | BeatTransitionWhereUniqueInput[]
+    update?: BeatTransitionUpdateWithWhereUniqueWithoutToBeatInput | BeatTransitionUpdateWithWhereUniqueWithoutToBeatInput[]
+    updateMany?: BeatTransitionUpdateManyWithWhereWithoutToBeatInput | BeatTransitionUpdateManyWithWhereWithoutToBeatInput[]
+    deleteMany?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+  }
+
+  export type BeatCreateNestedOneWithoutNextBeatsInput = {
+    create?: XOR<BeatCreateWithoutNextBeatsInput, BeatUncheckedCreateWithoutNextBeatsInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutNextBeatsInput
+    connect?: BeatWhereUniqueInput
+  }
+
+  export type BeatCreateNestedOneWithoutPreviousBeatsInput = {
+    create?: XOR<BeatCreateWithoutPreviousBeatsInput, BeatUncheckedCreateWithoutPreviousBeatsInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutPreviousBeatsInput
+    connect?: BeatWhereUniqueInput
+  }
+
+  export type BeatUpdateOneRequiredWithoutNextBeatsNestedInput = {
+    create?: XOR<BeatCreateWithoutNextBeatsInput, BeatUncheckedCreateWithoutNextBeatsInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutNextBeatsInput
+    upsert?: BeatUpsertWithoutNextBeatsInput
+    connect?: BeatWhereUniqueInput
+    update?: XOR<XOR<BeatUpdateToOneWithWhereWithoutNextBeatsInput, BeatUpdateWithoutNextBeatsInput>, BeatUncheckedUpdateWithoutNextBeatsInput>
+  }
+
+  export type BeatUpdateOneRequiredWithoutPreviousBeatsNestedInput = {
+    create?: XOR<BeatCreateWithoutPreviousBeatsInput, BeatUncheckedCreateWithoutPreviousBeatsInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutPreviousBeatsInput
+    upsert?: BeatUpsertWithoutPreviousBeatsInput
+    connect?: BeatWhereUniqueInput
+    update?: XOR<XOR<BeatUpdateToOneWithWhereWithoutPreviousBeatsInput, BeatUpdateWithoutPreviousBeatsInput>, BeatUncheckedUpdateWithoutPreviousBeatsInput>
+  }
+
+  export type SequenceCreateNestedOneWithoutScenesInput = {
+    create?: XOR<SequenceCreateWithoutScenesInput, SequenceUncheckedCreateWithoutScenesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutScenesInput
+    connect?: SequenceWhereUniqueInput
+  }
+
+  export type BeatCreateNestedManyWithoutSceneInput = {
+    create?: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput> | BeatCreateWithoutSceneInput[] | BeatUncheckedCreateWithoutSceneInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutSceneInput | BeatCreateOrConnectWithoutSceneInput[]
+    createMany?: BeatCreateManySceneInputEnvelope
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type SceneTransitionCreateNestedManyWithoutFromSceneInput = {
+    create?: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput> | SceneTransitionCreateWithoutFromSceneInput[] | SceneTransitionUncheckedCreateWithoutFromSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutFromSceneInput | SceneTransitionCreateOrConnectWithoutFromSceneInput[]
+    createMany?: SceneTransitionCreateManyFromSceneInputEnvelope
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+  }
+
+  export type SceneTransitionCreateNestedManyWithoutToSceneInput = {
+    create?: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput> | SceneTransitionCreateWithoutToSceneInput[] | SceneTransitionUncheckedCreateWithoutToSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutToSceneInput | SceneTransitionCreateOrConnectWithoutToSceneInput[]
+    createMany?: SceneTransitionCreateManyToSceneInputEnvelope
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+  }
+
+  export type BeatUncheckedCreateNestedManyWithoutSceneInput = {
+    create?: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput> | BeatCreateWithoutSceneInput[] | BeatUncheckedCreateWithoutSceneInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutSceneInput | BeatCreateOrConnectWithoutSceneInput[]
+    createMany?: BeatCreateManySceneInputEnvelope
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type SceneTransitionUncheckedCreateNestedManyWithoutFromSceneInput = {
+    create?: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput> | SceneTransitionCreateWithoutFromSceneInput[] | SceneTransitionUncheckedCreateWithoutFromSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutFromSceneInput | SceneTransitionCreateOrConnectWithoutFromSceneInput[]
+    createMany?: SceneTransitionCreateManyFromSceneInputEnvelope
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+  }
+
+  export type SceneTransitionUncheckedCreateNestedManyWithoutToSceneInput = {
+    create?: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput> | SceneTransitionCreateWithoutToSceneInput[] | SceneTransitionUncheckedCreateWithoutToSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutToSceneInput | SceneTransitionCreateOrConnectWithoutToSceneInput[]
+    createMany?: SceneTransitionCreateManyToSceneInputEnvelope
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+  }
+
+  export type SequenceUpdateOneRequiredWithoutScenesNestedInput = {
+    create?: XOR<SequenceCreateWithoutScenesInput, SequenceUncheckedCreateWithoutScenesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutScenesInput
+    upsert?: SequenceUpsertWithoutScenesInput
+    connect?: SequenceWhereUniqueInput
+    update?: XOR<XOR<SequenceUpdateToOneWithWhereWithoutScenesInput, SequenceUpdateWithoutScenesInput>, SequenceUncheckedUpdateWithoutScenesInput>
+  }
+
+  export type BeatUpdateManyWithoutSceneNestedInput = {
+    create?: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput> | BeatCreateWithoutSceneInput[] | BeatUncheckedCreateWithoutSceneInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutSceneInput | BeatCreateOrConnectWithoutSceneInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutSceneInput | BeatUpsertWithWhereUniqueWithoutSceneInput[]
+    createMany?: BeatCreateManySceneInputEnvelope
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutSceneInput | BeatUpdateWithWhereUniqueWithoutSceneInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutSceneInput | BeatUpdateManyWithWhereWithoutSceneInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type SceneTransitionUpdateManyWithoutFromSceneNestedInput = {
+    create?: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput> | SceneTransitionCreateWithoutFromSceneInput[] | SceneTransitionUncheckedCreateWithoutFromSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutFromSceneInput | SceneTransitionCreateOrConnectWithoutFromSceneInput[]
+    upsert?: SceneTransitionUpsertWithWhereUniqueWithoutFromSceneInput | SceneTransitionUpsertWithWhereUniqueWithoutFromSceneInput[]
+    createMany?: SceneTransitionCreateManyFromSceneInputEnvelope
+    set?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    disconnect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    delete?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    update?: SceneTransitionUpdateWithWhereUniqueWithoutFromSceneInput | SceneTransitionUpdateWithWhereUniqueWithoutFromSceneInput[]
+    updateMany?: SceneTransitionUpdateManyWithWhereWithoutFromSceneInput | SceneTransitionUpdateManyWithWhereWithoutFromSceneInput[]
+    deleteMany?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+  }
+
+  export type SceneTransitionUpdateManyWithoutToSceneNestedInput = {
+    create?: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput> | SceneTransitionCreateWithoutToSceneInput[] | SceneTransitionUncheckedCreateWithoutToSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutToSceneInput | SceneTransitionCreateOrConnectWithoutToSceneInput[]
+    upsert?: SceneTransitionUpsertWithWhereUniqueWithoutToSceneInput | SceneTransitionUpsertWithWhereUniqueWithoutToSceneInput[]
+    createMany?: SceneTransitionCreateManyToSceneInputEnvelope
+    set?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    disconnect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    delete?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    update?: SceneTransitionUpdateWithWhereUniqueWithoutToSceneInput | SceneTransitionUpdateWithWhereUniqueWithoutToSceneInput[]
+    updateMany?: SceneTransitionUpdateManyWithWhereWithoutToSceneInput | SceneTransitionUpdateManyWithWhereWithoutToSceneInput[]
+    deleteMany?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+  }
+
+  export type BeatUncheckedUpdateManyWithoutSceneNestedInput = {
+    create?: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput> | BeatCreateWithoutSceneInput[] | BeatUncheckedCreateWithoutSceneInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutSceneInput | BeatCreateOrConnectWithoutSceneInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutSceneInput | BeatUpsertWithWhereUniqueWithoutSceneInput[]
+    createMany?: BeatCreateManySceneInputEnvelope
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutSceneInput | BeatUpdateWithWhereUniqueWithoutSceneInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutSceneInput | BeatUpdateManyWithWhereWithoutSceneInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type SceneTransitionUncheckedUpdateManyWithoutFromSceneNestedInput = {
+    create?: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput> | SceneTransitionCreateWithoutFromSceneInput[] | SceneTransitionUncheckedCreateWithoutFromSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutFromSceneInput | SceneTransitionCreateOrConnectWithoutFromSceneInput[]
+    upsert?: SceneTransitionUpsertWithWhereUniqueWithoutFromSceneInput | SceneTransitionUpsertWithWhereUniqueWithoutFromSceneInput[]
+    createMany?: SceneTransitionCreateManyFromSceneInputEnvelope
+    set?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    disconnect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    delete?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    update?: SceneTransitionUpdateWithWhereUniqueWithoutFromSceneInput | SceneTransitionUpdateWithWhereUniqueWithoutFromSceneInput[]
+    updateMany?: SceneTransitionUpdateManyWithWhereWithoutFromSceneInput | SceneTransitionUpdateManyWithWhereWithoutFromSceneInput[]
+    deleteMany?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+  }
+
+  export type SceneTransitionUncheckedUpdateManyWithoutToSceneNestedInput = {
+    create?: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput> | SceneTransitionCreateWithoutToSceneInput[] | SceneTransitionUncheckedCreateWithoutToSceneInput[]
+    connectOrCreate?: SceneTransitionCreateOrConnectWithoutToSceneInput | SceneTransitionCreateOrConnectWithoutToSceneInput[]
+    upsert?: SceneTransitionUpsertWithWhereUniqueWithoutToSceneInput | SceneTransitionUpsertWithWhereUniqueWithoutToSceneInput[]
+    createMany?: SceneTransitionCreateManyToSceneInputEnvelope
+    set?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    disconnect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    delete?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    connect?: SceneTransitionWhereUniqueInput | SceneTransitionWhereUniqueInput[]
+    update?: SceneTransitionUpdateWithWhereUniqueWithoutToSceneInput | SceneTransitionUpdateWithWhereUniqueWithoutToSceneInput[]
+    updateMany?: SceneTransitionUpdateManyWithWhereWithoutToSceneInput | SceneTransitionUpdateManyWithWhereWithoutToSceneInput[]
+    deleteMany?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+  }
+
+  export type SceneCreateNestedOneWithoutNextScenesInput = {
+    create?: XOR<SceneCreateWithoutNextScenesInput, SceneUncheckedCreateWithoutNextScenesInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutNextScenesInput
+    connect?: SceneWhereUniqueInput
+  }
+
+  export type SceneCreateNestedOneWithoutPreviousScenesInput = {
+    create?: XOR<SceneCreateWithoutPreviousScenesInput, SceneUncheckedCreateWithoutPreviousScenesInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutPreviousScenesInput
+    connect?: SceneWhereUniqueInput
+  }
+
+  export type SceneUpdateOneRequiredWithoutNextScenesNestedInput = {
+    create?: XOR<SceneCreateWithoutNextScenesInput, SceneUncheckedCreateWithoutNextScenesInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutNextScenesInput
+    upsert?: SceneUpsertWithoutNextScenesInput
+    connect?: SceneWhereUniqueInput
+    update?: XOR<XOR<SceneUpdateToOneWithWhereWithoutNextScenesInput, SceneUpdateWithoutNextScenesInput>, SceneUncheckedUpdateWithoutNextScenesInput>
+  }
+
+  export type SceneUpdateOneRequiredWithoutPreviousScenesNestedInput = {
+    create?: XOR<SceneCreateWithoutPreviousScenesInput, SceneUncheckedCreateWithoutPreviousScenesInput>
+    connectOrCreate?: SceneCreateOrConnectWithoutPreviousScenesInput
+    upsert?: SceneUpsertWithoutPreviousScenesInput
+    connect?: SceneWhereUniqueInput
+    update?: XOR<XOR<SceneUpdateToOneWithWhereWithoutPreviousScenesInput, SceneUpdateWithoutPreviousScenesInput>, SceneUncheckedUpdateWithoutPreviousScenesInput>
+  }
+
+  export type ActCreateNestedOneWithoutSequencesInput = {
+    create?: XOR<ActCreateWithoutSequencesInput, ActUncheckedCreateWithoutSequencesInput>
+    connectOrCreate?: ActCreateOrConnectWithoutSequencesInput
+    connect?: ActWhereUniqueInput
+  }
+
+  export type SceneCreateNestedManyWithoutSequenceInput = {
+    create?: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput> | SceneCreateWithoutSequenceInput[] | SceneUncheckedCreateWithoutSequenceInput[]
+    connectOrCreate?: SceneCreateOrConnectWithoutSequenceInput | SceneCreateOrConnectWithoutSequenceInput[]
+    createMany?: SceneCreateManySequenceInputEnvelope
+    connect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+  }
+
+  export type SequenceTransitionCreateNestedManyWithoutFromSequenceInput = {
+    create?: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput> | SequenceTransitionCreateWithoutFromSequenceInput[] | SequenceTransitionUncheckedCreateWithoutFromSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutFromSequenceInput | SequenceTransitionCreateOrConnectWithoutFromSequenceInput[]
+    createMany?: SequenceTransitionCreateManyFromSequenceInputEnvelope
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+  }
+
+  export type SequenceTransitionCreateNestedManyWithoutToSequenceInput = {
+    create?: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput> | SequenceTransitionCreateWithoutToSequenceInput[] | SequenceTransitionUncheckedCreateWithoutToSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutToSequenceInput | SequenceTransitionCreateOrConnectWithoutToSequenceInput[]
+    createMany?: SequenceTransitionCreateManyToSequenceInputEnvelope
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+  }
+
+  export type SceneUncheckedCreateNestedManyWithoutSequenceInput = {
+    create?: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput> | SceneCreateWithoutSequenceInput[] | SceneUncheckedCreateWithoutSequenceInput[]
+    connectOrCreate?: SceneCreateOrConnectWithoutSequenceInput | SceneCreateOrConnectWithoutSequenceInput[]
+    createMany?: SceneCreateManySequenceInputEnvelope
+    connect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+  }
+
+  export type SequenceTransitionUncheckedCreateNestedManyWithoutFromSequenceInput = {
+    create?: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput> | SequenceTransitionCreateWithoutFromSequenceInput[] | SequenceTransitionUncheckedCreateWithoutFromSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutFromSequenceInput | SequenceTransitionCreateOrConnectWithoutFromSequenceInput[]
+    createMany?: SequenceTransitionCreateManyFromSequenceInputEnvelope
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+  }
+
+  export type SequenceTransitionUncheckedCreateNestedManyWithoutToSequenceInput = {
+    create?: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput> | SequenceTransitionCreateWithoutToSequenceInput[] | SequenceTransitionUncheckedCreateWithoutToSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutToSequenceInput | SequenceTransitionCreateOrConnectWithoutToSequenceInput[]
+    createMany?: SequenceTransitionCreateManyToSequenceInputEnvelope
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+  }
+
+  export type ActUpdateOneRequiredWithoutSequencesNestedInput = {
+    create?: XOR<ActCreateWithoutSequencesInput, ActUncheckedCreateWithoutSequencesInput>
+    connectOrCreate?: ActCreateOrConnectWithoutSequencesInput
+    upsert?: ActUpsertWithoutSequencesInput
+    connect?: ActWhereUniqueInput
+    update?: XOR<XOR<ActUpdateToOneWithWhereWithoutSequencesInput, ActUpdateWithoutSequencesInput>, ActUncheckedUpdateWithoutSequencesInput>
+  }
+
+  export type SceneUpdateManyWithoutSequenceNestedInput = {
+    create?: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput> | SceneCreateWithoutSequenceInput[] | SceneUncheckedCreateWithoutSequenceInput[]
+    connectOrCreate?: SceneCreateOrConnectWithoutSequenceInput | SceneCreateOrConnectWithoutSequenceInput[]
+    upsert?: SceneUpsertWithWhereUniqueWithoutSequenceInput | SceneUpsertWithWhereUniqueWithoutSequenceInput[]
+    createMany?: SceneCreateManySequenceInputEnvelope
+    set?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    disconnect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    delete?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    connect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    update?: SceneUpdateWithWhereUniqueWithoutSequenceInput | SceneUpdateWithWhereUniqueWithoutSequenceInput[]
+    updateMany?: SceneUpdateManyWithWhereWithoutSequenceInput | SceneUpdateManyWithWhereWithoutSequenceInput[]
+    deleteMany?: SceneScalarWhereInput | SceneScalarWhereInput[]
+  }
+
+  export type SequenceTransitionUpdateManyWithoutFromSequenceNestedInput = {
+    create?: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput> | SequenceTransitionCreateWithoutFromSequenceInput[] | SequenceTransitionUncheckedCreateWithoutFromSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutFromSequenceInput | SequenceTransitionCreateOrConnectWithoutFromSequenceInput[]
+    upsert?: SequenceTransitionUpsertWithWhereUniqueWithoutFromSequenceInput | SequenceTransitionUpsertWithWhereUniqueWithoutFromSequenceInput[]
+    createMany?: SequenceTransitionCreateManyFromSequenceInputEnvelope
+    set?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    disconnect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    delete?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    update?: SequenceTransitionUpdateWithWhereUniqueWithoutFromSequenceInput | SequenceTransitionUpdateWithWhereUniqueWithoutFromSequenceInput[]
+    updateMany?: SequenceTransitionUpdateManyWithWhereWithoutFromSequenceInput | SequenceTransitionUpdateManyWithWhereWithoutFromSequenceInput[]
+    deleteMany?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+  }
+
+  export type SequenceTransitionUpdateManyWithoutToSequenceNestedInput = {
+    create?: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput> | SequenceTransitionCreateWithoutToSequenceInput[] | SequenceTransitionUncheckedCreateWithoutToSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutToSequenceInput | SequenceTransitionCreateOrConnectWithoutToSequenceInput[]
+    upsert?: SequenceTransitionUpsertWithWhereUniqueWithoutToSequenceInput | SequenceTransitionUpsertWithWhereUniqueWithoutToSequenceInput[]
+    createMany?: SequenceTransitionCreateManyToSequenceInputEnvelope
+    set?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    disconnect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    delete?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    update?: SequenceTransitionUpdateWithWhereUniqueWithoutToSequenceInput | SequenceTransitionUpdateWithWhereUniqueWithoutToSequenceInput[]
+    updateMany?: SequenceTransitionUpdateManyWithWhereWithoutToSequenceInput | SequenceTransitionUpdateManyWithWhereWithoutToSequenceInput[]
+    deleteMany?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+  }
+
+  export type SceneUncheckedUpdateManyWithoutSequenceNestedInput = {
+    create?: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput> | SceneCreateWithoutSequenceInput[] | SceneUncheckedCreateWithoutSequenceInput[]
+    connectOrCreate?: SceneCreateOrConnectWithoutSequenceInput | SceneCreateOrConnectWithoutSequenceInput[]
+    upsert?: SceneUpsertWithWhereUniqueWithoutSequenceInput | SceneUpsertWithWhereUniqueWithoutSequenceInput[]
+    createMany?: SceneCreateManySequenceInputEnvelope
+    set?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    disconnect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    delete?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    connect?: SceneWhereUniqueInput | SceneWhereUniqueInput[]
+    update?: SceneUpdateWithWhereUniqueWithoutSequenceInput | SceneUpdateWithWhereUniqueWithoutSequenceInput[]
+    updateMany?: SceneUpdateManyWithWhereWithoutSequenceInput | SceneUpdateManyWithWhereWithoutSequenceInput[]
+    deleteMany?: SceneScalarWhereInput | SceneScalarWhereInput[]
+  }
+
+  export type SequenceTransitionUncheckedUpdateManyWithoutFromSequenceNestedInput = {
+    create?: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput> | SequenceTransitionCreateWithoutFromSequenceInput[] | SequenceTransitionUncheckedCreateWithoutFromSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutFromSequenceInput | SequenceTransitionCreateOrConnectWithoutFromSequenceInput[]
+    upsert?: SequenceTransitionUpsertWithWhereUniqueWithoutFromSequenceInput | SequenceTransitionUpsertWithWhereUniqueWithoutFromSequenceInput[]
+    createMany?: SequenceTransitionCreateManyFromSequenceInputEnvelope
+    set?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    disconnect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    delete?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    update?: SequenceTransitionUpdateWithWhereUniqueWithoutFromSequenceInput | SequenceTransitionUpdateWithWhereUniqueWithoutFromSequenceInput[]
+    updateMany?: SequenceTransitionUpdateManyWithWhereWithoutFromSequenceInput | SequenceTransitionUpdateManyWithWhereWithoutFromSequenceInput[]
+    deleteMany?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+  }
+
+  export type SequenceTransitionUncheckedUpdateManyWithoutToSequenceNestedInput = {
+    create?: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput> | SequenceTransitionCreateWithoutToSequenceInput[] | SequenceTransitionUncheckedCreateWithoutToSequenceInput[]
+    connectOrCreate?: SequenceTransitionCreateOrConnectWithoutToSequenceInput | SequenceTransitionCreateOrConnectWithoutToSequenceInput[]
+    upsert?: SequenceTransitionUpsertWithWhereUniqueWithoutToSequenceInput | SequenceTransitionUpsertWithWhereUniqueWithoutToSequenceInput[]
+    createMany?: SequenceTransitionCreateManyToSequenceInputEnvelope
+    set?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    disconnect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    delete?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    connect?: SequenceTransitionWhereUniqueInput | SequenceTransitionWhereUniqueInput[]
+    update?: SequenceTransitionUpdateWithWhereUniqueWithoutToSequenceInput | SequenceTransitionUpdateWithWhereUniqueWithoutToSequenceInput[]
+    updateMany?: SequenceTransitionUpdateManyWithWhereWithoutToSequenceInput | SequenceTransitionUpdateManyWithWhereWithoutToSequenceInput[]
+    deleteMany?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+  }
+
+  export type SequenceCreateNestedOneWithoutNextSequencesInput = {
+    create?: XOR<SequenceCreateWithoutNextSequencesInput, SequenceUncheckedCreateWithoutNextSequencesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutNextSequencesInput
+    connect?: SequenceWhereUniqueInput
+  }
+
+  export type SequenceCreateNestedOneWithoutPreviousSequencesInput = {
+    create?: XOR<SequenceCreateWithoutPreviousSequencesInput, SequenceUncheckedCreateWithoutPreviousSequencesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutPreviousSequencesInput
+    connect?: SequenceWhereUniqueInput
+  }
+
+  export type SequenceUpdateOneRequiredWithoutNextSequencesNestedInput = {
+    create?: XOR<SequenceCreateWithoutNextSequencesInput, SequenceUncheckedCreateWithoutNextSequencesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutNextSequencesInput
+    upsert?: SequenceUpsertWithoutNextSequencesInput
+    connect?: SequenceWhereUniqueInput
+    update?: XOR<XOR<SequenceUpdateToOneWithWhereWithoutNextSequencesInput, SequenceUpdateWithoutNextSequencesInput>, SequenceUncheckedUpdateWithoutNextSequencesInput>
+  }
+
+  export type SequenceUpdateOneRequiredWithoutPreviousSequencesNestedInput = {
+    create?: XOR<SequenceCreateWithoutPreviousSequencesInput, SequenceUncheckedCreateWithoutPreviousSequencesInput>
+    connectOrCreate?: SequenceCreateOrConnectWithoutPreviousSequencesInput
+    upsert?: SequenceUpsertWithoutPreviousSequencesInput
+    connect?: SequenceWhereUniqueInput
+    update?: XOR<XOR<SequenceUpdateToOneWithWhereWithoutPreviousSequencesInput, SequenceUpdateWithoutPreviousSequencesInput>, SequenceUncheckedUpdateWithoutPreviousSequencesInput>
+  }
+
+  export type SequenceCreateNestedManyWithoutActInput = {
+    create?: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput> | SequenceCreateWithoutActInput[] | SequenceUncheckedCreateWithoutActInput[]
+    connectOrCreate?: SequenceCreateOrConnectWithoutActInput | SequenceCreateOrConnectWithoutActInput[]
+    createMany?: SequenceCreateManyActInputEnvelope
+    connect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+  }
+
+  export type ActTransitionCreateNestedManyWithoutFromActInput = {
+    create?: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput> | ActTransitionCreateWithoutFromActInput[] | ActTransitionUncheckedCreateWithoutFromActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutFromActInput | ActTransitionCreateOrConnectWithoutFromActInput[]
+    createMany?: ActTransitionCreateManyFromActInputEnvelope
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+  }
+
+  export type ActTransitionCreateNestedManyWithoutToActInput = {
+    create?: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput> | ActTransitionCreateWithoutToActInput[] | ActTransitionUncheckedCreateWithoutToActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutToActInput | ActTransitionCreateOrConnectWithoutToActInput[]
+    createMany?: ActTransitionCreateManyToActInputEnvelope
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+  }
+
+  export type SequenceUncheckedCreateNestedManyWithoutActInput = {
+    create?: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput> | SequenceCreateWithoutActInput[] | SequenceUncheckedCreateWithoutActInput[]
+    connectOrCreate?: SequenceCreateOrConnectWithoutActInput | SequenceCreateOrConnectWithoutActInput[]
+    createMany?: SequenceCreateManyActInputEnvelope
+    connect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+  }
+
+  export type ActTransitionUncheckedCreateNestedManyWithoutFromActInput = {
+    create?: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput> | ActTransitionCreateWithoutFromActInput[] | ActTransitionUncheckedCreateWithoutFromActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutFromActInput | ActTransitionCreateOrConnectWithoutFromActInput[]
+    createMany?: ActTransitionCreateManyFromActInputEnvelope
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+  }
+
+  export type ActTransitionUncheckedCreateNestedManyWithoutToActInput = {
+    create?: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput> | ActTransitionCreateWithoutToActInput[] | ActTransitionUncheckedCreateWithoutToActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutToActInput | ActTransitionCreateOrConnectWithoutToActInput[]
+    createMany?: ActTransitionCreateManyToActInputEnvelope
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+  }
+
+  export type SequenceUpdateManyWithoutActNestedInput = {
+    create?: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput> | SequenceCreateWithoutActInput[] | SequenceUncheckedCreateWithoutActInput[]
+    connectOrCreate?: SequenceCreateOrConnectWithoutActInput | SequenceCreateOrConnectWithoutActInput[]
+    upsert?: SequenceUpsertWithWhereUniqueWithoutActInput | SequenceUpsertWithWhereUniqueWithoutActInput[]
+    createMany?: SequenceCreateManyActInputEnvelope
+    set?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    disconnect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    delete?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    connect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    update?: SequenceUpdateWithWhereUniqueWithoutActInput | SequenceUpdateWithWhereUniqueWithoutActInput[]
+    updateMany?: SequenceUpdateManyWithWhereWithoutActInput | SequenceUpdateManyWithWhereWithoutActInput[]
+    deleteMany?: SequenceScalarWhereInput | SequenceScalarWhereInput[]
+  }
+
+  export type ActTransitionUpdateManyWithoutFromActNestedInput = {
+    create?: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput> | ActTransitionCreateWithoutFromActInput[] | ActTransitionUncheckedCreateWithoutFromActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutFromActInput | ActTransitionCreateOrConnectWithoutFromActInput[]
+    upsert?: ActTransitionUpsertWithWhereUniqueWithoutFromActInput | ActTransitionUpsertWithWhereUniqueWithoutFromActInput[]
+    createMany?: ActTransitionCreateManyFromActInputEnvelope
+    set?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    disconnect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    delete?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    update?: ActTransitionUpdateWithWhereUniqueWithoutFromActInput | ActTransitionUpdateWithWhereUniqueWithoutFromActInput[]
+    updateMany?: ActTransitionUpdateManyWithWhereWithoutFromActInput | ActTransitionUpdateManyWithWhereWithoutFromActInput[]
+    deleteMany?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+  }
+
+  export type ActTransitionUpdateManyWithoutToActNestedInput = {
+    create?: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput> | ActTransitionCreateWithoutToActInput[] | ActTransitionUncheckedCreateWithoutToActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutToActInput | ActTransitionCreateOrConnectWithoutToActInput[]
+    upsert?: ActTransitionUpsertWithWhereUniqueWithoutToActInput | ActTransitionUpsertWithWhereUniqueWithoutToActInput[]
+    createMany?: ActTransitionCreateManyToActInputEnvelope
+    set?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    disconnect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    delete?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    update?: ActTransitionUpdateWithWhereUniqueWithoutToActInput | ActTransitionUpdateWithWhereUniqueWithoutToActInput[]
+    updateMany?: ActTransitionUpdateManyWithWhereWithoutToActInput | ActTransitionUpdateManyWithWhereWithoutToActInput[]
+    deleteMany?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+  }
+
+  export type SequenceUncheckedUpdateManyWithoutActNestedInput = {
+    create?: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput> | SequenceCreateWithoutActInput[] | SequenceUncheckedCreateWithoutActInput[]
+    connectOrCreate?: SequenceCreateOrConnectWithoutActInput | SequenceCreateOrConnectWithoutActInput[]
+    upsert?: SequenceUpsertWithWhereUniqueWithoutActInput | SequenceUpsertWithWhereUniqueWithoutActInput[]
+    createMany?: SequenceCreateManyActInputEnvelope
+    set?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    disconnect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    delete?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    connect?: SequenceWhereUniqueInput | SequenceWhereUniqueInput[]
+    update?: SequenceUpdateWithWhereUniqueWithoutActInput | SequenceUpdateWithWhereUniqueWithoutActInput[]
+    updateMany?: SequenceUpdateManyWithWhereWithoutActInput | SequenceUpdateManyWithWhereWithoutActInput[]
+    deleteMany?: SequenceScalarWhereInput | SequenceScalarWhereInput[]
+  }
+
+  export type ActTransitionUncheckedUpdateManyWithoutFromActNestedInput = {
+    create?: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput> | ActTransitionCreateWithoutFromActInput[] | ActTransitionUncheckedCreateWithoutFromActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutFromActInput | ActTransitionCreateOrConnectWithoutFromActInput[]
+    upsert?: ActTransitionUpsertWithWhereUniqueWithoutFromActInput | ActTransitionUpsertWithWhereUniqueWithoutFromActInput[]
+    createMany?: ActTransitionCreateManyFromActInputEnvelope
+    set?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    disconnect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    delete?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    update?: ActTransitionUpdateWithWhereUniqueWithoutFromActInput | ActTransitionUpdateWithWhereUniqueWithoutFromActInput[]
+    updateMany?: ActTransitionUpdateManyWithWhereWithoutFromActInput | ActTransitionUpdateManyWithWhereWithoutFromActInput[]
+    deleteMany?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+  }
+
+  export type ActTransitionUncheckedUpdateManyWithoutToActNestedInput = {
+    create?: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput> | ActTransitionCreateWithoutToActInput[] | ActTransitionUncheckedCreateWithoutToActInput[]
+    connectOrCreate?: ActTransitionCreateOrConnectWithoutToActInput | ActTransitionCreateOrConnectWithoutToActInput[]
+    upsert?: ActTransitionUpsertWithWhereUniqueWithoutToActInput | ActTransitionUpsertWithWhereUniqueWithoutToActInput[]
+    createMany?: ActTransitionCreateManyToActInputEnvelope
+    set?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    disconnect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    delete?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    connect?: ActTransitionWhereUniqueInput | ActTransitionWhereUniqueInput[]
+    update?: ActTransitionUpdateWithWhereUniqueWithoutToActInput | ActTransitionUpdateWithWhereUniqueWithoutToActInput[]
+    updateMany?: ActTransitionUpdateManyWithWhereWithoutToActInput | ActTransitionUpdateManyWithWhereWithoutToActInput[]
+    deleteMany?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+  }
+
+  export type ActCreateNestedOneWithoutNextActsInput = {
+    create?: XOR<ActCreateWithoutNextActsInput, ActUncheckedCreateWithoutNextActsInput>
+    connectOrCreate?: ActCreateOrConnectWithoutNextActsInput
+    connect?: ActWhereUniqueInput
+  }
+
+  export type ActCreateNestedOneWithoutPreviousActsInput = {
+    create?: XOR<ActCreateWithoutPreviousActsInput, ActUncheckedCreateWithoutPreviousActsInput>
+    connectOrCreate?: ActCreateOrConnectWithoutPreviousActsInput
+    connect?: ActWhereUniqueInput
+  }
+
+  export type ActUpdateOneRequiredWithoutNextActsNestedInput = {
+    create?: XOR<ActCreateWithoutNextActsInput, ActUncheckedCreateWithoutNextActsInput>
+    connectOrCreate?: ActCreateOrConnectWithoutNextActsInput
+    upsert?: ActUpsertWithoutNextActsInput
+    connect?: ActWhereUniqueInput
+    update?: XOR<XOR<ActUpdateToOneWithWhereWithoutNextActsInput, ActUpdateWithoutNextActsInput>, ActUncheckedUpdateWithoutNextActsInput>
+  }
+
+  export type ActUpdateOneRequiredWithoutPreviousActsNestedInput = {
+    create?: XOR<ActCreateWithoutPreviousActsInput, ActUncheckedCreateWithoutPreviousActsInput>
+    connectOrCreate?: ActCreateOrConnectWithoutPreviousActsInput
+    upsert?: ActUpsertWithoutPreviousActsInput
+    connect?: ActWhereUniqueInput
+    update?: XOR<XOR<ActUpdateToOneWithWhereWithoutPreviousActsInput, ActUpdateWithoutPreviousActsInput>, ActUncheckedUpdateWithoutPreviousActsInput>
+  }
+
+  export type BeatCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput> | BeatCreateWithoutLocationInput[] | BeatUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutLocationInput | BeatCreateOrConnectWithoutLocationInput[]
+    createMany?: BeatCreateManyLocationInputEnvelope
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type BeatUncheckedCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput> | BeatCreateWithoutLocationInput[] | BeatUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutLocationInput | BeatCreateOrConnectWithoutLocationInput[]
+    createMany?: BeatCreateManyLocationInputEnvelope
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type BeatUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput> | BeatCreateWithoutLocationInput[] | BeatUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutLocationInput | BeatCreateOrConnectWithoutLocationInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutLocationInput | BeatUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BeatCreateManyLocationInputEnvelope
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutLocationInput | BeatUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutLocationInput | BeatUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type BeatUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput> | BeatCreateWithoutLocationInput[] | BeatUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutLocationInput | BeatCreateOrConnectWithoutLocationInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutLocationInput | BeatUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BeatCreateManyLocationInputEnvelope
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutLocationInput | BeatUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutLocationInput | BeatUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type BeatCreateNestedManyWithoutCharactersInput = {
+    create?: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput> | BeatCreateWithoutCharactersInput[] | BeatUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutCharactersInput | BeatCreateOrConnectWithoutCharactersInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type ClueCreateNestedManyWithoutCharactersInput = {
+    create?: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput> | ClueCreateWithoutCharactersInput[] | ClueUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutCharactersInput | ClueCreateOrConnectWithoutCharactersInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+  }
+
+  export type BeatUncheckedCreateNestedManyWithoutCharactersInput = {
+    create?: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput> | BeatCreateWithoutCharactersInput[] | BeatUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutCharactersInput | BeatCreateOrConnectWithoutCharactersInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+  }
+
+  export type ClueUncheckedCreateNestedManyWithoutCharactersInput = {
+    create?: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput> | ClueCreateWithoutCharactersInput[] | ClueUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutCharactersInput | ClueCreateOrConnectWithoutCharactersInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+  }
+
+  export type BeatUpdateManyWithoutCharactersNestedInput = {
+    create?: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput> | BeatCreateWithoutCharactersInput[] | BeatUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutCharactersInput | BeatCreateOrConnectWithoutCharactersInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutCharactersInput | BeatUpsertWithWhereUniqueWithoutCharactersInput[]
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutCharactersInput | BeatUpdateWithWhereUniqueWithoutCharactersInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutCharactersInput | BeatUpdateManyWithWhereWithoutCharactersInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type ClueUpdateManyWithoutCharactersNestedInput = {
+    create?: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput> | ClueCreateWithoutCharactersInput[] | ClueUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutCharactersInput | ClueCreateOrConnectWithoutCharactersInput[]
+    upsert?: ClueUpsertWithWhereUniqueWithoutCharactersInput | ClueUpsertWithWhereUniqueWithoutCharactersInput[]
+    set?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    disconnect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    delete?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    update?: ClueUpdateWithWhereUniqueWithoutCharactersInput | ClueUpdateWithWhereUniqueWithoutCharactersInput[]
+    updateMany?: ClueUpdateManyWithWhereWithoutCharactersInput | ClueUpdateManyWithWhereWithoutCharactersInput[]
+    deleteMany?: ClueScalarWhereInput | ClueScalarWhereInput[]
+  }
+
+  export type BeatUncheckedUpdateManyWithoutCharactersNestedInput = {
+    create?: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput> | BeatCreateWithoutCharactersInput[] | BeatUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: BeatCreateOrConnectWithoutCharactersInput | BeatCreateOrConnectWithoutCharactersInput[]
+    upsert?: BeatUpsertWithWhereUniqueWithoutCharactersInput | BeatUpsertWithWhereUniqueWithoutCharactersInput[]
+    set?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    disconnect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    delete?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    connect?: BeatWhereUniqueInput | BeatWhereUniqueInput[]
+    update?: BeatUpdateWithWhereUniqueWithoutCharactersInput | BeatUpdateWithWhereUniqueWithoutCharactersInput[]
+    updateMany?: BeatUpdateManyWithWhereWithoutCharactersInput | BeatUpdateManyWithWhereWithoutCharactersInput[]
+    deleteMany?: BeatScalarWhereInput | BeatScalarWhereInput[]
+  }
+
+  export type ClueUncheckedUpdateManyWithoutCharactersNestedInput = {
+    create?: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput> | ClueCreateWithoutCharactersInput[] | ClueUncheckedCreateWithoutCharactersInput[]
+    connectOrCreate?: ClueCreateOrConnectWithoutCharactersInput | ClueCreateOrConnectWithoutCharactersInput[]
+    upsert?: ClueUpsertWithWhereUniqueWithoutCharactersInput | ClueUpsertWithWhereUniqueWithoutCharactersInput[]
+    set?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    disconnect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    delete?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    connect?: ClueWhereUniqueInput | ClueWhereUniqueInput[]
+    update?: ClueUpdateWithWhereUniqueWithoutCharactersInput | ClueUpdateWithWhereUniqueWithoutCharactersInput[]
+    updateMany?: ClueUpdateManyWithWhereWithoutCharactersInput | ClueUpdateManyWithWhereWithoutCharactersInput[]
+    deleteMany?: ClueScalarWhereInput | ClueScalarWhereInput[]
+  }
+
+  export type BeatCreateNestedOneWithoutCluesInput = {
+    create?: XOR<BeatCreateWithoutCluesInput, BeatUncheckedCreateWithoutCluesInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutCluesInput
+    connect?: BeatWhereUniqueInput
+  }
+
+  export type CharacterCreateNestedManyWithoutCluesInput = {
+    create?: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput> | CharacterCreateWithoutCluesInput[] | CharacterUncheckedCreateWithoutCluesInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutCluesInput | CharacterCreateOrConnectWithoutCluesInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+  }
+
+  export type CharacterUncheckedCreateNestedManyWithoutCluesInput = {
+    create?: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput> | CharacterCreateWithoutCluesInput[] | CharacterUncheckedCreateWithoutCluesInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutCluesInput | CharacterCreateOrConnectWithoutCluesInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+  }
+
+  export type BeatUpdateOneRequiredWithoutCluesNestedInput = {
+    create?: XOR<BeatCreateWithoutCluesInput, BeatUncheckedCreateWithoutCluesInput>
+    connectOrCreate?: BeatCreateOrConnectWithoutCluesInput
+    upsert?: BeatUpsertWithoutCluesInput
+    connect?: BeatWhereUniqueInput
+    update?: XOR<XOR<BeatUpdateToOneWithWhereWithoutCluesInput, BeatUpdateWithoutCluesInput>, BeatUncheckedUpdateWithoutCluesInput>
+  }
+
+  export type CharacterUpdateManyWithoutCluesNestedInput = {
+    create?: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput> | CharacterCreateWithoutCluesInput[] | CharacterUncheckedCreateWithoutCluesInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutCluesInput | CharacterCreateOrConnectWithoutCluesInput[]
+    upsert?: CharacterUpsertWithWhereUniqueWithoutCluesInput | CharacterUpsertWithWhereUniqueWithoutCluesInput[]
+    set?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    disconnect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    delete?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    update?: CharacterUpdateWithWhereUniqueWithoutCluesInput | CharacterUpdateWithWhereUniqueWithoutCluesInput[]
+    updateMany?: CharacterUpdateManyWithWhereWithoutCluesInput | CharacterUpdateManyWithWhereWithoutCluesInput[]
+    deleteMany?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
+  }
+
+  export type CharacterUncheckedUpdateManyWithoutCluesNestedInput = {
+    create?: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput> | CharacterCreateWithoutCluesInput[] | CharacterUncheckedCreateWithoutCluesInput[]
+    connectOrCreate?: CharacterCreateOrConnectWithoutCluesInput | CharacterCreateOrConnectWithoutCluesInput[]
+    upsert?: CharacterUpsertWithWhereUniqueWithoutCluesInput | CharacterUpsertWithWhereUniqueWithoutCluesInput[]
+    set?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    disconnect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    delete?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    connect?: CharacterWhereUniqueInput | CharacterWhereUniqueInput[]
+    update?: CharacterUpdateWithWhereUniqueWithoutCluesInput | CharacterUpdateWithWhereUniqueWithoutCluesInput[]
+    updateMany?: CharacterUpdateManyWithWhereWithoutCluesInput | CharacterUpdateManyWithWhereWithoutCluesInput[]
+    deleteMany?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -14985,6 +31834,1719 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type SceneCreateWithoutBeatsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequence: SequenceCreateNestedOneWithoutScenesInput
+    nextScenes?: SceneTransitionCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneUncheckedCreateWithoutBeatsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    sequenceId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    nextScenes?: SceneTransitionUncheckedCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionUncheckedCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneCreateOrConnectWithoutBeatsInput = {
+    where: SceneWhereUniqueInput
+    create: XOR<SceneCreateWithoutBeatsInput, SceneUncheckedCreateWithoutBeatsInput>
+  }
+
+  export type CharacterCreateWithoutBeatsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    clues?: ClueCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterUncheckedCreateWithoutBeatsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    clues?: ClueUncheckedCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterCreateOrConnectWithoutBeatsInput = {
+    where: CharacterWhereUniqueInput
+    create: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput>
+  }
+
+  export type ClueCreateWithoutBeatInput = {
+    id?: string
+    title: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterCreateNestedManyWithoutCluesInput
+  }
+
+  export type ClueUncheckedCreateWithoutBeatInput = {
+    id?: string
+    title: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutCluesInput
+  }
+
+  export type ClueCreateOrConnectWithoutBeatInput = {
+    where: ClueWhereUniqueInput
+    create: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput>
+  }
+
+  export type ClueCreateManyBeatInputEnvelope = {
+    data: ClueCreateManyBeatInput | ClueCreateManyBeatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type LocationCreateWithoutBeatsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type LocationUncheckedCreateWithoutBeatsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type LocationCreateOrConnectWithoutBeatsInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutBeatsInput, LocationUncheckedCreateWithoutBeatsInput>
+  }
+
+  export type BeatTransitionCreateWithoutFromBeatInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    toBeat: BeatCreateNestedOneWithoutPreviousBeatsInput
+  }
+
+  export type BeatTransitionUncheckedCreateWithoutFromBeatInput = {
+    id?: string
+    toBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionCreateOrConnectWithoutFromBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    create: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput>
+  }
+
+  export type BeatTransitionCreateManyFromBeatInputEnvelope = {
+    data: BeatTransitionCreateManyFromBeatInput | BeatTransitionCreateManyFromBeatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BeatTransitionCreateWithoutToBeatInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromBeat: BeatCreateNestedOneWithoutNextBeatsInput
+  }
+
+  export type BeatTransitionUncheckedCreateWithoutToBeatInput = {
+    id?: string
+    fromBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionCreateOrConnectWithoutToBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    create: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput>
+  }
+
+  export type BeatTransitionCreateManyToBeatInputEnvelope = {
+    data: BeatTransitionCreateManyToBeatInput | BeatTransitionCreateManyToBeatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SceneUpsertWithoutBeatsInput = {
+    update: XOR<SceneUpdateWithoutBeatsInput, SceneUncheckedUpdateWithoutBeatsInput>
+    create: XOR<SceneCreateWithoutBeatsInput, SceneUncheckedCreateWithoutBeatsInput>
+    where?: SceneWhereInput
+  }
+
+  export type SceneUpdateToOneWithWhereWithoutBeatsInput = {
+    where?: SceneWhereInput
+    data: XOR<SceneUpdateWithoutBeatsInput, SceneUncheckedUpdateWithoutBeatsInput>
+  }
+
+  export type SceneUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequence?: SequenceUpdateOneRequiredWithoutScenesNestedInput
+    nextScenes?: SceneTransitionUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    sequenceId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextScenes?: SceneTransitionUncheckedUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUncheckedUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type CharacterUpsertWithWhereUniqueWithoutBeatsInput = {
+    where: CharacterWhereUniqueInput
+    update: XOR<CharacterUpdateWithoutBeatsInput, CharacterUncheckedUpdateWithoutBeatsInput>
+    create: XOR<CharacterCreateWithoutBeatsInput, CharacterUncheckedCreateWithoutBeatsInput>
+  }
+
+  export type CharacterUpdateWithWhereUniqueWithoutBeatsInput = {
+    where: CharacterWhereUniqueInput
+    data: XOR<CharacterUpdateWithoutBeatsInput, CharacterUncheckedUpdateWithoutBeatsInput>
+  }
+
+  export type CharacterUpdateManyWithWhereWithoutBeatsInput = {
+    where: CharacterScalarWhereInput
+    data: XOR<CharacterUpdateManyMutationInput, CharacterUncheckedUpdateManyWithoutBeatsInput>
+  }
+
+  export type CharacterScalarWhereInput = {
+    AND?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
+    OR?: CharacterScalarWhereInput[]
+    NOT?: CharacterScalarWhereInput | CharacterScalarWhereInput[]
+    id?: StringFilter<"Character"> | string
+    name?: StringFilter<"Character"> | string
+    description?: StringNullableFilter<"Character"> | string | null
+    createdAt?: DateTimeFilter<"Character"> | Date | string
+    updatedAt?: DateTimeFilter<"Character"> | Date | string
+  }
+
+  export type ClueUpsertWithWhereUniqueWithoutBeatInput = {
+    where: ClueWhereUniqueInput
+    update: XOR<ClueUpdateWithoutBeatInput, ClueUncheckedUpdateWithoutBeatInput>
+    create: XOR<ClueCreateWithoutBeatInput, ClueUncheckedCreateWithoutBeatInput>
+  }
+
+  export type ClueUpdateWithWhereUniqueWithoutBeatInput = {
+    where: ClueWhereUniqueInput
+    data: XOR<ClueUpdateWithoutBeatInput, ClueUncheckedUpdateWithoutBeatInput>
+  }
+
+  export type ClueUpdateManyWithWhereWithoutBeatInput = {
+    where: ClueScalarWhereInput
+    data: XOR<ClueUpdateManyMutationInput, ClueUncheckedUpdateManyWithoutBeatInput>
+  }
+
+  export type ClueScalarWhereInput = {
+    AND?: ClueScalarWhereInput | ClueScalarWhereInput[]
+    OR?: ClueScalarWhereInput[]
+    NOT?: ClueScalarWhereInput | ClueScalarWhereInput[]
+    id?: StringFilter<"Clue"> | string
+    title?: StringFilter<"Clue"> | string
+    description?: StringNullableFilter<"Clue"> | string | null
+    beatId?: StringFilter<"Clue"> | string
+    createdAt?: DateTimeFilter<"Clue"> | Date | string
+    updatedAt?: DateTimeFilter<"Clue"> | Date | string
+  }
+
+  export type LocationUpsertWithoutBeatsInput = {
+    update: XOR<LocationUpdateWithoutBeatsInput, LocationUncheckedUpdateWithoutBeatsInput>
+    create: XOR<LocationCreateWithoutBeatsInput, LocationUncheckedCreateWithoutBeatsInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutBeatsInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutBeatsInput, LocationUncheckedUpdateWithoutBeatsInput>
+  }
+
+  export type LocationUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationUncheckedUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUpsertWithWhereUniqueWithoutFromBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    update: XOR<BeatTransitionUpdateWithoutFromBeatInput, BeatTransitionUncheckedUpdateWithoutFromBeatInput>
+    create: XOR<BeatTransitionCreateWithoutFromBeatInput, BeatTransitionUncheckedCreateWithoutFromBeatInput>
+  }
+
+  export type BeatTransitionUpdateWithWhereUniqueWithoutFromBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    data: XOR<BeatTransitionUpdateWithoutFromBeatInput, BeatTransitionUncheckedUpdateWithoutFromBeatInput>
+  }
+
+  export type BeatTransitionUpdateManyWithWhereWithoutFromBeatInput = {
+    where: BeatTransitionScalarWhereInput
+    data: XOR<BeatTransitionUpdateManyMutationInput, BeatTransitionUncheckedUpdateManyWithoutFromBeatInput>
+  }
+
+  export type BeatTransitionScalarWhereInput = {
+    AND?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+    OR?: BeatTransitionScalarWhereInput[]
+    NOT?: BeatTransitionScalarWhereInput | BeatTransitionScalarWhereInput[]
+    id?: StringFilter<"BeatTransition"> | string
+    fromBeatId?: StringFilter<"BeatTransition"> | string
+    toBeatId?: StringFilter<"BeatTransition"> | string
+    condition?: StringNullableFilter<"BeatTransition"> | string | null
+    description?: StringNullableFilter<"BeatTransition"> | string | null
+    createdAt?: DateTimeFilter<"BeatTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"BeatTransition"> | Date | string
+  }
+
+  export type BeatTransitionUpsertWithWhereUniqueWithoutToBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    update: XOR<BeatTransitionUpdateWithoutToBeatInput, BeatTransitionUncheckedUpdateWithoutToBeatInput>
+    create: XOR<BeatTransitionCreateWithoutToBeatInput, BeatTransitionUncheckedCreateWithoutToBeatInput>
+  }
+
+  export type BeatTransitionUpdateWithWhereUniqueWithoutToBeatInput = {
+    where: BeatTransitionWhereUniqueInput
+    data: XOR<BeatTransitionUpdateWithoutToBeatInput, BeatTransitionUncheckedUpdateWithoutToBeatInput>
+  }
+
+  export type BeatTransitionUpdateManyWithWhereWithoutToBeatInput = {
+    where: BeatTransitionScalarWhereInput
+    data: XOR<BeatTransitionUpdateManyMutationInput, BeatTransitionUncheckedUpdateManyWithoutToBeatInput>
+  }
+
+  export type BeatCreateWithoutNextBeatsInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutNextBeatsInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutNextBeatsInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutNextBeatsInput, BeatUncheckedCreateWithoutNextBeatsInput>
+  }
+
+  export type BeatCreateWithoutPreviousBeatsInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutPreviousBeatsInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutPreviousBeatsInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutPreviousBeatsInput, BeatUncheckedCreateWithoutPreviousBeatsInput>
+  }
+
+  export type BeatUpsertWithoutNextBeatsInput = {
+    update: XOR<BeatUpdateWithoutNextBeatsInput, BeatUncheckedUpdateWithoutNextBeatsInput>
+    create: XOR<BeatCreateWithoutNextBeatsInput, BeatUncheckedCreateWithoutNextBeatsInput>
+    where?: BeatWhereInput
+  }
+
+  export type BeatUpdateToOneWithWhereWithoutNextBeatsInput = {
+    where?: BeatWhereInput
+    data: XOR<BeatUpdateWithoutNextBeatsInput, BeatUncheckedUpdateWithoutNextBeatsInput>
+  }
+
+  export type BeatUpdateWithoutNextBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutNextBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUpsertWithoutPreviousBeatsInput = {
+    update: XOR<BeatUpdateWithoutPreviousBeatsInput, BeatUncheckedUpdateWithoutPreviousBeatsInput>
+    create: XOR<BeatCreateWithoutPreviousBeatsInput, BeatUncheckedCreateWithoutPreviousBeatsInput>
+    where?: BeatWhereInput
+  }
+
+  export type BeatUpdateToOneWithWhereWithoutPreviousBeatsInput = {
+    where?: BeatWhereInput
+    data: XOR<BeatUpdateWithoutPreviousBeatsInput, BeatUncheckedUpdateWithoutPreviousBeatsInput>
+  }
+
+  export type BeatUpdateWithoutPreviousBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutPreviousBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+  }
+
+  export type SequenceCreateWithoutScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    act: ActCreateNestedOneWithoutSequencesInput
+    nextSequences?: SequenceTransitionCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceUncheckedCreateWithoutScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    actId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    nextSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceCreateOrConnectWithoutScenesInput = {
+    where: SequenceWhereUniqueInput
+    create: XOR<SequenceCreateWithoutScenesInput, SequenceUncheckedCreateWithoutScenesInput>
+  }
+
+  export type BeatCreateWithoutSceneInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutSceneInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutSceneInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput>
+  }
+
+  export type BeatCreateManySceneInputEnvelope = {
+    data: BeatCreateManySceneInput | BeatCreateManySceneInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SceneTransitionCreateWithoutFromSceneInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    toScene: SceneCreateNestedOneWithoutPreviousScenesInput
+  }
+
+  export type SceneTransitionUncheckedCreateWithoutFromSceneInput = {
+    id?: string
+    toSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionCreateOrConnectWithoutFromSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    create: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput>
+  }
+
+  export type SceneTransitionCreateManyFromSceneInputEnvelope = {
+    data: SceneTransitionCreateManyFromSceneInput | SceneTransitionCreateManyFromSceneInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SceneTransitionCreateWithoutToSceneInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromScene: SceneCreateNestedOneWithoutNextScenesInput
+  }
+
+  export type SceneTransitionUncheckedCreateWithoutToSceneInput = {
+    id?: string
+    fromSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionCreateOrConnectWithoutToSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    create: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput>
+  }
+
+  export type SceneTransitionCreateManyToSceneInputEnvelope = {
+    data: SceneTransitionCreateManyToSceneInput | SceneTransitionCreateManyToSceneInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SequenceUpsertWithoutScenesInput = {
+    update: XOR<SequenceUpdateWithoutScenesInput, SequenceUncheckedUpdateWithoutScenesInput>
+    create: XOR<SequenceCreateWithoutScenesInput, SequenceUncheckedCreateWithoutScenesInput>
+    where?: SequenceWhereInput
+  }
+
+  export type SequenceUpdateToOneWithWhereWithoutScenesInput = {
+    where?: SequenceWhereInput
+    data: XOR<SequenceUpdateWithoutScenesInput, SequenceUncheckedUpdateWithoutScenesInput>
+  }
+
+  export type SequenceUpdateWithoutScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    act?: ActUpdateOneRequiredWithoutSequencesNestedInput
+    nextSequences?: SequenceTransitionUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateWithoutScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    actId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextSequences?: SequenceTransitionUncheckedUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUncheckedUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type BeatUpsertWithWhereUniqueWithoutSceneInput = {
+    where: BeatWhereUniqueInput
+    update: XOR<BeatUpdateWithoutSceneInput, BeatUncheckedUpdateWithoutSceneInput>
+    create: XOR<BeatCreateWithoutSceneInput, BeatUncheckedCreateWithoutSceneInput>
+  }
+
+  export type BeatUpdateWithWhereUniqueWithoutSceneInput = {
+    where: BeatWhereUniqueInput
+    data: XOR<BeatUpdateWithoutSceneInput, BeatUncheckedUpdateWithoutSceneInput>
+  }
+
+  export type BeatUpdateManyWithWhereWithoutSceneInput = {
+    where: BeatScalarWhereInput
+    data: XOR<BeatUpdateManyMutationInput, BeatUncheckedUpdateManyWithoutSceneInput>
+  }
+
+  export type BeatScalarWhereInput = {
+    AND?: BeatScalarWhereInput | BeatScalarWhereInput[]
+    OR?: BeatScalarWhereInput[]
+    NOT?: BeatScalarWhereInput | BeatScalarWhereInput[]
+    id?: StringFilter<"Beat"> | string
+    title?: StringFilter<"Beat"> | string
+    content?: StringFilter<"Beat"> | string
+    order?: IntFilter<"Beat"> | number
+    sceneId?: StringFilter<"Beat"> | string
+    locationId?: StringNullableFilter<"Beat"> | string | null
+    createdAt?: DateTimeFilter<"Beat"> | Date | string
+    updatedAt?: DateTimeFilter<"Beat"> | Date | string
+  }
+
+  export type SceneTransitionUpsertWithWhereUniqueWithoutFromSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    update: XOR<SceneTransitionUpdateWithoutFromSceneInput, SceneTransitionUncheckedUpdateWithoutFromSceneInput>
+    create: XOR<SceneTransitionCreateWithoutFromSceneInput, SceneTransitionUncheckedCreateWithoutFromSceneInput>
+  }
+
+  export type SceneTransitionUpdateWithWhereUniqueWithoutFromSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    data: XOR<SceneTransitionUpdateWithoutFromSceneInput, SceneTransitionUncheckedUpdateWithoutFromSceneInput>
+  }
+
+  export type SceneTransitionUpdateManyWithWhereWithoutFromSceneInput = {
+    where: SceneTransitionScalarWhereInput
+    data: XOR<SceneTransitionUpdateManyMutationInput, SceneTransitionUncheckedUpdateManyWithoutFromSceneInput>
+  }
+
+  export type SceneTransitionScalarWhereInput = {
+    AND?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+    OR?: SceneTransitionScalarWhereInput[]
+    NOT?: SceneTransitionScalarWhereInput | SceneTransitionScalarWhereInput[]
+    id?: StringFilter<"SceneTransition"> | string
+    fromSceneId?: StringFilter<"SceneTransition"> | string
+    toSceneId?: StringFilter<"SceneTransition"> | string
+    condition?: StringNullableFilter<"SceneTransition"> | string | null
+    description?: StringNullableFilter<"SceneTransition"> | string | null
+    createdAt?: DateTimeFilter<"SceneTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SceneTransition"> | Date | string
+  }
+
+  export type SceneTransitionUpsertWithWhereUniqueWithoutToSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    update: XOR<SceneTransitionUpdateWithoutToSceneInput, SceneTransitionUncheckedUpdateWithoutToSceneInput>
+    create: XOR<SceneTransitionCreateWithoutToSceneInput, SceneTransitionUncheckedCreateWithoutToSceneInput>
+  }
+
+  export type SceneTransitionUpdateWithWhereUniqueWithoutToSceneInput = {
+    where: SceneTransitionWhereUniqueInput
+    data: XOR<SceneTransitionUpdateWithoutToSceneInput, SceneTransitionUncheckedUpdateWithoutToSceneInput>
+  }
+
+  export type SceneTransitionUpdateManyWithWhereWithoutToSceneInput = {
+    where: SceneTransitionScalarWhereInput
+    data: XOR<SceneTransitionUpdateManyMutationInput, SceneTransitionUncheckedUpdateManyWithoutToSceneInput>
+  }
+
+  export type SceneCreateWithoutNextScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequence: SequenceCreateNestedOneWithoutScenesInput
+    beats?: BeatCreateNestedManyWithoutSceneInput
+    previousScenes?: SceneTransitionCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneUncheckedCreateWithoutNextScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    sequenceId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutSceneInput
+    previousScenes?: SceneTransitionUncheckedCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneCreateOrConnectWithoutNextScenesInput = {
+    where: SceneWhereUniqueInput
+    create: XOR<SceneCreateWithoutNextScenesInput, SceneUncheckedCreateWithoutNextScenesInput>
+  }
+
+  export type SceneCreateWithoutPreviousScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequence: SequenceCreateNestedOneWithoutScenesInput
+    beats?: BeatCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionCreateNestedManyWithoutFromSceneInput
+  }
+
+  export type SceneUncheckedCreateWithoutPreviousScenesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    sequenceId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionUncheckedCreateNestedManyWithoutFromSceneInput
+  }
+
+  export type SceneCreateOrConnectWithoutPreviousScenesInput = {
+    where: SceneWhereUniqueInput
+    create: XOR<SceneCreateWithoutPreviousScenesInput, SceneUncheckedCreateWithoutPreviousScenesInput>
+  }
+
+  export type SceneUpsertWithoutNextScenesInput = {
+    update: XOR<SceneUpdateWithoutNextScenesInput, SceneUncheckedUpdateWithoutNextScenesInput>
+    create: XOR<SceneCreateWithoutNextScenesInput, SceneUncheckedCreateWithoutNextScenesInput>
+    where?: SceneWhereInput
+  }
+
+  export type SceneUpdateToOneWithWhereWithoutNextScenesInput = {
+    where?: SceneWhereInput
+    data: XOR<SceneUpdateWithoutNextScenesInput, SceneUncheckedUpdateWithoutNextScenesInput>
+  }
+
+  export type SceneUpdateWithoutNextScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequence?: SequenceUpdateOneRequiredWithoutScenesNestedInput
+    beats?: BeatUpdateManyWithoutSceneNestedInput
+    previousScenes?: SceneTransitionUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateWithoutNextScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    sequenceId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutSceneNestedInput
+    previousScenes?: SceneTransitionUncheckedUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUpsertWithoutPreviousScenesInput = {
+    update: XOR<SceneUpdateWithoutPreviousScenesInput, SceneUncheckedUpdateWithoutPreviousScenesInput>
+    create: XOR<SceneCreateWithoutPreviousScenesInput, SceneUncheckedCreateWithoutPreviousScenesInput>
+    where?: SceneWhereInput
+  }
+
+  export type SceneUpdateToOneWithWhereWithoutPreviousScenesInput = {
+    where?: SceneWhereInput
+    data: XOR<SceneUpdateWithoutPreviousScenesInput, SceneUncheckedUpdateWithoutPreviousScenesInput>
+  }
+
+  export type SceneUpdateWithoutPreviousScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequence?: SequenceUpdateOneRequiredWithoutScenesNestedInput
+    beats?: BeatUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUpdateManyWithoutFromSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateWithoutPreviousScenesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    sequenceId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUncheckedUpdateManyWithoutFromSceneNestedInput
+  }
+
+  export type ActCreateWithoutSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    nextActs?: ActTransitionCreateNestedManyWithoutFromActInput
+    previousActs?: ActTransitionCreateNestedManyWithoutToActInput
+  }
+
+  export type ActUncheckedCreateWithoutSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    nextActs?: ActTransitionUncheckedCreateNestedManyWithoutFromActInput
+    previousActs?: ActTransitionUncheckedCreateNestedManyWithoutToActInput
+  }
+
+  export type ActCreateOrConnectWithoutSequencesInput = {
+    where: ActWhereUniqueInput
+    create: XOR<ActCreateWithoutSequencesInput, ActUncheckedCreateWithoutSequencesInput>
+  }
+
+  export type SceneCreateWithoutSequenceInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneUncheckedCreateWithoutSequenceInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutSceneInput
+    nextScenes?: SceneTransitionUncheckedCreateNestedManyWithoutFromSceneInput
+    previousScenes?: SceneTransitionUncheckedCreateNestedManyWithoutToSceneInput
+  }
+
+  export type SceneCreateOrConnectWithoutSequenceInput = {
+    where: SceneWhereUniqueInput
+    create: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput>
+  }
+
+  export type SceneCreateManySequenceInputEnvelope = {
+    data: SceneCreateManySequenceInput | SceneCreateManySequenceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SequenceTransitionCreateWithoutFromSequenceInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    toSequence: SequenceCreateNestedOneWithoutPreviousSequencesInput
+  }
+
+  export type SequenceTransitionUncheckedCreateWithoutFromSequenceInput = {
+    id?: string
+    toSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionCreateOrConnectWithoutFromSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    create: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput>
+  }
+
+  export type SequenceTransitionCreateManyFromSequenceInputEnvelope = {
+    data: SequenceTransitionCreateManyFromSequenceInput | SequenceTransitionCreateManyFromSequenceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SequenceTransitionCreateWithoutToSequenceInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromSequence: SequenceCreateNestedOneWithoutNextSequencesInput
+  }
+
+  export type SequenceTransitionUncheckedCreateWithoutToSequenceInput = {
+    id?: string
+    fromSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionCreateOrConnectWithoutToSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    create: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput>
+  }
+
+  export type SequenceTransitionCreateManyToSequenceInputEnvelope = {
+    data: SequenceTransitionCreateManyToSequenceInput | SequenceTransitionCreateManyToSequenceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ActUpsertWithoutSequencesInput = {
+    update: XOR<ActUpdateWithoutSequencesInput, ActUncheckedUpdateWithoutSequencesInput>
+    create: XOR<ActCreateWithoutSequencesInput, ActUncheckedCreateWithoutSequencesInput>
+    where?: ActWhereInput
+  }
+
+  export type ActUpdateToOneWithWhereWithoutSequencesInput = {
+    where?: ActWhereInput
+    data: XOR<ActUpdateWithoutSequencesInput, ActUncheckedUpdateWithoutSequencesInput>
+  }
+
+  export type ActUpdateWithoutSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextActs?: ActTransitionUpdateManyWithoutFromActNestedInput
+    previousActs?: ActTransitionUpdateManyWithoutToActNestedInput
+  }
+
+  export type ActUncheckedUpdateWithoutSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nextActs?: ActTransitionUncheckedUpdateManyWithoutFromActNestedInput
+    previousActs?: ActTransitionUncheckedUpdateManyWithoutToActNestedInput
+  }
+
+  export type SceneUpsertWithWhereUniqueWithoutSequenceInput = {
+    where: SceneWhereUniqueInput
+    update: XOR<SceneUpdateWithoutSequenceInput, SceneUncheckedUpdateWithoutSequenceInput>
+    create: XOR<SceneCreateWithoutSequenceInput, SceneUncheckedCreateWithoutSequenceInput>
+  }
+
+  export type SceneUpdateWithWhereUniqueWithoutSequenceInput = {
+    where: SceneWhereUniqueInput
+    data: XOR<SceneUpdateWithoutSequenceInput, SceneUncheckedUpdateWithoutSequenceInput>
+  }
+
+  export type SceneUpdateManyWithWhereWithoutSequenceInput = {
+    where: SceneScalarWhereInput
+    data: XOR<SceneUpdateManyMutationInput, SceneUncheckedUpdateManyWithoutSequenceInput>
+  }
+
+  export type SceneScalarWhereInput = {
+    AND?: SceneScalarWhereInput | SceneScalarWhereInput[]
+    OR?: SceneScalarWhereInput[]
+    NOT?: SceneScalarWhereInput | SceneScalarWhereInput[]
+    id?: StringFilter<"Scene"> | string
+    title?: StringFilter<"Scene"> | string
+    description?: StringNullableFilter<"Scene"> | string | null
+    order?: IntFilter<"Scene"> | number
+    sequenceId?: StringFilter<"Scene"> | string
+    createdAt?: DateTimeFilter<"Scene"> | Date | string
+    updatedAt?: DateTimeFilter<"Scene"> | Date | string
+  }
+
+  export type SequenceTransitionUpsertWithWhereUniqueWithoutFromSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    update: XOR<SequenceTransitionUpdateWithoutFromSequenceInput, SequenceTransitionUncheckedUpdateWithoutFromSequenceInput>
+    create: XOR<SequenceTransitionCreateWithoutFromSequenceInput, SequenceTransitionUncheckedCreateWithoutFromSequenceInput>
+  }
+
+  export type SequenceTransitionUpdateWithWhereUniqueWithoutFromSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    data: XOR<SequenceTransitionUpdateWithoutFromSequenceInput, SequenceTransitionUncheckedUpdateWithoutFromSequenceInput>
+  }
+
+  export type SequenceTransitionUpdateManyWithWhereWithoutFromSequenceInput = {
+    where: SequenceTransitionScalarWhereInput
+    data: XOR<SequenceTransitionUpdateManyMutationInput, SequenceTransitionUncheckedUpdateManyWithoutFromSequenceInput>
+  }
+
+  export type SequenceTransitionScalarWhereInput = {
+    AND?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+    OR?: SequenceTransitionScalarWhereInput[]
+    NOT?: SequenceTransitionScalarWhereInput | SequenceTransitionScalarWhereInput[]
+    id?: StringFilter<"SequenceTransition"> | string
+    fromSequenceId?: StringFilter<"SequenceTransition"> | string
+    toSequenceId?: StringFilter<"SequenceTransition"> | string
+    condition?: StringNullableFilter<"SequenceTransition"> | string | null
+    description?: StringNullableFilter<"SequenceTransition"> | string | null
+    createdAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"SequenceTransition"> | Date | string
+  }
+
+  export type SequenceTransitionUpsertWithWhereUniqueWithoutToSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    update: XOR<SequenceTransitionUpdateWithoutToSequenceInput, SequenceTransitionUncheckedUpdateWithoutToSequenceInput>
+    create: XOR<SequenceTransitionCreateWithoutToSequenceInput, SequenceTransitionUncheckedCreateWithoutToSequenceInput>
+  }
+
+  export type SequenceTransitionUpdateWithWhereUniqueWithoutToSequenceInput = {
+    where: SequenceTransitionWhereUniqueInput
+    data: XOR<SequenceTransitionUpdateWithoutToSequenceInput, SequenceTransitionUncheckedUpdateWithoutToSequenceInput>
+  }
+
+  export type SequenceTransitionUpdateManyWithWhereWithoutToSequenceInput = {
+    where: SequenceTransitionScalarWhereInput
+    data: XOR<SequenceTransitionUpdateManyMutationInput, SequenceTransitionUncheckedUpdateManyWithoutToSequenceInput>
+  }
+
+  export type SequenceCreateWithoutNextSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    act: ActCreateNestedOneWithoutSequencesInput
+    scenes?: SceneCreateNestedManyWithoutSequenceInput
+    previousSequences?: SequenceTransitionCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceUncheckedCreateWithoutNextSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    actId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scenes?: SceneUncheckedCreateNestedManyWithoutSequenceInput
+    previousSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceCreateOrConnectWithoutNextSequencesInput = {
+    where: SequenceWhereUniqueInput
+    create: XOR<SequenceCreateWithoutNextSequencesInput, SequenceUncheckedCreateWithoutNextSequencesInput>
+  }
+
+  export type SequenceCreateWithoutPreviousSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    act: ActCreateNestedOneWithoutSequencesInput
+    scenes?: SceneCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionCreateNestedManyWithoutFromSequenceInput
+  }
+
+  export type SequenceUncheckedCreateWithoutPreviousSequencesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    actId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scenes?: SceneUncheckedCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutFromSequenceInput
+  }
+
+  export type SequenceCreateOrConnectWithoutPreviousSequencesInput = {
+    where: SequenceWhereUniqueInput
+    create: XOR<SequenceCreateWithoutPreviousSequencesInput, SequenceUncheckedCreateWithoutPreviousSequencesInput>
+  }
+
+  export type SequenceUpsertWithoutNextSequencesInput = {
+    update: XOR<SequenceUpdateWithoutNextSequencesInput, SequenceUncheckedUpdateWithoutNextSequencesInput>
+    create: XOR<SequenceCreateWithoutNextSequencesInput, SequenceUncheckedCreateWithoutNextSequencesInput>
+    where?: SequenceWhereInput
+  }
+
+  export type SequenceUpdateToOneWithWhereWithoutNextSequencesInput = {
+    where?: SequenceWhereInput
+    data: XOR<SequenceUpdateWithoutNextSequencesInput, SequenceUncheckedUpdateWithoutNextSequencesInput>
+  }
+
+  export type SequenceUpdateWithoutNextSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    act?: ActUpdateOneRequiredWithoutSequencesNestedInput
+    scenes?: SceneUpdateManyWithoutSequenceNestedInput
+    previousSequences?: SequenceTransitionUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateWithoutNextSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    actId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scenes?: SceneUncheckedUpdateManyWithoutSequenceNestedInput
+    previousSequences?: SequenceTransitionUncheckedUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUpsertWithoutPreviousSequencesInput = {
+    update: XOR<SequenceUpdateWithoutPreviousSequencesInput, SequenceUncheckedUpdateWithoutPreviousSequencesInput>
+    create: XOR<SequenceCreateWithoutPreviousSequencesInput, SequenceUncheckedCreateWithoutPreviousSequencesInput>
+    where?: SequenceWhereInput
+  }
+
+  export type SequenceUpdateToOneWithWhereWithoutPreviousSequencesInput = {
+    where?: SequenceWhereInput
+    data: XOR<SequenceUpdateWithoutPreviousSequencesInput, SequenceUncheckedUpdateWithoutPreviousSequencesInput>
+  }
+
+  export type SequenceUpdateWithoutPreviousSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    act?: ActUpdateOneRequiredWithoutSequencesNestedInput
+    scenes?: SceneUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUpdateManyWithoutFromSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateWithoutPreviousSequencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    actId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scenes?: SceneUncheckedUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUncheckedUpdateManyWithoutFromSequenceNestedInput
+  }
+
+  export type SequenceCreateWithoutActInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scenes?: SceneCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceUncheckedCreateWithoutActInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scenes?: SceneUncheckedCreateNestedManyWithoutSequenceInput
+    nextSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutFromSequenceInput
+    previousSequences?: SequenceTransitionUncheckedCreateNestedManyWithoutToSequenceInput
+  }
+
+  export type SequenceCreateOrConnectWithoutActInput = {
+    where: SequenceWhereUniqueInput
+    create: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput>
+  }
+
+  export type SequenceCreateManyActInputEnvelope = {
+    data: SequenceCreateManyActInput | SequenceCreateManyActInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ActTransitionCreateWithoutFromActInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    toAct: ActCreateNestedOneWithoutPreviousActsInput
+  }
+
+  export type ActTransitionUncheckedCreateWithoutFromActInput = {
+    id?: string
+    toActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionCreateOrConnectWithoutFromActInput = {
+    where: ActTransitionWhereUniqueInput
+    create: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput>
+  }
+
+  export type ActTransitionCreateManyFromActInputEnvelope = {
+    data: ActTransitionCreateManyFromActInput | ActTransitionCreateManyFromActInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ActTransitionCreateWithoutToActInput = {
+    id?: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    fromAct: ActCreateNestedOneWithoutNextActsInput
+  }
+
+  export type ActTransitionUncheckedCreateWithoutToActInput = {
+    id?: string
+    fromActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionCreateOrConnectWithoutToActInput = {
+    where: ActTransitionWhereUniqueInput
+    create: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput>
+  }
+
+  export type ActTransitionCreateManyToActInputEnvelope = {
+    data: ActTransitionCreateManyToActInput | ActTransitionCreateManyToActInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SequenceUpsertWithWhereUniqueWithoutActInput = {
+    where: SequenceWhereUniqueInput
+    update: XOR<SequenceUpdateWithoutActInput, SequenceUncheckedUpdateWithoutActInput>
+    create: XOR<SequenceCreateWithoutActInput, SequenceUncheckedCreateWithoutActInput>
+  }
+
+  export type SequenceUpdateWithWhereUniqueWithoutActInput = {
+    where: SequenceWhereUniqueInput
+    data: XOR<SequenceUpdateWithoutActInput, SequenceUncheckedUpdateWithoutActInput>
+  }
+
+  export type SequenceUpdateManyWithWhereWithoutActInput = {
+    where: SequenceScalarWhereInput
+    data: XOR<SequenceUpdateManyMutationInput, SequenceUncheckedUpdateManyWithoutActInput>
+  }
+
+  export type SequenceScalarWhereInput = {
+    AND?: SequenceScalarWhereInput | SequenceScalarWhereInput[]
+    OR?: SequenceScalarWhereInput[]
+    NOT?: SequenceScalarWhereInput | SequenceScalarWhereInput[]
+    id?: StringFilter<"Sequence"> | string
+    title?: StringFilter<"Sequence"> | string
+    description?: StringNullableFilter<"Sequence"> | string | null
+    order?: IntFilter<"Sequence"> | number
+    actId?: StringFilter<"Sequence"> | string
+    createdAt?: DateTimeFilter<"Sequence"> | Date | string
+    updatedAt?: DateTimeFilter<"Sequence"> | Date | string
+  }
+
+  export type ActTransitionUpsertWithWhereUniqueWithoutFromActInput = {
+    where: ActTransitionWhereUniqueInput
+    update: XOR<ActTransitionUpdateWithoutFromActInput, ActTransitionUncheckedUpdateWithoutFromActInput>
+    create: XOR<ActTransitionCreateWithoutFromActInput, ActTransitionUncheckedCreateWithoutFromActInput>
+  }
+
+  export type ActTransitionUpdateWithWhereUniqueWithoutFromActInput = {
+    where: ActTransitionWhereUniqueInput
+    data: XOR<ActTransitionUpdateWithoutFromActInput, ActTransitionUncheckedUpdateWithoutFromActInput>
+  }
+
+  export type ActTransitionUpdateManyWithWhereWithoutFromActInput = {
+    where: ActTransitionScalarWhereInput
+    data: XOR<ActTransitionUpdateManyMutationInput, ActTransitionUncheckedUpdateManyWithoutFromActInput>
+  }
+
+  export type ActTransitionScalarWhereInput = {
+    AND?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+    OR?: ActTransitionScalarWhereInput[]
+    NOT?: ActTransitionScalarWhereInput | ActTransitionScalarWhereInput[]
+    id?: StringFilter<"ActTransition"> | string
+    fromActId?: StringFilter<"ActTransition"> | string
+    toActId?: StringFilter<"ActTransition"> | string
+    condition?: StringNullableFilter<"ActTransition"> | string | null
+    description?: StringNullableFilter<"ActTransition"> | string | null
+    createdAt?: DateTimeFilter<"ActTransition"> | Date | string
+    updatedAt?: DateTimeFilter<"ActTransition"> | Date | string
+  }
+
+  export type ActTransitionUpsertWithWhereUniqueWithoutToActInput = {
+    where: ActTransitionWhereUniqueInput
+    update: XOR<ActTransitionUpdateWithoutToActInput, ActTransitionUncheckedUpdateWithoutToActInput>
+    create: XOR<ActTransitionCreateWithoutToActInput, ActTransitionUncheckedCreateWithoutToActInput>
+  }
+
+  export type ActTransitionUpdateWithWhereUniqueWithoutToActInput = {
+    where: ActTransitionWhereUniqueInput
+    data: XOR<ActTransitionUpdateWithoutToActInput, ActTransitionUncheckedUpdateWithoutToActInput>
+  }
+
+  export type ActTransitionUpdateManyWithWhereWithoutToActInput = {
+    where: ActTransitionScalarWhereInput
+    data: XOR<ActTransitionUpdateManyMutationInput, ActTransitionUncheckedUpdateManyWithoutToActInput>
+  }
+
+  export type ActCreateWithoutNextActsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceCreateNestedManyWithoutActInput
+    previousActs?: ActTransitionCreateNestedManyWithoutToActInput
+  }
+
+  export type ActUncheckedCreateWithoutNextActsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceUncheckedCreateNestedManyWithoutActInput
+    previousActs?: ActTransitionUncheckedCreateNestedManyWithoutToActInput
+  }
+
+  export type ActCreateOrConnectWithoutNextActsInput = {
+    where: ActWhereUniqueInput
+    create: XOR<ActCreateWithoutNextActsInput, ActUncheckedCreateWithoutNextActsInput>
+  }
+
+  export type ActCreateWithoutPreviousActsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceCreateNestedManyWithoutActInput
+    nextActs?: ActTransitionCreateNestedManyWithoutFromActInput
+  }
+
+  export type ActUncheckedCreateWithoutPreviousActsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sequences?: SequenceUncheckedCreateNestedManyWithoutActInput
+    nextActs?: ActTransitionUncheckedCreateNestedManyWithoutFromActInput
+  }
+
+  export type ActCreateOrConnectWithoutPreviousActsInput = {
+    where: ActWhereUniqueInput
+    create: XOR<ActCreateWithoutPreviousActsInput, ActUncheckedCreateWithoutPreviousActsInput>
+  }
+
+  export type ActUpsertWithoutNextActsInput = {
+    update: XOR<ActUpdateWithoutNextActsInput, ActUncheckedUpdateWithoutNextActsInput>
+    create: XOR<ActCreateWithoutNextActsInput, ActUncheckedCreateWithoutNextActsInput>
+    where?: ActWhereInput
+  }
+
+  export type ActUpdateToOneWithWhereWithoutNextActsInput = {
+    where?: ActWhereInput
+    data: XOR<ActUpdateWithoutNextActsInput, ActUncheckedUpdateWithoutNextActsInput>
+  }
+
+  export type ActUpdateWithoutNextActsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUpdateManyWithoutActNestedInput
+    previousActs?: ActTransitionUpdateManyWithoutToActNestedInput
+  }
+
+  export type ActUncheckedUpdateWithoutNextActsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUncheckedUpdateManyWithoutActNestedInput
+    previousActs?: ActTransitionUncheckedUpdateManyWithoutToActNestedInput
+  }
+
+  export type ActUpsertWithoutPreviousActsInput = {
+    update: XOR<ActUpdateWithoutPreviousActsInput, ActUncheckedUpdateWithoutPreviousActsInput>
+    create: XOR<ActCreateWithoutPreviousActsInput, ActUncheckedCreateWithoutPreviousActsInput>
+    where?: ActWhereInput
+  }
+
+  export type ActUpdateToOneWithWhereWithoutPreviousActsInput = {
+    where?: ActWhereInput
+    data: XOR<ActUpdateWithoutPreviousActsInput, ActUncheckedUpdateWithoutPreviousActsInput>
+  }
+
+  export type ActUpdateWithoutPreviousActsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUpdateManyWithoutActNestedInput
+    nextActs?: ActTransitionUpdateManyWithoutFromActNestedInput
+  }
+
+  export type ActUncheckedUpdateWithoutPreviousActsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sequences?: SequenceUncheckedUpdateManyWithoutActNestedInput
+    nextActs?: ActTransitionUncheckedUpdateManyWithoutFromActNestedInput
+  }
+
+  export type BeatCreateWithoutLocationInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutLocationInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutLocationInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BeatCreateManyLocationInputEnvelope = {
+    data: BeatCreateManyLocationInput | BeatCreateManyLocationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BeatUpsertWithWhereUniqueWithoutLocationInput = {
+    where: BeatWhereUniqueInput
+    update: XOR<BeatUpdateWithoutLocationInput, BeatUncheckedUpdateWithoutLocationInput>
+    create: XOR<BeatCreateWithoutLocationInput, BeatUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BeatUpdateWithWhereUniqueWithoutLocationInput = {
+    where: BeatWhereUniqueInput
+    data: XOR<BeatUpdateWithoutLocationInput, BeatUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type BeatUpdateManyWithWhereWithoutLocationInput = {
+    where: BeatScalarWhereInput
+    data: XOR<BeatUpdateManyMutationInput, BeatUncheckedUpdateManyWithoutLocationInput>
+  }
+
+  export type BeatCreateWithoutCharactersInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    clues?: ClueCreateNestedManyWithoutBeatInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutCharactersInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    clues?: ClueUncheckedCreateNestedManyWithoutBeatInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutCharactersInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput>
+  }
+
+  export type ClueCreateWithoutCharactersInput = {
+    id?: string
+    title: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beat: BeatCreateNestedOneWithoutCluesInput
+  }
+
+  export type ClueUncheckedCreateWithoutCharactersInput = {
+    id?: string
+    title: string
+    description?: string | null
+    beatId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ClueCreateOrConnectWithoutCharactersInput = {
+    where: ClueWhereUniqueInput
+    create: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput>
+  }
+
+  export type BeatUpsertWithWhereUniqueWithoutCharactersInput = {
+    where: BeatWhereUniqueInput
+    update: XOR<BeatUpdateWithoutCharactersInput, BeatUncheckedUpdateWithoutCharactersInput>
+    create: XOR<BeatCreateWithoutCharactersInput, BeatUncheckedCreateWithoutCharactersInput>
+  }
+
+  export type BeatUpdateWithWhereUniqueWithoutCharactersInput = {
+    where: BeatWhereUniqueInput
+    data: XOR<BeatUpdateWithoutCharactersInput, BeatUncheckedUpdateWithoutCharactersInput>
+  }
+
+  export type BeatUpdateManyWithWhereWithoutCharactersInput = {
+    where: BeatScalarWhereInput
+    data: XOR<BeatUpdateManyMutationInput, BeatUncheckedUpdateManyWithoutCharactersInput>
+  }
+
+  export type ClueUpsertWithWhereUniqueWithoutCharactersInput = {
+    where: ClueWhereUniqueInput
+    update: XOR<ClueUpdateWithoutCharactersInput, ClueUncheckedUpdateWithoutCharactersInput>
+    create: XOR<ClueCreateWithoutCharactersInput, ClueUncheckedCreateWithoutCharactersInput>
+  }
+
+  export type ClueUpdateWithWhereUniqueWithoutCharactersInput = {
+    where: ClueWhereUniqueInput
+    data: XOR<ClueUpdateWithoutCharactersInput, ClueUncheckedUpdateWithoutCharactersInput>
+  }
+
+  export type ClueUpdateManyWithWhereWithoutCharactersInput = {
+    where: ClueScalarWhereInput
+    data: XOR<ClueUpdateManyMutationInput, ClueUncheckedUpdateManyWithoutCharactersInput>
+  }
+
+  export type BeatCreateWithoutCluesInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    scene: SceneCreateNestedOneWithoutBeatsInput
+    characters?: CharacterCreateNestedManyWithoutBeatsInput
+    location?: LocationCreateNestedOneWithoutBeatsInput
+    nextBeats?: BeatTransitionCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatUncheckedCreateWithoutCluesInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    characters?: CharacterUncheckedCreateNestedManyWithoutBeatsInput
+    nextBeats?: BeatTransitionUncheckedCreateNestedManyWithoutFromBeatInput
+    previousBeats?: BeatTransitionUncheckedCreateNestedManyWithoutToBeatInput
+  }
+
+  export type BeatCreateOrConnectWithoutCluesInput = {
+    where: BeatWhereUniqueInput
+    create: XOR<BeatCreateWithoutCluesInput, BeatUncheckedCreateWithoutCluesInput>
+  }
+
+  export type CharacterCreateWithoutCluesInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterUncheckedCreateWithoutCluesInput = {
+    id?: string
+    name: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    beats?: BeatUncheckedCreateNestedManyWithoutCharactersInput
+  }
+
+  export type CharacterCreateOrConnectWithoutCluesInput = {
+    where: CharacterWhereUniqueInput
+    create: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput>
+  }
+
+  export type BeatUpsertWithoutCluesInput = {
+    update: XOR<BeatUpdateWithoutCluesInput, BeatUncheckedUpdateWithoutCluesInput>
+    create: XOR<BeatCreateWithoutCluesInput, BeatUncheckedCreateWithoutCluesInput>
+    where?: BeatWhereInput
+  }
+
+  export type BeatUpdateToOneWithWhereWithoutCluesInput = {
+    where?: BeatWhereInput
+    data: XOR<BeatUpdateWithoutCluesInput, BeatUncheckedUpdateWithoutCluesInput>
+  }
+
+  export type BeatUpdateWithoutCluesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutCluesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type CharacterUpsertWithWhereUniqueWithoutCluesInput = {
+    where: CharacterWhereUniqueInput
+    update: XOR<CharacterUpdateWithoutCluesInput, CharacterUncheckedUpdateWithoutCluesInput>
+    create: XOR<CharacterCreateWithoutCluesInput, CharacterUncheckedCreateWithoutCluesInput>
+  }
+
+  export type CharacterUpdateWithWhereUniqueWithoutCluesInput = {
+    where: CharacterWhereUniqueInput
+    data: XOR<CharacterUpdateWithoutCluesInput, CharacterUncheckedUpdateWithoutCluesInput>
+  }
+
+  export type CharacterUpdateManyWithWhereWithoutCluesInput = {
+    where: CharacterScalarWhereInput
+    data: XOR<CharacterUpdateManyMutationInput, CharacterUncheckedUpdateManyWithoutCluesInput>
+  }
+
   export type AccountCreateManyUserInput = {
     type: string
     provider: string
@@ -15205,6 +33767,626 @@ export namespace Prisma {
 
   export type RolePermissionUncheckedUpdateManyWithoutPermissionInput = {
     roleId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueCreateManyBeatInput = {
+    id?: string
+    title: string
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionCreateManyFromBeatInput = {
+    id?: string
+    toBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatTransitionCreateManyToBeatInput = {
+    id?: string
+    fromBeatId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CharacterUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clues?: ClueUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterUncheckedUpdateWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clues?: ClueUncheckedUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterUncheckedUpdateManyWithoutBeatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueUpdateWithoutBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUpdateManyWithoutCluesNestedInput
+  }
+
+  export type ClueUncheckedUpdateWithoutBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutCluesNestedInput
+  }
+
+  export type ClueUncheckedUpdateManyWithoutBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUpdateWithoutFromBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    toBeat?: BeatUpdateOneRequiredWithoutPreviousBeatsNestedInput
+  }
+
+  export type BeatTransitionUncheckedUpdateWithoutFromBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUncheckedUpdateManyWithoutFromBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUpdateWithoutToBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromBeat?: BeatUpdateOneRequiredWithoutNextBeatsNestedInput
+  }
+
+  export type BeatTransitionUncheckedUpdateWithoutToBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatTransitionUncheckedUpdateManyWithoutToBeatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromBeatId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatCreateManySceneInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    locationId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionCreateManyFromSceneInput = {
+    id?: string
+    toSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneTransitionCreateManyToSceneInput = {
+    id?: string
+    fromSceneId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatUpdateWithoutSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateManyWithoutSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionUpdateWithoutFromSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    toScene?: SceneUpdateOneRequiredWithoutPreviousScenesNestedInput
+  }
+
+  export type SceneTransitionUncheckedUpdateWithoutFromSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionUncheckedUpdateManyWithoutFromSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionUpdateWithoutToSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromScene?: SceneUpdateOneRequiredWithoutNextScenesNestedInput
+  }
+
+  export type SceneTransitionUncheckedUpdateWithoutToSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneTransitionUncheckedUpdateManyWithoutToSceneInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSceneId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SceneCreateManySequenceInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionCreateManyFromSequenceInput = {
+    id?: string
+    toSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceTransitionCreateManyToSequenceInput = {
+    id?: string
+    fromSequenceId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SceneUpdateWithoutSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateWithoutSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutSceneNestedInput
+    nextScenes?: SceneTransitionUncheckedUpdateManyWithoutFromSceneNestedInput
+    previousScenes?: SceneTransitionUncheckedUpdateManyWithoutToSceneNestedInput
+  }
+
+  export type SceneUncheckedUpdateManyWithoutSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionUpdateWithoutFromSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    toSequence?: SequenceUpdateOneRequiredWithoutPreviousSequencesNestedInput
+  }
+
+  export type SequenceTransitionUncheckedUpdateWithoutFromSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionUncheckedUpdateManyWithoutFromSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionUpdateWithoutToSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromSequence?: SequenceUpdateOneRequiredWithoutNextSequencesNestedInput
+  }
+
+  export type SequenceTransitionUncheckedUpdateWithoutToSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceTransitionUncheckedUpdateManyWithoutToSequenceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromSequenceId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SequenceCreateManyActInput = {
+    id?: string
+    title: string
+    description?: string | null
+    order: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionCreateManyFromActInput = {
+    id?: string
+    toActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ActTransitionCreateManyToActInput = {
+    id?: string
+    fromActId: string
+    condition?: string | null
+    description?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SequenceUpdateWithoutActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scenes?: SceneUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateWithoutActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scenes?: SceneUncheckedUpdateManyWithoutSequenceNestedInput
+    nextSequences?: SequenceTransitionUncheckedUpdateManyWithoutFromSequenceNestedInput
+    previousSequences?: SequenceTransitionUncheckedUpdateManyWithoutToSequenceNestedInput
+  }
+
+  export type SequenceUncheckedUpdateManyWithoutActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionUpdateWithoutFromActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    toAct?: ActUpdateOneRequiredWithoutPreviousActsNestedInput
+  }
+
+  export type ActTransitionUncheckedUpdateWithoutFromActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionUncheckedUpdateManyWithoutFromActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    toActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionUpdateWithoutToActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    fromAct?: ActUpdateOneRequiredWithoutNextActsNestedInput
+  }
+
+  export type ActTransitionUncheckedUpdateWithoutToActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ActTransitionUncheckedUpdateManyWithoutToActInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fromActId?: StringFieldUpdateOperationsInput | string
+    condition?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatCreateManyLocationInput = {
+    id?: string
+    title: string
+    content: string
+    order: number
+    sceneId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type BeatUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    characters?: CharacterUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    characters?: CharacterUncheckedUpdateManyWithoutBeatsNestedInput
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateManyWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BeatUpdateWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    scene?: SceneUpdateOneRequiredWithoutBeatsNestedInput
+    clues?: ClueUpdateManyWithoutBeatNestedInput
+    location?: LocationUpdateOneWithoutBeatsNestedInput
+    nextBeats?: BeatTransitionUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    clues?: ClueUncheckedUpdateManyWithoutBeatNestedInput
+    nextBeats?: BeatTransitionUncheckedUpdateManyWithoutFromBeatNestedInput
+    previousBeats?: BeatTransitionUncheckedUpdateManyWithoutToBeatNestedInput
+  }
+
+  export type BeatUncheckedUpdateManyWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    sceneId?: StringFieldUpdateOperationsInput | string
+    locationId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueUpdateWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beat?: BeatUpdateOneRequiredWithoutCluesNestedInput
+  }
+
+  export type ClueUncheckedUpdateWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    beatId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ClueUncheckedUpdateManyWithoutCharactersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    beatId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CharacterUpdateWithoutCluesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterUncheckedUpdateWithoutCluesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    beats?: BeatUncheckedUpdateManyWithoutCharactersNestedInput
+  }
+
+  export type CharacterUncheckedUpdateManyWithoutCluesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
