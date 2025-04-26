@@ -7,8 +7,18 @@ import { UserDialog, User } from "@/components/user-dialog";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { UserTable } from "@/components/user-table";
 import { useSearchParams } from "next/navigation";
+import { useSystemStore } from "@/store/system-store";
 
 export default function UsersPage() {
+  const { setBreadcrumbs } = useSystemStore();
+  
+  useEffect(() => {
+    setBreadcrumbs([
+      { title: "仪表盘", url: "/" },
+      { title: "用户管理", url: "/users" }
+    ]);
+  }, [setBreadcrumbs]);
+
   const [users, setUsers] = useState<User[]>([]);
   const [pagination, setPagination] = useState({
     total: 0,

@@ -1,7 +1,19 @@
+"use client";
+
 import { ChartAreaInteractive } from "@/components/chart-area-interactive";
 import { SectionCards } from "@/components/section-cards";
+import { useSystemStore } from "@/store/system-store";
+import { useEffect } from "react";
 
 export default function HomePage() {
+  const { setBreadcrumbs } = useSystemStore();
+
+  useEffect(() => {
+    setBreadcrumbs([
+      { title: "仪表盘", url: "/" }
+    ]);
+  }, [setBreadcrumbs]);
+
   return (
     <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
       <SectionCards />

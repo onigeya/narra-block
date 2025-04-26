@@ -23,6 +23,11 @@ interface SystemState {
   navClouds: NavItem[]
   navSecondary: NavItem[]
   documents: Document[]
+  breadcrumbs: {
+    title: string
+    url: string
+  }[]
+  setBreadcrumbs: (breadcrumbs: { title: string; url: string }[]) => void
 }
 
 const initialState: SystemState = {
@@ -140,8 +145,16 @@ const initialState: SystemState = {
       icon: IconFileWord,
     },
   ],
+  breadcrumbs: [
+    {
+      title: "仪表盘",
+      url: "/"
+    }
+  ],
+  setBreadcrumbs: () => {}
 }
 
 export const useSystemStore = create<SystemState>()((set) => ({
   ...initialState,
+  setBreadcrumbs: (breadcrumbs: { title: string; url: string }[]) => set({ breadcrumbs })
 })) 
