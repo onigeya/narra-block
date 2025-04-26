@@ -87,7 +87,7 @@ export function NavUser() {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => router.push("/settings")}>
                 <IconUserCircle />
                 账户设置
               </DropdownMenuItem>
